@@ -17,42 +17,24 @@ class index{
 	public $db;
 	public function init()
 	{
-
+		
 		 $this->db=pc_base::load_model('singer_model');
 		 $r=$this->db->get_one('supstar=1','id,title,thumb,description,url');
-		 $page=$_GET['page'];
-		 $infos=$this->db->listinfo('thumb!=""',"");
+		 // 获得所有歌手的资料分页显示
+		 $size=3;
+		 $data=$this->db->select('thumb!=""','id,thumb,title,url','','id desc');
+		 $num=count($data);
 		 $this->db->table_name=$this->db->table_name.'_data';
-		 $r2=$this->db->get_one('id='.$r['id']);
-		 $r=array_merge($r,$r2);
+		 if($r)
+		 {
+			 $r2=$this->db->get_one('id='.$r['id']);
+			 $r=array_merge($r,$r2);
+		 }
 		 extract($r);
-
-		 include template('artistic','index');
-	}
-	/*分页显示*/
-	public function list_page()
-	{
-		$this->db=pc_base::load_model('singer_model');
-		isset($_GET['page'])?$page=$_GET['page']:$page=1;
-		$data=$infos=array();
-		// 参数4为每条显示的数字，参数$page为页码
-		$info=$this->db->my_listinfo('thumb!=""','id desc',$page,3);
-		$total=$this->db->number;
-
-		if($total>0)
-		{
-				$pages=$this->db->pages;
-				foreach($info as $_v)
-				{
-					if(strpos($_v['url'],'://')===false)$v['url']='1'.$v['url'];
-					$data[]=$_v;
-				}
-
-		}else{
-			$data=$info;
-		}
-		include template('artistic','list_page');
-
+		 $page=
+		 // 分页显示歌手
+		
+		include template('artistic','index');
 	}
 	/**
 	 * 设置推荐明星

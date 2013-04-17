@@ -84,7 +84,7 @@ background:url(../images/about_list_on.jpg);
 	*width:613px;
 }
 .ar_t{
-	background:#fefefd;
+	background:#f3f0ea;
 	border:solid #e4d9c0 1px ;
 	padding:1px;
 	margin-bottom:15px;
@@ -98,9 +98,11 @@ background:url(../images/about_list_on.jpg);
 }
 .star_list{
 	background:#F4F2ED;
+	margin-top: 20px;
 }
-.supstar,.star_list iframe{
-	background:#f4f2ed;
+.supstar{
+	padding-bottom: 29px;
+	*width:903px; 
 }
 .supstar .thumb{
 	width:229px;
@@ -111,26 +113,21 @@ background:url(../images/about_list_on.jpg);
 	line-height:1.6em;
 	font-size:14px;
 }
-.star_list iframe{
-	width:909px;
-	border:none;
-	height:738px;
-}
+
 .stars{
 	padding:0px;
 }
-body{
-	margin:0px;
-	background:#f4f2ed;
-}
+
 .stars li{
-	margin:0 23px 33px 0px;
+	margin:0 31px 33px 0px;
 	float:left;
 	width:152px;
 	height:176px;
 	padding:1px;
 	background:#fff;
-	
+}
+.stars .l5{
+	margin-right: 0;
 }
 .stars .lilast{
 	margin-right:0px;
@@ -139,6 +136,10 @@ body{
 .stars li a img{
 	width:138px;
 	height:136px;
+}
+.list_page{
+	width:561px;
+	overflow: hidden;
 }
 .list_page a{
 		text-decoration:none;
@@ -160,14 +161,25 @@ body{
 	text-shadow: #333;
 
 }
-.page{
-	text-align:center;
-	/*margin-left:300px;*/
-
+.nums{
+	width: 300px;
+	margin: 0 auto;
+	height: 50px;
+	margin-left: 400px;
+	margin-bottom: 20px;
 }
-.page a,.page span{
-	padding:0 2px;
-			color:#908f8d;
+.nums li{
+	list-style: none;
+	padding:5px 10px;
+	background-color:#cfb006;
+	color: #fff;
+	font-weight: bold;
+	margin-right: 5px;
+	cursor: pointer;
+}
+.nums .numon{
+background-color: #5babdf;
+color:#fff;
 }
 .page .on{
 	color:#FFAE00;

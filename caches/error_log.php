@@ -850,3 +850,9 @@
 <?php exit;?>04-17 23:22:46 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
 <?php exit;?>04-17 23:22:46 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
  (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-18 00:12:39 | 2 | extract() expects parameter 1 to be array, boolean given | phpcms\modules\artistic\index.php | 33
+<?php exit;?>04-18 00:12:59 | 2 | extract() expects parameter 1 to be array, boolean given | phpcms\modules\artistic\index.php | 34
+<?php exit;?>04-18 00:13:55 | 2 | extract() expects parameter 1 to be array, boolean given | phpcms\modules\artistic\index.php | 34
+<?php exit;?>04-18 00:20:22 | 2 | extract() expects parameter 1 to be array, boolean given | phpcms\modules\artistic\index.php | 33
+<?php exit;?>04-18 00:20:26 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>04-18 00:20:26 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
