@@ -810,3 +810,43 @@
 <?php exit;?>04-17 22:33:05 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-17 22:45:54 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-17 22:45:54 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-17 23:19:50 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:19:50 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于目标计算机积极拒绝，无法连接。
+ | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:19:50 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:19:50 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:19:50 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:19:50 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:19:50 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:20:06 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:20:06 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于目标计算机积极拒绝，无法连接。
+ | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:20:06 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:20:06 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:20:06 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:20:06 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:20:06 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:30 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:30 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于目标计算机积极拒绝，无法连接。
+ | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:30 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:22:30 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:22:30 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:22:30 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:22:30 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:46 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:46 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: 由于目标计算机积极拒绝，无法连接。
+ | phpcms\libs\classes\mysql.class.php | 56
+<?php exit;?>04-17 23:22:46 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:22:46 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:22:46 | 2 | mysql_errno() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 392
+<?php exit;?>04-17 23:22:46 | 2 | mysql_error() expects parameter 1 to be resource, boolean given | phpcms\libs\classes\mysql.class.php | 388
+<?php exit;?>04-17 23:22:46 | 2 | mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] 由于目标计算机积极拒绝，无法连接。
+ (trying to connect via tcp://localhost:3306) | phpcms\libs\classes\mysql.class.php | 56

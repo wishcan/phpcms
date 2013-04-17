@@ -9,7 +9,7 @@
 <div id='cont' class='center2'>
 	<!-- 左侧选择导航开始 -->
 	<div class='l list'>
-    	{pc:content action="category" catid="31" num="25" siteid="$siteid" order="listorder DESC"}
+    	{pc:content action="category" catid="31" num="25" siteid="$siteid" order="listorder DESC" }
         	<ul class="nav-site">
 			{loop $data $r}
 			<li {if $id==$r['catid']} class="liston" {/if}><a href="{$r[url]}" target='con'><span>{$r[catname]}</span></a></li>
@@ -36,6 +36,10 @@
 <script type="text/javascript">
 	
 	$(function(){
+		$("li").click(function(){
+			$(".liston").removeClass("liston");
+			$(this).addClass("liston");
+		})
 		$("iframe[name='con']").attr('src',$(".list:first").find("a").attr('href'))
 
 	})

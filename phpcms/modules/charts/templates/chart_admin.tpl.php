@@ -37,9 +37,9 @@
     	<td><?php echo $v['singer'];?></td>
     	<td><?php echo $v['point'];?></td>
     	<td>
-    		<a name='delete'>删除</a>
-			<a href=''name='changepoint'>票数修改</a>
-    	</td>
+    		<a name='delete'href='javascript:delete(<?php echo $v["id"]?>)'>删除</a>
+			<a href='javascript:changeVote(<?php echo $v["id"]?>)'name='changepoint'>票数修改</a>
+    	</td>	
 		
     </tr>
 <?php
@@ -90,6 +90,34 @@ function _M(menuid) {
 	});
 }
 
+function delete(id)
+{
+	if(confirm("确定从榜单中删除吗？")
+	{
+		var id=id;
+		$.post(
+			'?m=charts&c=charts&m=delete',
+			{id:id},
+			function(statu)
+			{
+				alert(statu)
+				switch(parseInt(statu)){
+					case 1:
+					location.reload();
+					break;
+					case 2:
+					alert("删除失败请稍后重试");
+					break;
+					default
+					alert(statu);
+					break;
+				}
+			}
+
+
+			);
+	}
+}
 //-->
 </script>
 </body>

@@ -1,4 +1,4 @@
-<script type="text/javascript" src='{JS_PATH}jquery.min.js'></script>
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><script type="text/javascript" src='<?php echo JS_PATH;?>jquery.min.js'></script>
 <!-- 榜单相关页面 -->
 <script type='text/javascript'>
 $(function(){
@@ -13,9 +13,10 @@ $(function(){
     <div id="content">
 
       <div class="col-auto">
+    <img src="<?php echo CSS_PATH;?>hy/images/jj_logo.png" style='margin-left:100px;' />
 
             <div class="content" style='line-height:2em;margin-top:55px;text-algin:center;'>
-            	    {$content}
+            	    <?php echo $content;?>
             </div>
         </div>
      </div>
