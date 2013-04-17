@@ -13,6 +13,7 @@ class index{
 		$this->_username=param::get_cookie('_username');
 		$this->_userid=param::get_cookie('_userid');
 		$this->pre=$this->db->db_tablepre;
+		$this->sql='select * from '.$this->pre.'music as m inner join '.$this->pre.'music_data';
 		pc_base::load_app_func('global');
 	}
 	public function init(){
@@ -25,9 +26,9 @@ class index{
 	 * @return page分页页面
 	 * @return $data['music']  歌曲名称
 	 * @return $data['singer'] 歌手
-	 * @return $data['cName']  唱片公司
-	 * @return $data['spName'] 专辑名称
-	 * @return $data['url']    地址
+	 * @return $data['cname']  唱片公司
+	 * @return $data['spname'] 专辑名称
+	 * @return $data['mUrl']   歌曲附件地址
 	 */
 
 	public function lists(){
@@ -35,9 +36,84 @@ class index{
 		if(!$_GET['id'])return false;
 		isset($_GET['hash'])? $pageSize=50:$pageSize=9;
 		isset($_GET['page'])?$page=$_GET['page']:$page=1;
-		$data=$infos=array();
-		$sql='select m.title as music,m.id as id,m.rcname, m.url,s.title as singer ,sp.title as spName from v9_music as m inner join v9_singer as s inner join v9_sp as sp on m.sid=s.id and m.spid = sp.id  where m.catid = '.$_GET['id'];
-		$info=$this->db->my_listinfo(array('sql'=>$sql),'m.listorder desc',$page,$pageSize);
+		$where=' catid='.$_GET['id'];
+		$row=$this->selectMusic('catid = '.$_GET['id'],0,$page,$pageSize);
+		$page=$row['page'];
+		$data=$row['data'];
+		include template('music','lists');
+
+	}
+	/**
+	 * @param [string] $_POST['search']['musicName']  查询歌曲名
+	 * @param [string] $_POST['search']['singerName'] 查询歌手名
+	 * @return [array] $data 查询得到的结果集
+	 * @message 未完成功能  分页
+	 */
+	public function search()
+	{
+		
+		if(!$_GET['search'])
+		{
+			return false;
+			// 暂时返回个错误，之后改善
+		}
+		
+		$musicName=$singerName='';
+		$where='';
+		$data=array();
+		if(isset($_GET['search']['musicName']))
+		{
+			$key=$_GET['search']['musicName'];
+			$where='title like "%'.$key.'%"';
+			
+		}else if(isset($_GET['search']['singerName']))
+		{
+			$key=$_GET['search']['singerName'];
+			$where='singer like "%'.$key.'%"';
+		}
+		$data=$this->selectMusic($where);
+		$num =count($data);
+		include template('music','search');
+
+	}
+
+	/**
+	 * 显示歌曲的全部信息
+	 * @param [num] $_GET['id'];
+	 */
+	public function mp3()
+	{
+		if(!isset($_GET['id'])){
+			return false;
+		}
+
+		$data=$this->selectMusic('m.id = '.$_GET['id']);
+		extract($data[0]);
+		$url=explode(',', $data[0][mUrl]);
+		$url=explode('=>',$url[0]);
+
+		$mUrl=trim($url[2]," '");
+		if(substr($mUrl, 0,23)=='http://localhost/phpcms')
+			{
+				$mUrl=str_replace('http://localhost/phpcms',APP_PATH,$mUrl);
+			}
+			if(!$photo){
+				$photo=$thumb;
+			}
+		include template('music','show_mp3');
+	}
+
+	public function selectMusic($where,$page=0,$page,$pageSize)
+	{
+		$sql=$this->sql.' where '.$where;
+		if(!$page)
+		{
+			$data=$this->db->queryAll($sql);
+			return $data;
+		}
+		$data=$infos=$row=array();
+
+		$info=$this->db->my_listinfo(array('sql'=>$sql),'m.listorder desc,m.updatetime desc ',$page,$pageSize);
 		$total=$this->db->number;
 		if($total>0)
 		{
@@ -47,19 +123,15 @@ class index{
 					if(strpos($_v['url'],'://')===false)$v['url']='1'.$v['url'];
 					$data[]=$_v;
 				}
+				$row['pages']=$page;
+				$row['data']=$data;
 
 		}else{
-			$data=$info;
+			$row=$info;
 		}
-		include template('music','lists');
 
-	}
+		return $row;
 
-	/**
- * 发动投票
- */
-	public function createVote()
-	{
 
 	}
 	/**
@@ -159,12 +231,6 @@ class index{
 			}
 	}
 
-	// 创建榜单
-	public function createNewMusicList()
-	{
-
-	}
-	// 新歌推荐添加
 
 	// 获得专辑
 	public function getSps()
@@ -180,70 +246,6 @@ class index{
 			$data=$db->select($where);
 		 	echo json_encode($data);
 		}
-	/**
-	 * @param [string] $_POST['search']['musicName']  查询歌曲名
-	 * @param [string] $_POST['search']['singerName'] 查询歌手名
-	 * @return [array] $data 查询得到的结果集
-	 * @message 未完成功能  分页
-	 */
-	public function search()
-	{
-		
-		if(!$_GET['search'])
-		{
-			return false;
-			// 暂时返回个错误，之后改善
-		}
-		
-		$musicName=$singerName='';
-		$sql='select m.title as music,m.rcname,m.id as id, m.url,s.title as singer ,sp.title as spName from v9_music as m inner join v9_singer as s inner join v9_sp as sp inne on m.sid=s.id and m.spid = sp.id  where ';
-		$where='';
-		$data=array();
-		if(isset($_GET['search']['musicName']))
-		{
-			$key=$_GET['search']['musicName'];
-			$where='m.title like "%'.$key.'%"';
-			
-		}else if(isset($_GET['search']['singerName']))
-		{
-			$key=$_GET['search']['singerName'];
-			$where='s.title like "%'.$key.'%"';
-		}
-		$sql.=$where;
-		$data=$this->db->queryAll($sql);
-		$num =count($data);
-		include template('music','search');
-
-	}
-	/**
-	 * 显示歌曲的全部信息
-	 * @param [num] $_GET['id'];
-	 */
-	public function mp3()
-	{
-		if(!isset($_GET['id'])){
-			return false;
-		}
-
-		$sql='select m.title as music, md.content as lyric,s.thumb,md.mUrl, sd.photo,s.title as  singer ,sp.title as spName, c.title as cName from v9_music as m inner join v9_singer as s inner join v9_sp as sp inner join v9_record_company as c inner join v9_singer_data as sd  inner join v9_music_data as md on m.id=md.id and m.sid=s.id and m.spid = sp.id and m.rcid=c.id  and s.id = sd.id where ';
-		$where='m.id = '.$_GET['id'];
-		$sql.=$where;
-		$data=$this->db->queryAll($sql);
-		extract($data[0]);
-
-		$url=explode(',', $data[0][mUrl]);
-		$url=explode('=>',$url[0]);
-		$mUrl=trim($url[2]," '");
-		if(substr($mUrl, 0,23)=='http://localhost/phpcms')
-			{
-				$mUrl=str_replace('http://localhost/phpcms',WEB_PATH,$mUrl);
-			}
-
-			if(!$photo){
-				$photo=$thumb;
-			}
-		include template('music','show_mp3');
-	}
 
 	public function getMusic()
 	{

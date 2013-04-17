@@ -1,5 +1,5 @@
-
-{template "content","header"}
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>
+<?php include template("content","header"); ?>
 <!--首页页面显示开始-->
 <div class='main'>
 	
@@ -8,12 +8,12 @@
         <!-- 幻灯片开始 -->
         <div class='h_images l'>  
             <div class='imgs'>
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
             </div>
             <div class='zz'></div>
             <ul class='h_num'>
@@ -32,7 +32,7 @@
             <div class='good_h'></div>
             <ul class='classes l'>
                 <li class='l good_l1'>
-                <img src='{CSS_PATH}hy/images/zw3.png' class='l'/> 
+                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
                 <ul class='l'>
                     <div class='good_h2'></div>
                     <table>
@@ -57,7 +57,7 @@
                 </li>
                 <div class='c'></div>
                  <li class='l  good_l2'>
-                <img src='{CSS_PATH}hy/images/zw3.png' class='l'/> 
+                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
                 <ul class='l'>
                     <div class='good_h3'></div>
                     <table>
@@ -82,7 +82,7 @@
                 </li>
                 <div class='c'></div>
                 <li class='l good_l3'>
-                <img src='{CSS_PATH}hy/images/zw3.png' class='l'/> 
+                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
                 <ul class='l'>
                     <div class='good_h4'></div>
                     <table>
@@ -116,40 +116,40 @@
                 <div class='top2_l'>
                 <!-- 缩略图 -->
                   <div class='thumb l'>
-                    <img src='{CSS_PATH}hy/images/zw2.png' />
+                    <img src='<?php echo CSS_PATH;?>hy/images/zw2.png' />
                     <div class='zz2'></div>
                     <p>谭晶亮相山西大剧院</p>
                   </div>
                   <div class='news l'>
                     <!-- 热点新闻开始 -->
                     <div class='hot'>
-                    	{pc:content  action="position" posid="2" order="listorder DESC" num="1" return="info"}
+                    	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=70e60edaff7f2f83f3be09bbd3707e1d&action=position&posid=2&order=listorder+DESC&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'position')) {$info = $content_tag->position(array('posid'=>'2','order'=>'listorder DESC','limit'=>'1',));}?>
                     	
-                    	{loop $info $v}
-                    <a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>
-                          <h3 class='hot_title'>{str_cut($v['title'],50)}</h3>
+                    	<?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
+                    <a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>>
+                          <h3 class='hot_title'><?php echo str_cut($v['title'],50);?></h3>
                           <p class='hot_desc'>
-                            {str_cut($v['description'],100)} <span class='more'>查看详细 >></span>
+                            <?php echo str_cut($v['description'],100);?> <span class='more'>查看详细 >></span>
                           </p>
                      </a>
-                     {/loop}
-            		  {/pc}  
+                     <?php $n++;}unset($n); ?>
+            		  <?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>  
                     </div>
                     <!-- 热点新闻结束 -->
                     <!-- 新新闻 -->
                     <ul class='new'>
 
-             		 	{pc:content  action="lists"  catid="9" order="updatetime desc" num="5" return="data"}
-             		 	{loop $data $v}
-             		 	{php if($n!==1):}
+             		 	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=8d937d324091ec1ae074221a9f17b3ba&action=lists&catid=9&order=updatetime+desc&num=5&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'9','order'=>'updatetime desc','limit'=>'5',));}?>
+             		 	<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+             		 	<?php if($n!==1):?>
                         <li>
-                            <a href='{$v[url]}'><span class='news_title'>{str_cut($v['title'],50)}</span>
-                            <span class='time'>{date("Y-m-d",$v[inputtime])}</span>
+                            <a href='<?php echo $v['url'];?>'><span class='news_title'><?php echo str_cut($v['title'],50);?></span>
+                            <span class='time'><?php echo date("Y-m-d",$v[inputtime]);?></span>
                             </a>
                         </li>
-						{php endif;}
-                        {/loop}
-                       	{/pc}
+						<?php endif;?>
+                        <?php $n++;}unset($n); ?>
+                       	<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
                        
                     </ul>
                   </div>
@@ -163,7 +163,7 @@
               </div>
               <!-- 微博同步开始 -->
               <div class='weibo l'>
-                <img src='{CSS_PATH}hy/images/weibo_zw.png' />
+                <img src='<?php echo CSS_PATH;?>hy/images/weibo_zw.png' />
               </div>
               <!-- 微博同步结束  -->
             </div>
@@ -171,7 +171,7 @@
         <div class='c'></div>
     <!-- 广告位 -->
       <div class='gg'>
-        <img src='{CSS_PATH}hy/images/zw4.png' />
+        <img src='<?php echo CSS_PATH;?>hy/images/zw4.png' />
       </div>
     </div>
     <!-- 首页上部分结束 -->
@@ -181,9 +181,9 @@
       <!-- 周排行榜 -->
       <div class='week'>
 	  <!--  -->
-	  	{loop $week $n $v}
-	         <ul class='week_{if $n==0}n{elseif $n==1}g{elseif $n==2}m{/if}'> 
-	          <h1>{$v[title]}</h1>
+	  	<?php $n=1; if(is_array($week)) foreach($week AS $n => $v) { ?>
+	         <ul class='week_<?php if($n==0) { ?>n<?php } elseif ($n==1) { ?>g<?php } elseif ($n==2) { ?>m<?php } ?>'> 
+	          <h1><?php echo $v['title'];?></h1>
 	          <table cellspacing="0">
 	                <thead>
 	                    <tr>
@@ -196,25 +196,25 @@
 	               </thead>
 	               <tbody>
 	              
-	               		{loop $v['data'] $k $d}
-	             		<tr {if $n%2==0} class='tr2' {/if}>
-	                    	<td class='td1'><span class='one num num{php echo $k+1}'></span></td>
-	                    	<td class='td2'>{str_cut($d[music],18)}</td>
-	                    	<td class='td3'>{$d[singer]}</td>
-	                    	<td class='td4'>{$d[point]}</td>
+	               		<?php $n=1; if(is_array($v['data'])) foreach($v['data'] AS $k => $d) { ?>
+	             		<tr <?php if($n%2==0) { ?> class='tr2' <?php } ?>>
+	                    	<td class='td1'><span class='one num num<?php echo $k+1?>'></span></td>
+	                    	<td class='td2'><?php echo str_cut($d[music],18);?></td>
+	                    	<td class='td3'><?php echo $d['singer'];?></td>
+	                    	<td class='td4'><?php echo $d['point'];?></td>
 
-	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' target='blank'><b class='st'></b></a></td>
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' target='blank'><b class='st'></b></a></td>
 	                    </tr>
-	              		  {/loop}
+	              		  <?php $n++;}unset($n); ?>
 	              		  
 	               </tbody>
 	          </table>
 	          	<div class='week_t'>
 	          		<span>为您喜欢的歌曲投上一票吧</span>
-	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=vote'></a>
+	          		<a href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=vote'></a>
 	          	</div>
 	      	</ul>
-	      	 {/loop}
+	      	 <?php $n++;}unset($n); ?>
       </div>
       <!-- 月排行榜 -->
       <div class='c'></div>
@@ -512,37 +512,37 @@
 				<div class='center2 l'>
 				<ul>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span><span>Dear Diary</span></span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
 					</li>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
 					</li>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
 					</li>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
 					</li>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
 					</li>
 					<li>
-						<img src='{CSS_PATH}hy/images/zw4-7.png' />
+						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 						<p class='singer'>Robynn & Kendy</p>
 						<i></i>
@@ -568,37 +568,37 @@
 						<div class='center2 l'>
 						<ul>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
@@ -624,37 +624,37 @@
 						<div class='center2 l'>
 						<ul>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name l'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
 							</li>
 							<li>
-								<img src='{CSS_PATH}hy/images/zw4-7.png' />
+								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
 								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
 								<p class='singer'>Robynn & Kendy</p>
 								<i></i>
@@ -670,45 +670,45 @@
 	<!-- 视频推荐开始 -->
 		<div id='video'>
 
-			<h6><a href='{APP_PATH}index.php?m=content&c=index&a=lists&catid=42'>更多</a></h6>
+			<h6><a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=42'>更多</a></h6>
 			<ul class='l'>
-			{pc:content  action="lists"  catid="42" order="updatetime desc" num="5" return="data"}
-			{loop $data $v}
+			<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=586152055df632d2472e9ce8a94dfa69&action=lists&catid=42&order=updatetime+desc&num=5&return=data\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'42','order'=>'updatetime desc','limit'=>'5',));}?>
+			<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 
 				<li>
-				<a href='{$v[url]}'>
-						<img src='{$v[thumb]}' />
-						<p><b>{$v[title]}</b></p>
+				<a href='<?php echo $v['url'];?>'>
+						<img src='<?php echo $v['thumb'];?>' />
+						<p><b><?php echo $v['title'];?></b></p>
 					</a>
 				</li>
-				{/loop}
-				{/pc}
+				<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
 			</ul>
 		</div>
 	<!-- 视频推荐结束 -->
 	<!-- 演出信息开始 -->
 		<div id='messages' class='l'>
-			<h6><a href='{APP_PATH}index.php?m=content&c=index&a=lists&catid=44'>更多</a></h6>
+			<h6><a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=44'>更多</a></h6>
 			<ul class='l'>
-				{pc:content  action="lists"  catid="44" order="updatetime desc" num="3" return="data"moreinfo="1"}
+				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=e17acbc9726c4059b5565b020baae7dc&action=lists&catid=44&order=updatetime+desc&num=3&return=data&moreinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'44','order'=>'updatetime desc','moreinfo'=>'1','limit'=>'3',));}?>
 
-				{loop $data $v}
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 				<li>
-					<a href='{$v[url]}' title='{$v[title]}'>
-						<img src='{$v[thumb]}' class='l' />
+					<a href='<?php echo $v['url'];?>' title='<?php echo $v['title'];?>'>
+						<img src='<?php echo $v['thumb'];?>' class='l' />
 						<div class='message l'>
 							
-								<h3 class='message_title'>{str_cut($v[title],30)}</h3>
-								<p class='message_desc'>{str_cut($v[content],100)}</p>
-								<p><span>时间：</span>{date("Y-m-d",$v[showtime])}</p>
-								<p><span>地点: </span>{$v[showplace]}</p>
-								<p><span>购票地址: </span>{str_cut($v[showplaces],40)}</p>
+								<h3 class='message_title'><?php echo str_cut($v[title],30);?></h3>
+								<p class='message_desc'><?php echo str_cut($v[content],100);?></p>
+								<p><span>时间：</span><?php echo date("Y-m-d",$v[showtime]);?></p>
+								<p><span>地点: </span><?php echo $v['showplace'];?></p>
+								<p><span>购票地址: </span><?php echo str_cut($v[showplaces],40);?></p>
 							
 						</div>
 					</a>
 				</li>
-				{/loop}
-				{/pc}
+				<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
 			
 			</ul>
 		</div>
@@ -717,7 +717,7 @@
 <div class='c'></div>
 <!--首页内容结束-->
 <!--引入尾部文件开始-->
-{template "content","footer"}
+<?php include template("content","footer"); ?>
 <!--引入尾部结束-->
 <!-- 页面结束 -->
 

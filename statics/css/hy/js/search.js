@@ -17,7 +17,7 @@ $("form").submit(function(){
 
 		key=$(this).prev("input").val();
 		if(key!==''){
-			self.location.href=WEB_PATH+'index.php?m=music&c=index&a=search&'+name+'='+key;
+			self.location.href=APP_PATH+'index.php?m=music&c=index&a=search&'+name+'='+key;
 		}
 		return false;
 	})
@@ -28,7 +28,7 @@ $("form").submit(function(){
 			if(e.keyCode==13){
 				key=$('.name').val();
 					if(key!==''){
-						self.location.href=WEB_PATH+'index.php?m=music&c=index&a=search&'+name+'='+key;
+						self.location.href=APP_PATH+'index.php?m=music&c=index&a=search&'+name+'='+key;
 					}
 			}
 

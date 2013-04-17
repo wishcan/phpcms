@@ -1,12 +1,12 @@
-{if $_GET[hash]==1}
-{template "content","header"}
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php if($_GET[hash]==1) { ?>
+<?php include template("content","header"); ?>
 <SCRIPT TYPE="text/javascript">
 	APP_PATH=<?php echo APP_PATH;?>;
 	// $('title').text($("title").html())
-	$('title').html('新歌推荐——{if $_GET[id]==26}内地推荐{elseif $_GET[id]==27}港台推荐{else}民歌推荐{/if}')
+	$('title').html('新歌推荐——<?php if($_GET[id]==26) { ?>内地推荐<?php } elseif ($_GET[id]==27) { ?>港台推荐<?php } else { ?>民歌推荐<?php } ?>')
 </SCRIPT>
 <title></title>
-<script type="text/javascript" src='{CSS_PATH}hy/js/search.js'></script>
+<script type="text/javascript" src='<?php echo CSS_PATH;?>hy/js/search.js'></script>
 <div id='new_music' class='center2 art new_music list_once'>
 
 <!-- 新歌推荐页头部开始 -->
@@ -47,12 +47,12 @@
 			<div class='c'></div>
 			<!-- 内地歌曲推荐开始 -->
 			<div class='music_list music_list_n'>
-{/if}
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/hy_header.css">
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
-<div id='music_list_page' class='{if $_GET[id]==26}new_t_n{elseif $_GET[id]==27}new_t_g{else}new_t_m{/if}'>
+<?php } ?>
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/hy_header.css">
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
+<div id='music_list_page' class='<?php if($_GET[id]==26) { ?>new_t_n<?php } elseif ($_GET[id]==27) { ?>new_t_g<?php } else { ?>new_t_m<?php } ?>'>
 	<h3 class=''>
-		{if !$_GET['hash']}<a href='{APP_PATH}index.php?m=music&c=index&a=lists&id={$_GET[id]}&hash=1' target='blank'></a>{/if}</h3>
+		<?php if(!$_GET['hash']) { ?><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=lists&id=<?php echo $_GET['id'];?>&hash=1' target='blank'></a><?php } ?></h3>
 	<div class='musics'>
 	<table cellspacing="0">
 		<thead>
@@ -64,27 +64,27 @@
 					<th>试听</th>
 		</thead>
 		<tbody>
-			{loop $data $r}
+			<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
 			<tr>
-				<td>{$r[title]}</td>
-				<td>{$r[singer]}</td>
-				<td>{$r[spname]}</td>
-				<td>{$r[rcname]}</td>
-				<td><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$r[id]}' target='blank'><b class='st'></b></a></td>
+				<td><?php echo $r['title'];?></td>
+				<td><?php echo $r['singer'];?></td>
+				<td><?php echo $r['spname'];?></td>
+				<td><?php echo $r['rcname'];?></td>
+				<td><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $r['id'];?>' target='blank'><b class='st'></b></a></td>
 			</tr>
-			{/loop}
+			<?php $n++;}unset($n); ?>
 		</tbody>
 	</table>
-	 {if $pages}<div class=page>{$pages}</div>{/if}
+	 <?php if($pages) { ?><div class=page><?php echo $pages;?></div><?php } ?>
 	</div>
 	 <div style='clear:both'></div>
 	
 
-{if $_GET[hash]==1}
+<?php if($_GET[hash]==1) { ?>
 </div>
 </div>
 </div>
 </div></div>
 <div class='c'></div>
-{template "content","footer"}
-{/if}
+<?php include template("content","footer"); ?>
+<?php } ?>

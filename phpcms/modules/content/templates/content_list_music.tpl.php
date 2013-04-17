@@ -226,11 +226,8 @@ $(document).ready(function(){
 		<div   class="iptd"><input class="tit_ipt"  value="<?php echo $r['title'];?>" type="text" id="title_<?php echo $r['id'];?>"></input>
 		</div>
 		</td>
-		
 		<td align='center'>
-			<?php 
-			echo $r['singer'];
-			?>
+		<?php echo $r['singer'];?>
 		</td>
 		<td align='center'>
 			<?php

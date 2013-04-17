@@ -29,16 +29,16 @@ class charts extends admin{
 
 	}
 	/**
-	 * @param $_GET['type'] 1:内地; 2:港台; 3:民歌;
-	 * @return [type] [description]
+	 * @param  [integer] $_GET['id'] 榜单
+	 * @return [integer] [$num]      榜单内的歌曲条数
 	 */
 	public function admin()
 	{
 		isset($_GET['id'])?$id=$_GET['id']:showmessage("非法操作",'blank');
-		 $tablename=$this->pre.$this->tableName.$id;
-		$sql='select m.title as music,m.id as mid,m.thumb as mthumb,s.url as surl, s.id as singerid,s.title as singer,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m inner join '.$this->pre.'singer as s on ch.mid=m.id and ch.sid=s.id order by ch.point desc';
+		$tablename=$this->pre.$this->tableName.$id;
+		$sql='select m.title as music,m.id as mid,m.thumb as mthumb,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
 		$row=$this->db->queryAll($sql);
-
+		$num=count($row);
 		include $this->admin_tpl('chart_admin');
 
 	}
@@ -97,7 +97,7 @@ class charts extends admin{
 
 			$select='select id from '.$tableName.' where mid = '.$v;
 			if(!$this->db->queryAll($select)){
-				$sql='insert into '.$tableName.'(mid,sid,cid)values('.trim($v).','.trim($sids[$k]).','.trim($table_a).');';
+				$sql='insert into '.$tableName.'(mid,cid)values('.trim($v).','.trim($table_a).');';
 				if($this->db->query($sql)){
 					$statu=1;
 				}else{

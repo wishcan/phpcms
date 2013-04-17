@@ -1,8 +1,5 @@
+<title>{$singer}—{$title}</title>
 {template "content","header"}
-<script type="text/javascript">
-//$music data for php
-	$("title").html("{$music}—{$singer}")
-</script>
 <script type="text/javascript" src='{CSS_PATH}hy/js/search.js'></script>
 <link rel="stylesheet" href="{CSS_PATH}hy/css/about.css">
 <script type="text/javascript" src="{CSS_PATH}hy/js/swfobject.js"></script>
@@ -10,7 +7,7 @@
 
 <!-- 歌曲页头部开始 -->
 <div class='mp3_title page_title'>
-  <h3>{$singer}-{$music}</h3>
+  <h3>{$singer}-{$title}</h3>
 </div>
 <div class='music_link l'>
   <i class='l'></i>
@@ -35,18 +32,18 @@
 					<div class="player">	
 					
 											
-															
-						<object type="application/x-shockwave-flash" data="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={APP_PATH}{$mUrl}" width="240" height="20" id="dewplayer-vol">
+													
+						<object type="application/x-shockwave-flash" data="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={$mUrl}" width="240" height="20" id="dewplayer-vol">
 							<param name="wmode" value="transparent">
-							<param name="movie" value="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={APP_PATH}{$mUrl}">
+							<param name="movie" value="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={$mUrl}">
 						</object>
 					</div>
 
 					<ul>
-						<li>作词：</li>
-						<li>作曲：</li>
-						<li>专辑：{$spName}</li>
-						<li>唱片公司：{$cName}</li>
+						<li>作词：{$writer}</li>
+						<li>作曲：{$comper}</li>
+						<li>专辑：{$spname}</li>
+						<li>唱片公司：{$rcname}</li>
 					</ul>
 
 				</div>
@@ -64,7 +61,8 @@
 				歌曲信息
 			</h5>
 		<div class="lyrics">
-					{$lyric}
+			
+					{if $content}{$content}{else}还没歌词？快联系我们！{/if}
 			</div>
 		</div>
 	</div>

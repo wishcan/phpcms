@@ -4,7 +4,7 @@
 <div class="table-list"> 
 <div class="subnav">
     <div class="content-menu ib-a blue line-x">
-    <a class="add fb" href="javascript:window.top.art.dialog({id:'add',iframe:'?m=charts&c=charts&a=add&type=<?php echo $type;?>', title:'榜单制定', width:'700', height:'500', lock:true}, function(){var d = window.top.art.dialog({id:'add'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'add'}).close()});void(0);"><em>榜单发布</em></a>　    <a href="javascript:;" class="on"><em>周榜管理</em></a>    </div>
+    <h3>共有<?php echo $num;?>首歌曲列入榜单</h3>
 </div>
 <div class="bk10"></div>
 <form name="myform" id="myform" action="?m=member&c=member_model&a=delete" method="post" onsubmit="check();return false;">
@@ -15,6 +15,7 @@
 	<thead>
 		<tr>
 			<th align="center" width="30px"><input type="checkbox" value="" id="check_box" onclick="selectall('modelid[]');"></th>
+			<th>排名</th>
 			<th align="center">ID</th>
 			<th align="center">歌曲名</th>
 			<th align="center">歌手</th>
@@ -23,11 +24,14 @@
 		</tr>
 	</thead>
 <tbody>
+
 <?php
 	foreach($row as $k=>$v) {
 ?>
     <tr>
+
     	<td><input type="checkbox" value="<?php echo $v['id'];?>" name="modelid[]"></td>
+    	<td><?php echo $k+1;?></td>
     	<td><?php echo $v['id'];?></td>
     	<td><?php echo $v['music'];?></td>
     	<td><?php echo $v['singer'];?></td>
