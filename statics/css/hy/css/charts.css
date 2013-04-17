@@ -1,0 +1,79 @@
+.center2{
+	/*margin-top: 20px;*/
+}
+.page_title{
+	border-radius: 5px;
+	margin-top: 25px;
+}
+.bdhg_title{
+	margin: 0 auto;
+	width: 285px;
+	height: 55px;
+	position: relative;
+	top: -8px;
+}
+.bdhg_w{
+
+	background-image: url(../images/bdhg_w.png);
+
+}
+.bdhg_m{
+	background-image: url(../images/bdhg_m.png);
+	/*margin-top: 25px;*/
+}
+.bdhg_title .select{
+	width: 127px;
+	height: 27px;
+	background-color:  #f7f7f7;
+	background-image: url(../images/select.png);
+	margin-left: 68px;
+	position: relative;
+	top:14px;
+	text-align: center;
+	background-repeat: no-repeat;
+}
+.bdhg_title .select li{
+	width: 82%;
+	height: 24px;
+	text-indent: -18px;
+	font-size: 14px;
+	line-height: 27px;
+	*margin-left: -18px;
+	cursor: pointer;
+	display: none;
+	background-color: #f8f8f8;
+}
+.bdhg_title .select .on{
+	display: block;
+}
+.bdhg_title .select li:hover
+{
+	background-color: #e8e6ef;
+}
+.chart p{
+	/*height: 43px;*/
+	/*float: left;*/
+	padding-left: 210px;
+}
+.chart p a{
+	display: block;
+	width:68px ;
+	height: 23px;
+	background-repeat: no-repeat;
+
+	margin: 10px;
+}
+.bdxq_n a{
+background-image: url(../images/bdxq_n.png);
+}
+.bdxq_g a{
+background-image: url(../images/bdxq_g.png);
+}
+.bdxq_m a{
+background-image: url(../images/bdxq_m.png);
+}
+/*榜单内页*/
+.list_title{
+	line-height: 46px;
+	font-size: 16px;
+}

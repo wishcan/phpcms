@@ -1,0 +1,146 @@
+
+
+<title>查分结果——赖伟锋 - 闹够了没有</title>
+{template "content","header"}
+
+<script type="text/javascript">
+//$music data for php
+	$("title").html("{$music}—{$singer}")
+</script>
+<link rel="stylesheet" href="{CSS_PATH}hy/css/about.css">
+
+<div id='new_music' class='center2 art new_music list_once points'>
+
+<!-- 歌曲内容 -->
+	<p class="point_t">第201301期</p>
+<div class="center2 mp3_content l mp3_point">
+
+	<div class="mp3">
+		<!-- 歌曲信息 -->
+		<div class="mp3_message l">
+			<div class="mp3_l l">
+				<!-- 加入收藏 -->
+				<div class='mp3_logo'>赖伟锋 - 闹够了没有<p class="collect">加入收藏</p></div>
+				<div class="c"></div>
+				<div class="messages">
+					<!-- mp3播放器 -->
+					<div class="player">
+						<object type="application/x-shockwave-flash" data="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={$mUrl}" width="240" height="20" id="dewplayer-vol">
+							<param name="wmode" value="transparent">
+							<param name="movie" value="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3=mp3/{$mUrl}">
+						</object>
+					</div>
+						
+					<ul>
+						<li class='point_count'>99</li>
+						<li class='point_media'>99</li>
+						<li class='point_expert'>99</li>
+						<li class='point_college'>99</li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- 歌手缩略图 -->
+			<div class="mp3_r l">
+					<div class="thumb l"><img src='{$photo}' /></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="c"></div>
+<div class="mp3_point border" id='points'>
+		<div class="page_title">
+			<h4>	
+				201303期榜单信息
+			</h4>
+			<table cellspacing="0">
+				<thead>
+					<tr>
+						<th></th>
+						<th>单项总得分</th>
+						<th>参与人数</th>
+						<th>单项平均分</th>
+						<th>单项占比</th>
+						<th>单项最终分</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr class='point_tr1'>
+						<td>专家投票</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class='point_tr2'>
+						<td>媒体投票</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class='point_tr3'>
+						<td>高校投票</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="c"></div>
+
+</div>
+<div class="pj border">
+	<div class="page_title">
+		<h4>至尊点评</h4>
+	</div>
+	<div class='com'>
+		对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。　
+		对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。　对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。　
+		对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。　对别人的行为艺术（如表演）加以评价，说出自己的观点、看法、建议、意见等。　
+
+		</div>
+</div>		
+</div>
+<div class='c'></div>
+{template "content","footer"}
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+<script type='text/JavaScript'>
+		$(".collect").click(function(){
+			$.post(
+					"{APP_PATH}index.php?m=music&c=index&a=collect",
+					{id:"{$_GET[id]}"},
+					function(statu){
+						switch(parseInt(statu)){
+							case 1:
+							alert('成功加入收藏夹');
+							break;
+							case -1:
+							alert("尚未请登录");
+							location.href="{APP_PATH}/index.php?m=member&c=index&a=login";
+							break;
+							case -2:
+							alert("已经在您的收藏夹中");
+							break;
+							default:
+							alert(statu);
+							break;	
+						}
+					}
+
+
+				)
+
+
+		})
+
+
+
+</script>

@@ -1,0 +1,95 @@
+<title>榜单回顾</title>
+{template "content",'header'}
+<link rel="stylesheet" href="{CSS_PATH}/hy/css/charts.css">
+<style type="text/css">
+		.chart{
+		margin-top: 25px;
+		display: block;
+		float: left;
+		background-color: #fcfbf8;
+	}
+	.chart iframe{
+		width:300px;
+		height: 327px;
+		*height: 337px;
+		/**height: 367px;*/
+	}
+	
+</style>
+<script type="text/javascript">
+		
+	$(function(){
+
+
+			$("li").click(function(){
+				if($(this).attr("class")=='on'){
+					$(this).parent().find("li").show();
+					return;
+				}
+				// if($(this).attr("class")!=='on')
+				// {
+					$(this).parent().find(".on").removeClass('on');
+					$(this).addClass("on");
+					$(this).parent().find("li").hide();
+					$(this).show();
+				// }else{
+
+						
+				// }
+
+
+			})
+	})
+
+</script>
+<div class="center2">
+	<h3 class="page_title">
+		<div class="bdhg_w bdhg_title">
+			<ul class='select'>
+				<li class='on'>20130101期</li>
+				<li>20130102期</li>
+				<li>20130103期</li>
+				<li>20130104期</li>
+			</ul>
+		</div>
+	</h3>
+	<div class="center3">
+		<div class='chart border ' >
+		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=26" frameborder="0"></iframe>
+		<p class='bdxq_n'><a href='{APP_PATH}index.php?m=music&c=index&a=listCharts&id=26'></a></p>
+		</div>
+		<div class='chart border'style='margin:25px 24px 0px 24px'>
+		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=27" frameborder="0"></iframe>
+		<p class='bdxq_g'><a href='{APP_PATH}index.php?m=music&c=index&a=listCharts&id=27'></a></p>
+		</div>
+		<div class='chart border' >
+		<iframe  src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=28" frameborder="0"></iframe>
+		<p class='bdxq_m'><a href='{APP_PATH}index.php?m=music&c=index&a=listCharts&id=28'>	</a></p>
+		</div>
+	</div>
+	<div class="c"></div>
+	<h3 class="page_title">
+		<div class="bdhg_m bdhg_title" >
+			<ul class='select'>
+				<li class='on'>20130101期</li>
+				<li>20130102期</li>
+				<li>20130103期</li>
+				<li>20130104期</li>
+			</ul>
+		</div>
+	</h3>
+	<div class="center3">
+		<div class='chart border' >
+		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=26" frameborder="0"></iframe>
+		</div>
+		<div class='chart border'style='margin:25px 24px 0px 24px'>
+		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=27" frameborder="0"></iframe>
+		</div>
+		<div class='chart border' >
+		<iframe  src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=28" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+
+<div class="c"></div>
+{template "content","footer"}

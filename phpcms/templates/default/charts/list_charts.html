@@ -1,0 +1,119 @@
+
+<title>第201301期 至尊内地榜周榜</title>
+
+{template 'content','header'}
+
+ <style type="text/css">
+ </style>
+  <style type="text/css">
+ .list_title{
+	width: 780px;
+	margin: 0 auto;
+	margin-top: 25px;
+	line-height: 42px;
+} 
+	.week h1,.week .week_t{
+	*width: 300px;
+	}
+
+	td{text-align: center;}
+	.st{
+		float: right;
+		background-repeat: no-repeat;
+		/*padding-right: 10px;*/
+		margin-right: 5px;
+	}
+.week_g h1{
+	color: #e45757;
+}
+.week_m h1{
+	color: #b078fe;
+}
+.week table{
+	width:363px ;
+}
+.week tbody td{
+	border: 0;
+background: #fcfbf8;
+}
+.week thead td{
+	background: url({CSS_PATH}hy/images/bdhg_list_tbg.png);
+	padding: 8px 0;
+
+}
+.week tbody .tr2 td{
+	background-color: #f2f1ec;
+}
+.week tbody .td1{
+	width: 35px;
+}
+.week ul{
+	float: left;
+	background-color: #fcfbf8;
+	border-right: solid 1px #feaa7c;
+}
+.week .u2{
+		border-right:0;
+		border-left: solid 1px #feaa7c;
+}
+.border{
+	margin: 10px 0;
+}
+.week{
+	width: 734px;
+	margin: 0 auto;
+
+}
+.td5{
+	padding: 0;
+}
+.st{
+	margin-right: 15px;
+}
+
+
+ </style>
+<div class="center2">
+	<h3 class="page_title list_title">第201301期 至尊内地榜周榜</h3>
+ <div class='week'>
+ 	
+	<div class="border l">
+	{php for($j=0;$j<4;$j++):}
+ 	<ul class='week_{if $id==26}n{elseif $id==27}g{elseif $id==28}m{/if} {if $j%2==1} u2{/if}'>
+	          <table cellspacing="0">
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>得分</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	               	{php for($i=0;$i<10;$i++):}
+	             		<tr {if $i%2==1} class='tr2' {/if}>
+	                    	<td class='td1'><span class='one'></span></td>
+	                    	<td class='td2'>微日舞曲</td>
+	                    	<td class='td3'>白若溪</td>
+	                    	<td class='td4'>99</td>
+	                    	<td class='td5'><b class='st'></b></td>
+	                    </tr>
+	                  {php endfor;} 
+	               </tbody>
+	          </table>
+	        </ul>
+	       {if $j%2==1}
+	       </div>
+	       <div class="border l"> 	
+	       	{/if}
+	  {php endfor;}    
+	</div>        
+	
+<!-- 	 <div class="border l">
+ 
+	</div>      -->          
+</div>
+</div>
+<div class="c"></div>
+{template 'content','footer'}

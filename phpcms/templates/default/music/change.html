@@ -1,0 +1,154 @@
+<link rel="stylesheet" href="{CSS_PATH}hy/css/member.css">
+<link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}cookie.js"></script>
+<script type="text/javascript" src="{JS_PATH}member_common.js"></script>
+<script type="text/javascript" src="{JS_PATH}dialog.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="{JS_PATH}formvalidator.js" charset="UTF-8"></script>
+<script type="text/javascript" src="{JS_PATH}formvalidatorregex.js" charset="UTF-8"></script>
+<script type="text/javascript">
+
+ $(function(){
+ 	$(window.parent.document).find("iframe").css({'height':parseInt($(".change").height())+100});
+ 	$(".colselect").css("background-image",'url({CSS_PATH}hy/images/select_bg.png)')
+ 	$(".dropmenu").css("margin",0)
+ 	$("label").parent().css("text-align",'right');
+ 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
+	$("#oldPassword").formValidator({onshow:"请输入现在的密码",onfocus: "6到20位非中文字符"}).inputValidator({min:6,max:20,onerror:"输入的长度有误"});
+	$("#oldPassword").blur(function(){
+		var password=$(this).val();
+		var usrid="{$userid}";
+		$.post(
+			"{APP_PATH}index.php?m=music&c=member&a=check_psd",
+			{id:usrid,password:$(this).val()},
+			function(status){
+					switch(parseInt(status)){
+						case 1:
+						break;
+						case -1:
+
+						$("#oldPasswordTip").attr("class",'onError')
+						$("#oldPasswordTip").html('密码错误');
+						break;
+						case -2:
+						alert("错误的操作")
+						break;
+						case -3:
+						alert("会话已经过期，请重新登陆");
+						location.reload();
+						break;
+					}
+			})
+
+			
+
+
+	})
+
+
+	$("#newPassword").formValidator({onshow:"{L('input').L('新的密码')}",onfocus:"密码为6到20的非中文字符"}).inputValidator({min:6,max:20,onerror:"密码为6到20的非中文字符"});
+	 $("#pwdconfirm").formValidator({onshow:"请确认密码",onfocus:"俩次密码需要一致",oncorrect:"俩次密码一致"}).compareValidator({desid:"newPassword",operateor:"=",onerror:"俩次密码不一致"}).inputValidator({min:6,max:20,onerror:"密码为6到20的非中文字符"});
+
+
+	 $(".button").click(function()
+	 {
+	 	if(!$("#oldPassword").val()){
+	 		alert("请输入原始密码");
+	 	}
+	 	var data=$("form").serialize();
+	 	var userid="{$userid}";
+	 	$.post(
+	 		"{APP_PATH}index.php?m=music&c=member&a=changeMember",
+	 		{post:data},
+	 		function(status){
+	 			switch(parseInt(status))
+	 			{
+	 				case 1:
+	 				alert("修改成功请重新登陆");
+	 				location.href("{APP_PATH}index.php?m=member&c=index&a=logout");
+	 				break;
+	 				case -1:
+	 				alert("操作失败请退出登录后重试");
+	 				break;
+	 				default:
+	 				alert(status);
+	 				break;
+	 			}
+	 		}
+
+
+	 		)
+
+	 	
+	 })
+
+
+ 
+ })
+
+
+
+</script>
+<style type="text/css">
+	body{background-color: #faf8f4;}
+</style>
+<div class="iframe change">
+	<h3>修改资料</h3>
+<form id='myform'action='{APP_PATH}' method='post'>
+	<table>
+		<tr>
+			<td><label>原始密码:</label></td>
+			<td><input type="password" name="oldPassword" id="oldPassword" /></td>
+		</tr>
+		<tr>
+			<td><label>新密码:</label></td>
+			<td><input type="password" name="newPassword" id="newPassword" /></td>
+		</tr>
+		<tr>
+			<td><label>确认密码:</label></td>
+			<td><input type="password" name="pwdconfirm" id="pwdconfirm" /></td>
+		</tr>
+		<tr>
+			<td><label>所在城市:</label></td>
+			<td id='city'><span class='ld'>{menu_linkage(1,'L_1')}</span></td>
+		</tr>
+
+		<tr>
+			<td><label>性别:</label></td>
+			<td><span class='ld'>{menu_linkage(3446,'L_3446')}</span></td>
+		</tr>
+		<tr>
+			<td><label>生日:</label></td>
+			<td><link rel="stylesheet" type="text/css" href="APP_PATH/statics/js/calendar/jscal2.css">
+				<link rel="stylesheet" type="text/css" href="APP_PATH/statics/js/calendar/border-radius.css">
+			<link rel="stylesheet" type="text/css" href="APP_PATH/statics/js/calendar/win2k.css"><script type="text/javascript" src="APP_PATH/statics/js/calendar/calendar.js"></script><script type="text/javascript" src="APP_PATH/statics/js/calendar/lang/en.js"></script><input type="text" name="birthday" id="birthday" value="{$birthday}" size="10" class="date input-text" readonly=""><script type="text/javascript">
+			Calendar.setup({
+			weekNumbers: true,
+		    inputField : "birthday",
+		    trigger    : "birthday",
+		    dateFormat: "%Y-%m-%d",
+		    showTime: false,
+		    onSelect   : function() {this.hide();}
+			});
+        </script></td>
+		</tr>
+		<tr>
+			<td><label>QQ:</label></td>
+			<td><input type="text" name="qq"value="{$qq}" id="QQ"></td>
+		</tr>
+		<tr>
+			<td><label>手机:</label></td>
+			<td><input type="text" name="phone"value="{$phone}" id="hone"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<input type="button" class='button' style='width: 108px;'class="dosubmit">
+</form> 
+
+
+</div>

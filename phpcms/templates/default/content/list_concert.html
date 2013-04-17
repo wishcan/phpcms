@@ -1,0 +1,39 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}hy/css/video.css">
+<!--main-->
+<div class="main center2 border concert">
+
+	<div class="content_title l">
+            <h2 class="l">演出信息</h2>
+            <span class="r">当前位置:<a href='{APP_PATH}'>首页</a>&gt;演出信息</span>
+       </div>
+       <hr/>
+	<div id='messages' class='l'>
+			<ul class='l'>
+				{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page" moreinfo="1"}
+				{php for($i=0;$i<8;$i++):}
+				{loop $data $r}
+				<li>
+		<a href="{$r[url]}" target="_blank"{title_style($r[style])}>
+				<img src='{$r[thumb]}'class='l' />
+						<div class='message l'>
+						
+								<h3 class='message_title'>{str_cut($r[title],30)}</h3>
+								<p class='message_desc'>{str_cut($r[content],70)}</p>
+								<p><span>时间：</span>{$r[showtime]}</p>
+								<p><span>地点: </span>{$r[showplaces]}</p>
+								<p><span>演出地址: </span>{$r[showplace]}</p>
+							</a>
+						</div>
+						
+				</li>	
+				{if $n%6==0}<li class="bk20 hr"></li>{/if}
+				{/loop} 
+		        {php endfor;}
+			</ul>	
+			<div id="pages" class="text-c">{$pages}</div> 
+		{/pc}
+	</div>		
+</div>
+    <div class="c"></div>
+{template "content","footer"}

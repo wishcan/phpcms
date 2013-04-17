@@ -1,0 +1,31 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}hy/css/video.css">
+<!--main-->
+<div class="main center2 border">
+
+	<div class="content_title l" >
+            <h2 class="l">视频推荐</h2>
+            <span class="r">当前位置:<a href='{APP_PATH}'>首页</a>&gt;新闻资讯</span>
+       </div>
+      <hr /> 
+     <div class="list">  
+    	{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
+        <ul class="">
+        	{php for($i=0;$i<15;$i++):}
+		{loop $data $r}
+			<li>
+				<a href="{$r[url]}" target="_blank"{title_style($r[style])}>
+				<p><img src='{$r[thumb]}' width='140' height='90' /></p>
+				<b>{$r[title]}</b></a></li>
+			{if $n%6==0}<li class="bk20 hr"></li>{/if}
+		{/loop}
+		       
+		        
+		        {php endfor;}
+		  </ul>       
+		       <div id="pages" class="text-c">{$pages}</div> 
+		{/pc}
+	</div>	
+</div>
+    <div class="c"></div>
+{template "content","footer"}

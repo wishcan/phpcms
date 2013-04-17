@@ -1,0 +1,829 @@
+
+ul li{
+	list-style:none;
+}
+#cont{
+	margin-top:25px;
+}
+.list{
+margin-right: 16px;
+}
+.list li{
+	width:222px;
+	height:39px;
+	padding:1px;
+	margin-bottom:12px;
+}
+.list li a{
+	display: block;
+	width:inherit;
+	height:inherit;
+	line-height:39px;
+	text-align: center;
+	font-weight:bold;
+	color:#333;
+	background:url(../images/about_list.jpg);
+}
+.list .liston a{
+	color:#fff;
+background:url(../images/about_list_on.jpg);
+}
+.content{
+	width:714px;
+	padding:1px;
+	
+}
+
+.content iframe{
+	width:694px;
+	border:none;
+	padding:20px;
+	padding-right:0px;
+	line-height:1.5em;
+	background:#F4F2ED;
+}
+
+.page_title{
+	width:958px;
+	height:42px;
+	background:url(../images/page_title_bg.jpg);
+	text-align:center;
+	*text-align:left;
+}
+.page_title h3{
+	position: relative;
+	width:284px;
+	height:55px;
+	background:url(../images/arlist_t.jpg);
+	background-repeat:no-repeat ;
+	margin-top:-9px;
+	margin-left:336px;
+}
+.arcontent{
+	padding:37px 28px;
+	width:904px;
+	background:#faf8f4;
+	margin-top:-14px;
+}
+.arcontent iframe{
+	width: 904px;
+	height: ;
+}
+.content2 h3{
+	width:903px;
+	height:39px;
+	background:url(../images/arlist_h.png);
+}
+.music_link{
+	top:-8px;
+}
+.message{
+	padding:14px;
+	padding-bottom:0px;
+	width:615px;
+	*width:613px;
+}
+.ar_t{
+	background:#fefefd;
+	border:solid #e4d9c0 1px ;
+	padding:1px;
+	margin-bottom:15px;
+}
+.ar_t .thumb{
+	margin:20px 10px 0 20px;
+}
+.message h2{
+	padding:14px 0; 
+	border-bottom:dotted 2px #5c5c5d;
+}
+.star_list{
+	background:#F4F2ED;
+}
+.supstar,.star_list iframe{
+	background:#f4f2ed;
+}
+.supstar .thumb{
+	width:229px;
+	height:210px;
+}
+.data{
+	padding:10px 0;
+	line-height:1.6em;
+	font-size:14px;
+}
+.star_list iframe{
+	width:909px;
+	border:none;
+	height:738px;
+}
+.stars{
+	padding:0px;
+}
+body{
+	margin:0px;
+	background:#f4f2ed;
+}
+.stars li{
+	margin:0 23px 33px 0px;
+	float:left;
+	width:152px;
+	height:176px;
+	padding:1px;
+	background:#fff;
+	
+}
+.stars .lilast{
+	margin-right:0px;
+}
+
+.stars li a img{
+	width:138px;
+	height:136px;
+}
+.list_page a{
+		text-decoration:none;
+	color:#333;
+}
+.stars li a{
+	padding:8px 6px;
+	display:block;
+	width:140px;
+	height:160px;
+	background:url(../images/list_star_bg.jpg);
+}
+.stars li a span{
+	display: block;
+	font-size:14px;
+	line-height:35px;
+	*line-height:30px;
+	text-align:center;
+	text-shadow: #333;
+
+}
+.page{
+	text-align:center;
+	/*margin-left:300px;*/
+
+}
+.page a,.page span{
+	padding:0 2px;
+			color:#908f8d;
+}
+.page .on{
+	color:#FFAE00;
+	font-weight:bold
+}
+img{
+	border:none;
+}
+.art_message,#new_music .news_m_c .news_m{
+	background:#faf8f4;
+	}
+.art_message .thumb{
+	padding:1px;
+	background:url(../images/art_thumb_bg.png);
+}
+.art_message .thumb img{
+	width:270px;
+	height:325px;
+}
+.art_message .message{
+	width:580px;
+	padding:8px 0 0 50px;
+	padding-right:0px;
+}
+.art_message .message h2{
+	padding:0px 0px 23px 0px;
+
+}
+.art_message .message .data{
+	padding-top:23px;
+}
+
+.art_message table{
+	margin-top:45px;
+}
+.art_message table td{
+	width:229px;
+	padding:10px 20px; 
+	font-weight:bold;
+	color:#333;
+	font-size:14px;
+}
+.odd{
+background-color: #f3eee4;
+}
+.art_message table  .odd td{
+	padding:8px 20px;
+}
+.art_message table .mes{
+	text-align:right;
+	font-weight:normal;
+	color:#343434;
+}
+.woorks{
+	margin-top:40px;
+}
+.woorks table{
+	float: left;
+	width:450px;
+	text-align:center;
+}
+.woorks table thead td{
+	padding:8px;
+	font-size:14px;
+}
+.woorks table tbody .st{
+	margin:0 auto;
+}
+.woorks table tbody tr{
+	line-height:32px;
+	height:40px;
+	padding:10px;
+	background-color: #fff;
+
+}
+.woorks table tbody tr td{
+	height:38px;
+	padding:1px;
+	/*background:url(../images/jj_title.jpg);*/
+}
+
+.woorks table tbody tr .t1{
+	padding-right:0px;
+	border-top:solid 1px #e3d8bf;
+	border-left:solid 1px #e3d8bf;
+	border-bottom:solid 1px #e3d8bf;
+	border-right:0px;
+}
+.woorks table tbody tr .t3{
+	padding-left:0px;
+	border-top:solid 1px #e3d8bf;
+	border-right:solid 1px #e3d8bf;
+	border-bottom:solid 1px #e3d8bf;;
+}
+.woorks table tbody tr .t2{
+	padding:1px 0;
+	border-top:solid 1px #e3d8bf;
+	border-bottom:solid 1px #e3d8bf;;;
+}
+.woorks table tbody tr td span{
+	line-height:40px;
+	display: block;
+	height:40px;
+	background:url(../images/jj_title.jpg);
+}
+.woorks table tbody tr td span .st{
+	position: relative;
+	top:10px;
+}
+.woorks table tbody .blank{
+	height:13px;
+}
+/*新歌推荐*/
+.new_tj_title h3{
+	background:url(../images/new_t_h.png);
+	margin-top:-8px;
+}
+#new_music select{
+	padding:4px 0px ; 
+	padding-right:0px;
+	font-size:12px;
+	cursor:pointer;
+	display: block;
+/*	height:30px;*/
+}
+#new_music .music_link{
+	*top:-8px;
+}
+#new_music select option{
+	margin:5px;
+	display: block;
+	height:30px;
+}
+#new_music .news_m_c{
+	background-color: #fff;
+	margin-top:-15px;
+}
+#new_music .news_m_c .news_m{
+	padding:30px 99px;
+}
+.select{
+	float: left;
+	width:25px;
+	height:27px;
+	background:url(../images/select_bg.png);
+	*background-image:none;
+	*position: relative;
+	*top:2px;
+	background-position: right;
+	padding-left:100px;
+	background-repeat:no-repeat;
+	margin-right: 25px;
+
+}
+.select div{
+	width:68px;
+	*width:85px;
+	overflow:hidden;
+	position: relative;
+	left:-65px;
+
+}
+.search{
+	/*padding-top: 22px;*/
+}
+#new_music .search span{
+	line-height: 1em;
+	*line-height: 2em;
+
+}
+#new_music .search span,#new_music .search span input{
+	float: left;
+	
+}
+#new_music .search .name{
+	display: block;
+	width:348px;
+	float:left;
+	height:20px;
+	font-size: 20px;
+	padding-bottom:1px;
+	*padding-bottom: 0px;
+	margin-right:15px;
+	box-shadow:0.5px 0.5px 0.5px #999 inset;
+	background-color:#f4f4f4;
+
+}
+.music_list{
+	margin-top:26px;
+	height:650px;
+}
+.music_list iframe{
+	width:765px;
+	height:650px;
+
+}
+#music_list_page{
+	background:#faf8f4;
+	height:650px;
+}
+
+.new_t_n h3{
+	background:url(../images/xgtj_t1.png);
+	
+}
+.new_t_g h3{
+	background:url(../images/xgtj_t2.png);
+}
+ .new_t_m h3{
+	background:url(../images/xgtj_t3.png);
+}
+#music_list_page h3{
+	margin-bottom:15px;
+	height:40px;
+	*width:760px;
+	background-repeat:no-repeat;
+}
+
+#music_list_page table th{
+	padding:6px;
+	color:#d65c54;
+	width:149px;
+}
+
+#music_list_page table td{
+	padding:15px;
+	text-align:center;
+	width:150px;
+	border-bottom:dashed 1px #dedcd8;
+}
+#music_list_page table td b{
+	float:right;
+
+}
+#music_list_page h3 a{
+	display: block;
+	float: right;
+	width:82px;
+	height:33px;
+}
+.new_t_g h3 a{
+	background:url(../images/xgtj_m2.png);
+}
+.new_t_n h3 a {
+	background:url(../images/xgtj_m1.png);
+}
+.new_t_m h3 a {
+	background:url(../images/xgtj_m3.png);
+}
+
+.new_t_g table td{
+	color:#838383;
+}
+.new_t_g table th{
+	background:#FDB0A6;
+}
+.new_t_n table th{
+	background-color: #fde5ba;
+	color:#ff7d3e;
+}
+.new_t_m table th{
+	background-color: #f1e4f7;
+	color:#bd6dd0;
+}
+#music_list_page{
+
+}
+#music_list_page .musics{
+	height:570px;
+}
+#music_list_page .musics .page{
+	margin-top:75px;
+}
+/*新歌单页推荐*/
+.list_once #music_list_page{
+	
+}
+/*歌曲搜索结果页面*/
+.search_num{
+	padding:20px;
+}
+.search_num h3{
+	color:#333;
+	text-align: center;
+	margin-bottom: 20px;
+
+}
+.red{
+	color:red;
+	font-weight: bold;
+}
+/*歌曲页面*/
+.mp3_title h3{
+	background: url(../images/mp3_title_bg.gif) no-repeat;
+	text-align: center;
+	font-weight: normal;
+	width: 236px;
+	height: 53px;
+	color:#fff;
+	line-height:53px;
+	margin-top: -7px;
+}
+.mp3_content{
+	background: #faf8f4;
+	/*width: 958px;*/
+	width: 820px;
+	/*margin-top: 12px;*/
+	padding:50px 70px;
+	margin-top: -18px;
+}
+.mp3_content .mp3_l{
+	padding:20px;
+	padding-right: 0px;
+
+}
+.mp3_content .mp3_l .collect{
+	width: 100px;
+	height: 17px;
+	margin-bottom: 20px;
+	*margin-bottom: 10px;
+	text-indent: 1.5em;
+	color:#7d7c7b;
+	float:right;
+	background: url(../images/collect.png);
+	background-repeat: no-repeat;
+	cursor:pointer;
+}
+.mp3_content .mp3_l .messages{
+	height: 202px;
+	width: 420px;
+	background: url(../images/mp3_m_bg.png);	
+}
+.mp3_content .mp3_l .messages li{
+	line-height:2em;
+	padding-left:1.5em;
+}
+.mp3_r{margin-top:8px;}
+.mp3_content .mp3_r .thumb{
+	border: solid 5px #ffbf00; 
+	padding:1px;
+	
+
+}
+.mp3_content .mp3_r .thumb img{
+	width: 248px;
+	height:248px ;
+}
+.player{
+	padding: 20px;
+}
+.lyric{
+	margin-top: 10px;
+
+	width: 807px;
+}
+.lyric h5{
+	width: 807px;
+	height: 29px;
+	background: url(../images/ly_header.png);
+	color:#fb8608;
+	text-indent: 1em;
+	line-height: 29px;
+}
+.lyrics{
+	padding: 25px 30px;
+	line-height: 2em;
+	background: #fff;
+}
+/*普通登陆页面*/
+.blue,.blue a{color:#377abe}
+.log{line-height:24px; height:24px;float:right; font-size:12px}
+.log span{color:#ced9e7}
+.log a{color:#049;text-decoration: none;}
+.log a:hover{text-decoration: underline;}
+ #content{width:920px; margin:auto; padding:36px 0 0 0}
+.form-login{ width:440px; padding-left:40px}
+.form-login h2{font-size:25px;color:#494949;border-bottom: 1px dashed #CCC;padding-bottom:3px; margin-bottom:10px}
+.form-login .input{ padding:7px 0}
+.form-login .input label{ width:84px;font-size:14px; color:#888; text-align:right}
+.take,.reg{padding:0 0 0 200px}
+.take .submit{ margin-top:10px}
+.form-login .hr hr{ display:none}
+
+.submit{padding-left:3px}
+.submit input{background-position: right top; border:none; padding:0 10px 0 7px; font-size:14px}
+.reg{ color:#666; line-height:24px}
+.reg .submit{background-position: left -35px; height:35px}
+.reg .submit input{background-position: right -35px; font-weight:700; color:#fff; height:35px}
+
+.col-1{position:relative; float:right; border:1px solid #c4d5df; zoom:1;background: url({IMG_PATH}member/member_title.png) repeat-x; width:310px; margin: auto; height:304px}
+.col-1 span.o1,
+	.col-1 span.o2,
+	.col-1 span.o3,
+	.col-1 span.o4{position:absolute;width:3px;height:3px; overflow:hidden;background: url({IMG_PATH}fillet.png) no-repeat}
+	.col-1 span.o1{background-position: left -6px; top:-1px; left:-1px}
+	.col-1 span.o2{background-position: right -6px; top:-1px; right:-1px}
+	.col-1 span.o3{background-position: left -9px; bottom:-1px; left:-1px}
+	.col-1 span.o4{background-position: right -9px; bottom:-1px; right:-1px;}
+.col-1 .title{color:#386ea8; padding:5px 10px 3px}
+.col-1 div.content{padding:0px 10px 10px}
+.col-1 div.content h5{background: url({IMG_PATH}member/ext-title.png) no-repeat 2px 10px; height:34px}
+.col-1 div.content h5 strong{ visibility: hidden}
+.pass-logo{ margin:auto; width:261px; padding-top:15px}
+.pass-logo p{border-top: 1px solid #e1e4e8; padding-top:15px}
+.item{padding:10px 0; vertical-align:middle; margin-bottom:10px}
+.item span{ color:#8c8686}
+.login-list li{ float:left;height:26px; margin-bottom:14px;width:123px;background:url({IMG_PATH}member/mbg.png) no-repeat}
+.login-list li a{ display:block;background-repeat:no-repeat; background-position:6px 5px;height:26px; padding-left:36px; line-height:26px}
+.login-list li a:hover{text-decoration: none;}
+.login_page{
+	width: 740px;
+	margin:0 auto;	
+	margin-top: 34px;
+}
+.login_page .submit{
+	float: left;
+}
+.login_title{
+	width: 740px;
+	margin:0 auto;
+}
+.login_title h3{
+	top:1px;
+	margin-left: 236px;
+	background: url(../images/login_title.png);
+}
+.login_page{
+	margin-left:250px;
+}
+.login_page .form{
+width: 740px;
+margin-top: 15px;
+}
+.login_page .form form{
+	height: 360px;
+	padding:20px;
+	background: #faf8f4;
+}
+
+#content form input,.login_page form input{
+	height: 25px;
+	line-height: 25px;
+}
+.login_page .form form .inputs{
+	padding: 30px 50px;
+	margin:0 auto;
+}
+.login_page .form form  .input{
+	margin-left: 80px;
+}
+.login_page #username,.login_page #password{
+	width:234px ;
+	margin: 10px 0;
+}
+#code{
+	width: 100px;
+}
+/*.take*/
+#dosubmit,#sign{
+	display: block;
+	width: 108px;
+	height: 32px;
+	margin: 20px 40px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+/*.hr{
+	margin-left: -20px;
+}*/
+#dosubmit{
+	margin-left: -80px;
+	/*padding:0 54px;*/
+	cursor: pointer;
+	background: url(../images/button_login.jpg);
+}
+
+#sign{
+	text-decoration: none;
+	background: url(../images/button_sign.jpg);
+	background-repeat: no-repeat;
+}
+/*注册页面*/
+#sign_page{
+	margin-top: 20px;
+}
+#sign_page #content{
+	padding:100px 150px;
+	padding-bottom:50px;
+	width: 660px;
+	margin: 15px 0;
+	background:#faf8f4;
+}
+#sign_page label{
+	font-size: 14px;
+	color:#888;
+	width: 20px;
+	text-align: right;
+}
+#sign_page form{
+	margin-left:120px;
+	}
+#sign_page .reg{
+	padding: 0;
+}	
+#sign_page form .input{
+	width: 600px;
+	height: 25px;
+	padding: 7px;
+}
+#sign_page form input{
+	width: 240px;
+}
+#nickname{
+/*margin-left: 32px;*/
+}
+#sign_page #code{
+	width: 160px;
+}
+#sign_page #code_img{
+	
+}
+#sign_page .submit{
+height: 50px;
+}
+
+#sign_page #sign{
+	height: 33px;
+	margin-left: 150px;
+	*margin-left: 0px;
+	margin-top: 40px;
+}
+.sign_title h3{
+	background: url(../images/sign_title.png);
+	margin-top:-8px;
+}
+/*查分结果*/
+.point_t{
+	color: #a59369;
+	position: relative;
+	top:21px;
+	left: 21px;
+}
+.mp3_logo{
+	height: 21px;
+	width: 492px;
+	margin-left: 10px;
+	padding-left: 40px;
+	background-image: url(../images/mp3_logo.png);
+	background-repeat: no-repeat;
+}
+.mp3_logo .collect{
+	*position: relative;
+	*top: -1em;
+}
+.mp3_point{
+
+}
+.mp3_point ul{
+	margin-left: 20px;
+}
+.mp3_point ul li{
+	float: left;
+	width: 90px;
+	height: 90px;
+	background-repeat: no-repeat;
+	font-size: 33px;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	top:40px;
+}
+.mp3_point .mp3_l .messages li{
+	padding: 0px;
+	margin-right: 25px;
+}
+.mp3_point ul .point_count{
+	width: 130px;
+	height: 130px;
+	background-image: url(../images/point_count.png);
+	color:#e22020;
+	font-size: 49px;
+	top: 0px;
+
+}
+.mp3_point ul .point_college{
+	background-image: url(../images/point_college.png);
+	color:#118cde;
+}
+.mp3_point ul .point_expert{
+	background-image: url(../images/point_expert.png);
+	color: #f52074;
+}
+.mp3_point ul .point_media{
+	color: #53b50e;
+	background-image: url(../images/point_media.png);
+}
+.mp3_point .mp3_l .messages{
+	width: 542px;
+}
+.mp3_point .mp3_message{
+	width: 850px;
+}
+.mp3_point thead tr th{
+padding: 5px;
+background:url(../images/point_tb_th.png);
+color:#fff;
+font-weight: bold;
+width: 160px;
+height: 40px;
+*height: 35px;
+background-repeat: repeat-x;
+
+}
+.mp3_point .page_title h4,.pj .page_title h4{
+	height: 45px;
+	color: #d74b16;
+	text-align: left;
+	line-height: 45px;
+	text-indent: 15px;
+
+}
+#points{
+	width: 960px;
+	height: 220px;
+	margin-top: 25px;
+} 
+.mp3_point tbody tr td{
+	height: 45px;
+	text-align: center;
+}
+.point_tr1 td{
+color:#ff6600;
+background-color: #fef7e7;
+}
+.point_tr2 td{
+color:#c32222;
+background-color: #fff1ef;
+}
+.point_tr3 td{
+color:#a05adb;
+background-color: #f9f3fe;
+}
+.points .page_title{
+	border:0;
+	width: 958px;
+
+}
+.pj{
+	background-color: #faf8f4;
+	width: 960px;
+	/*height:200px;*/
+	margin-top: 25px;
+	/*height: auto;*/
+}
+.pj .com{
+	line-height: 2em;
+	padding: 20px;
+	text-align:left
+}

@@ -1,0 +1,889 @@
+
+/**
+ * 公用
+ */
+
+img{
+	border: 0;
+}
+*{
+	padding:0px;
+	margin:0px;
+	text-decoration: none;
+}
+body{
+/*	background-color: #f8f4eb;*/
+	background:#f4f2ed;
+}
+a{
+	color:#515151;
+	font-size:14px;
+}
+ul li{
+	list-style: none;
+}
+.l{
+	float: left;
+}
+.r{
+	float: right;
+}
+.c{
+	clear:both;
+}
+.header{
+	height:212px;
+	background: url(../images/header_bg.png) repeat-x;
+	/*height:158px;*/
+	/*background: url(../images/header_bg1.png) repeat-x;*/
+}
+.center{
+	width:1080px;
+	margin:0px auto;
+}
+.center2{
+	width:960px;
+	margin:0px auto;
+}
+.top{
+	height:66px;
+	background:;
+	background: url(../images/header_top.png);
+	background-position: center center;
+}
+
+.logo{
+	width:1080px;
+	height:186px;
+	position:relative;
+	/*top:-40px;*/
+	left:40px;
+	background: url(../images/header_logo.png);
+	background-repeat:no-repeat;
+}
+
+.header_l{
+	height:158px;
+	background: url(../images/header_bg6.png)repeat-x;
+}
+.login{
+	position: absolute;
+	right: 50px;
+	top:0px;
+	z-index: 999;
+}
+.login iframe{
+	height: 100px;
+	width: 400px;
+}
+/**
+ * 
+ * 首页
+ */
+/*菜单栏开始*/
+.menu{
+	height:53px;
+	background:url(../images/menu_bg.jpg);
+	background-repeat:no-repeat;
+	position: relative;/*top:-80px;*/
+	/*left:40px;*/
+	margin-top:-28px;
+	padding-left:40px;
+}
+.menu a{
+	font-family:'微软雅黑';
+	font-size:16px;
+	color:#f02a08;
+	font-weight:bold;
+	line-height:53px;
+	margin-left: 40px;
+
+}
+/*菜单栏结束*/
+/*首页CSS开始*/
+/*幻灯片开始*/
+.main-top{
+margin-top:23px;	
+}
+.h_images .imgs{
+	width:610px;
+	height:384px;
+	overflow: hidden;
+}
+.h_images{
+	height:408px;
+}
+.h_images img{
+	width:610px;
+	height:384px;
+
+}
+.h_num,.zz{
+	width:610px;
+	height:20px;
+	padding:2px 0;
+}
+.h_num{
+float:left;
+}
+ .zz,.h_num,li{
+	position: relative;
+
+}
+/*数字透明遮罩*/
+ .zz,.zz2{
+background-color: #333;
+opacity: 0.5;
+-moz-opacity: 0.5;
+filter:alpha(opacity=5);
+height:20px;
+padding:2px 0;
+position:relative;
+top:-25px;
+}
+.h_num li{
+top:-48px;
+float:right;
+padding:2px 6px;
+margin-right:4px;
+font-size:12px;
+background:#A1A1A1;
+color:#fff;
+}
+.h_num .lion{
+	background:#E81A40;
+}
+/*绝对好声音开始*/
+
+.good_sound{
+	margin-left:18px;
+	border:solid 2px #ddd;
+	width:326px;
+	background-color: #fff;
+	height:382px;
+	/*padding:0 1.5px;*/
+	padding:1px;
+}
+.good_sound img{
+	width:91px;
+	height:91px;
+}
+.good_h{
+	width:328px;
+	height:50px;
+	background: url(../images/title_3.png);
+	margin-bottom:10px;
+}
+
+.classes li{
+	margin:6px 0;
+	width:310px;
+	padding-left:15px;
+
+	padding-bottom:8px;
+}
+.good_l1{
+	background-color: #f8f4eb;
+}
+.good_l2{
+	background-color: #f9f6ee;
+}
+.classes .good_l3{
+	background-color: #fbf9f4;
+	padding-bottom:0px;
+}
+.good_h2,.good_h3,.good_h4{
+	width:212px;
+	height:24px;
+}
+.good_h2{
+	background: url(../images/good_h2.png);
+}
+.good_h3{
+	background: url(../images/good_h3.png);
+}
+.good_h4{
+	background: url(../images/good_h4.png);
+}
+.classes ul{
+margin-left:7px;
+}
+.classes table{
+	font-size:12px;
+	font-family:'宋体';
+}
+.classes table tr{
+	margin-top:5px;
+	height:20px;
+	text-align:center;
+}
+.classes table tr .good_t1{
+	width:120px;
+	text-align:left;
+	text-indent: 1em;
+
+}
+.classes table tr .good_t2{
+width:57px;
+	}
+.st{
+display: block;
+width:16px;
+height:16px;
+background:url(../images/st_bg.png);
+cursor:pointer;
+}	
+/*首页上部第二部分*/
+.thumb img{
+width:233px;
+height:234px;
+}
+.thumb p{
+font-size:12px;
+color:#fff;
+position:relative;
+top:-40px;
+text-align:center;
+}
+.main_top2_l{
+	width:606px;
+	border:solid 1px #e4d9c1;
+	padding:2px;
+	height:274px;
+	background-color: #fff;
+}
+.top2_l{
+	background-color: #faf8f4;
+	width:570px;
+	height: 234px;
+	padding:20px 18px;
+}
+/*最新新闻*/
+.hot{
+	border-bottom: dashed 1px #b7ae9b;
+	padding-bottom:16px;
+	margin-bottom:18px;
+}
+.news{
+margin-left:18px;
+width:317px;	
+line-height: 1.5em;
+}
+.hot_title{
+	font-size:14px;
+	color:#da320f;
+	text-align: center;
+}
+.hot_desc{
+	font-size:12px;
+	color:#727272;
+	text-indent:1em;
+}
+.news .more{
+	color:#da320f;
+}
+
+.news .new li{
+	list-style-type:square;
+	list-style-position: inside;
+	/**height:0px;*/
+}
+.news .new li a{
+	font-size:12px;
+	color:#313131;
+	line-height:2em;
+}
+
+.news .new li .time{
+	float:right;
+	*position: relative;
+	*top:-22px;
+}
+
+
+
+/*右侧*/
+.maing_top2_r {
+	margin-left:18px;
+	width:327px;
+	padding:1px;
+}
+.maing_top2_r .top2_r_h a{
+display: block;
+float:left;
+width:105px;
+height:39px;
+margin-left:6px;
+}
+.maing_top2_r .top2_r_h .login1{
+	background: url(../images/login1.png);
+	margin-left:0px;
+}
+.maing_top2_r .login2{
+	background: url(../images/login2.png);
+}
+.maing_top2_r .login3{
+	background: url(../images/login3.jpg);
+}
+.maing_top2_r  .weibo{
+	margin-top:13px;
+}
+.gg{
+	margin:20px 0;
+}
+/*排行榜*/
+#main-body table tr td{
+	text-align:center;
+	font-size: 14px;
+}
+
+#main-body table thead{
+width:;
+}
+#main-body ul{
+	float: left;
+	width:300px;
+	height: 370px;
+	padding:1px;
+	border:solid 1px #e5dac2;
+	margin-right:23px;
+	/*margin-bottom: 20px;*/
+}
+#main-body ul{
+	height: 378px;
+	*height: 338px;
+}
+
+.week h1{
+	text-align: right;
+	width:290px;
+	height:39px;
+	font-size:14px;
+	color:#ff7635;
+	padding-right:10px;
+	font-family:'宋体';
+	line-height:39px;
+	text-indent: -2em;
+}
+.week .week_n h1{
+	background:url(../images/h_1.png);
+}
+.week .week_g h1{
+	background:url(../images/h_2.png);
+}
+.week .week_m h1{
+	background:url(../images/h_3.png);
+}
+.week table{
+	width:300px;
+	height: 296px;
+}
+.week thead td{
+	padding:5px 0;
+	color:#ff5a00;
+	margin-bottom: 10px;
+}
+
+.week thead{
+	background-color: #ffd993;
+	width:300px;
+}
+.week .week_g thead{
+background-color: #fdc3bd;
+}
+.week tbody td{
+	padding:5px;
+	background-color: #fff;
+	border-bottom:solid 1px #ddd;
+}
+.num{
+	display: block;
+	width:13px;
+	height: 13px;
+	background: url(../images/num.png);
+	background-repeat: no-repeat;
+	background-position: center 0px;
+}
+#main-body table tbody td .num1{
+background-position: left 0px;
+}
+#main-body table tbody td .num2{
+	/*color:;*/
+	background-position: left -26px;
+}
+#main-body table tbody td .num3{
+	background-position: left -53px;
+}
+#main-body table tbody td .num4{
+	background-position: left -79px;
+}
+#main-body table tbody td .num5{
+	background-position: left -106px;
+}
+#main-body table tbody td .num6{
+	background-position: left -133px;
+}
+#main-body table tbody td .num7{
+	background-position: left -159px;
+}
+#main-body table tbody td .num8{
+	background-position: left -185px;
+}
+#main-body table tbody td .num9{
+	background-position: left -211px;
+}
+#main-body table tbody td .num10{
+	background-position: left -240px;
+}
+.week .week_g thead td{
+color:#cc2a1e;
+}
+.week .week_m thead{
+	background-color: #ebd7f9;
+}
+#main-body .week .week_m{
+	margin: 0px;
+}
+.week .week_m thead td{
+	color:#ae42c5;
+}
+
+.week_t{
+	padding:10px 8px;
+	background-color: #fff;
+	float: left;width:284px;
+}
+.week_n .week_t a{
+	background:url(../images/tp_1.png);
+}
+.week_g .week_t a{
+	background:url(../images/tp_2.png);
+}
+.week_m .week_t a{
+	background:url(../images/tp_3.png);
+}
+.week_t span{
+	font-size:14px;
+	line-height:23px;
+	float:left;
+	
+}
+.week_t a{
+	display: inline-block;
+	/*margin-left:40px;*/
+	width:68px;
+	height:23px;
+	float:right;
+	/*float: right;*/
+}
+#main-body tbody .td1{
+	text-align:center;
+	padding-left:1em;
+	width:15px;
+}
+#main-body tbody .td1 span{
+display: block;
+width:23px;
+height:13px;
+padding-left:5px;
+text-indent:2em;
+background:url(../images/num.png);
+background-repeat: no-repeat;
+}
+#main-body tbody .td2{
+	width:91px;
+}
+#main-body tbody .td3,#main-body tbody .td4{
+	width:70px;
+	color:#585858;
+}
+#main-body tbody .td4{
+	width:34px;
+}
+#main-body tbody .td5{
+	width:15px;
+	padding-left:0.5em;
+}
+.month{
+	margin-top:20px;
+}
+.month .week_n h1{
+	background:url(../images/m_h_1.png);
+}
+.month .week_g h1{
+	background:url(../images/m_h_2.png);
+}
+.month .week_m h1{
+	background:url(../images/m_h_3.png);
+}
+/*新歌推荐*/
+#new_music{
+	margin-top:25px;
+}
+#new_music .n_m_h{
+	height:60px;
+}
+#new_music .n_m_h i{
+display: block;
+width:4px;
+height:46px;
+}
+#new_music .n_m_h h3{
+	width:952px;
+	height:46px;
+	background:url(../images/new_music_bg.png) repeat-x;
+}
+#new_music .n_m_h .n_m_l{
+background:url(../images/new_music_l.png) no-repeat;
+}
+#new_music .n_m_h .n_m_r{
+background:url(../images/new_music_r.png) no-repeat;
+}
+#new_music .new_music_h{
+	position: relative;
+	top:-52px;
+	left:337.5px;
+	width:285px;
+	height:55px;
+	background:url(../images/new_music_h.png);
+}
+.music_link{
+	position: relative;
+	top:-23px;
+	padding: 0 14px 0 34px;
+	z-index:10;
+}
+.music_link i{
+	display: block;
+	width:7px;
+	height:30px;
+	margin-right:20px;
+	background:url(../images/new_music_link.png);
+}
+/*分类音乐推荐*/
+.music_tui h3{
+	height:135px;
+	width:45px;
+	float: left;
+	margin-left:16px;
+	background:url(../images/music_tj.png);
+}
+.music_tui img{
+	width:128px;
+	height:128px;
+}
+.music_tui .music_g h3{
+background-position:left -260px ;
+}
+.music_tui .music_m h3{
+	height:120px;
+	background-position:left bottom ;
+}
+.music_tui ul li{
+	float:left;
+}
+
+#video ul{
+	width: 940px;
+}
+#video,#messages,.music_tui .center2{
+	float:left;
+	/*height:;*/
+	width:956px;
+	background:#fff;
+	border:solid 1px #e5dac2;
+	/*background-color: #faf8f4;*/
+	padding:1px;
+
+}
+.center3{
+	width:960px;
+		margin:0 auto;
+}
+#new_music .music_link{
+	*top:-45px;
+}
+.music_tui .music_link{
+	margin:0 auto;
+	position: relative;
+	top:-45px;
+	/*padding:0 84px;*/
+}
+
+.music_tui .music_n,.music_tui .music_g,.music_tui .music_m{
+	position: relative;
+	top:-33px;
+}
+.music_tui .music_n{
+	background-position:left top;
+	*margin-top:-44px;
+}
+.music_tui .music_g{
+	top:-55px;
+}
+.music_tui .music_m{
+	top:-75px;
+}
+.music_tui .center2 ul{
+	background-color: #faf8f4;
+	float: left;
+	padding:26px;
+	padding-right:0px;
+}
+.music_tui .center2 ul li{
+	width:128px;
+	margin-right:27px;
+}
+.music_tui .center2 ul li img{
+	float:left;
+}
+.music_tui .center2 ul li .st{
+	display: inline-block;
+	float: right;
+	/**float:none;*/
+}
+.music_tui p{
+	font-size:14px;	
+	font-family:'宋体';
+	
+}
+.music_tui .music_name{
+	color:#ff7200;
+	font-weight:bold;
+	margin: 10px 0;
+	width:128px;
+	float:left;
+
+}
+.music_tui .music_name span{
+	float:left;
+}
+.music_tui ul i{
+	display: block;
+	float: right;
+	/**float:none;*/
+	*text-align: right;
+	width:45px;
+	height:23px;
+	
+}
+.music_tui .singer{
+	margin:10px 0;
+}
+.music_n i{
+background:url(../images/tp_4.png);
+}
+.music_g i{
+background:url(../images/tp_5.png);
+}
+.music_m i{
+background:url(../images/tp_6.png);
+}
+/*新歌推荐结束*/
+/*视频推荐开始*/
+#video,#messages{
+	margin-top:-55px;
+	padding:1px;
+
+}
+#video img{
+	width:171px;
+	height:172px;
+}
+#messages img{
+	width:133px;
+	height:133px;
+}
+#video  h6,#messages h6{
+	height:40px;
+	width:948px;
+	padding-right:8px;
+	background:url(../images/video_t.png);
+	text-align: right;
+	line-height: 40px;
+}
+#video  h6 a,#messages h6 a{
+	color:#fff;
+}
+#messages h6{
+	background:url(../images/message_t.jpg);
+}
+#video ul,#messages ul{
+	padding:15px 0 15px 16px;
+
+	background-color: #faf8f4;
+}
+#messages ul{
+	width:940px;
+}
+#video ul li{
+	float:left;
+	margin-right:17px;
+}
+#video ul li a{
+	color:#ff7200;
+	font-size: 16px;
+}
+#video ul li a{
+	border:0;
+}
+#video ul li a img{
+	border:0;
+}
+#video ul li a p{
+	text-align:center;
+	padding:0px 5px;
+	padding-top:5px;
+}
+#messages{
+	margin-top:20px;
+}
+#messages li{
+	float:left;
+	font-size:12px;
+	margin-right:21px;
+	*margin-right: 18px;
+}
+#messages li h3{
+	color:#ff7200;
+	/*text-align:center;*/
+	font-size:14px;
+
+}
+
+.message{
+	padding:0 13px;
+	*padding:0 12px;
+	width:132px;
+}
+.message p{
+	font-size:13px;
+	padding:2px 0;
+}
+.message .message_desc{
+	color:#7e7e7e;
+}
+/*页面底部*/
+#footer{
+	margin-top:20px;
+	color:#fff;
+}
+.footer_t{
+background-color: #ffae00;
+padding:15px;
+
+}
+.footer_t_l,.footer_t_r,{
+	display: inline-block;
+		font-size:14px;
+}
+.footer_t_r h3{
+	padding:10px 0;
+}
+.footer_t_l .foot_logo{
+	display: block;
+	width:335px;
+	height:41px;
+	background:url(../images/foot_logo.jpg);
+	background-repeat:no-repeat;
+	padding:5px 0;
+}
+.footer_t_l p{
+	padding:5px;
+}
+.footer_t_l{
+	float:left;
+}
+.footer_t_r{
+	width:465px;
+	float:right;
+
+	line-height:1.5em;
+}
+.footer_b{
+background-color: #ff8200;
+height:20px;
+padding:8px;
+color:#fff;
+font-size:14px;
+}
+
+.page_title{
+	width:958px;
+	height:42px;
+	background:url(../images/page_title_bg.jpg);
+	text-align:center;
+	*text-align:left;
+}
+.page_title h3{
+	position: relative;
+	width:284px;
+	height:55px;
+	background:url(../images/arlist_t.jpg);
+	background-repeat:no-repeat ;
+	margin-top:-9px;
+	margin-left:336px;
+}
+/**
+ * 栏目页面
+ */
+
+.search,.border,.list li,.login_page .form,#music_list_page .musics,.lyric,.mp3_content,.content,.page_title,.arcontent,#new,.cates .cate,#friend .col-left,#new_music .news_m_c{
+border:solid 1px #e3d8bf;	
+padding:1px;
+}
+.content_title{
+	padding:0 20px;
+	width:674px;
+	height:40px;
+	background:url(../images/jj_title.jpg);
+}
+.content_title h2,.content_title span{
+ line-height: 40px;
+ color:#535353;
+}
+.content_title h2{
+	font-size: 16px;
+	color: #333333;
+
+}
+.content_title span{
+font-size: 14px;
+}
+.content_title a{
+	font-size: 14px;
+}
+/**
+ * 搜索框
+ */
+.search{
+	width:715px;
+	margin:0 auto;
+	padding: 18px 23px;
+}
+.search input[name='name']{
+	width:476px;
+	height:23px;
+	padding:2px;
+}
+.search span{
+	color:#6b6965;
+	padding:4px;
+	line-height:10px;
+	*position: relative;
+	top:-5px;
+}
+
+.search .submit{
+	display: inline-block;
+	padding:2px;
+	width:78px;
+	height:27px;
+	border:none;
+	padding:1px;
+	cursor: pointer;
+	position: relative;
+	*top:-3px;
+	line-height:27px;
+	background:url(../images/search.png);
+}

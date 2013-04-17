@@ -1,0 +1,120 @@
+#member{
+	margin-top: 20px;
+}
+.link{
+
+	width: 212px;
+	height: 446px;
+	background: url(../images/member_link_bg.png);
+	background-repeat:no-repeat;
+	padding:24.5px 21px;
+
+}
+ul li{
+	padding: 0px;
+	margin: 0;
+}
+.link h5{
+	color:#a60203;
+	padding-bottom: 14px;
+}
+.link span{
+	color:#4b3f27;
+	font-size: 14px;
+	padding: 5px;
+}
+.link h3{
+	width: 216px;
+	height: 12px;
+	background: url(../images/member_bg.png);
+	background-repeat: no-repeat;
+	padding:10px;
+	margin-top: 20px;
+	position: relative;
+	left: -24.5px;
+
+}
+.link .change .on{
+background-position:left -75px; 
+}
+.link .collect h3{
+
+background-position:left -115px; 	
+
+}
+.link .collect .on{
+background-position:left -42px; 
+}
+#con{
+width: 690px;
+padding: 17px;
+padding-top: 0;
+margin-left: -20px;
+background: #faf8f4;
+
+}
+iframe{
+	background: #faf8f4;
+}
+a{
+	text-decoration: none;
+}
+.iframe h3{
+	padding: 10px;
+	color:#404040;
+	width: 630px;
+	border-bottom: dashed 1px #b4b4b4; 
+}
+.iframe input{
+	border-radius: 2px;
+}
+.change{
+	height:680px;
+	background: #faf8f4;
+}
+th{
+text-align: right;	
+}
+.change th label{
+		text-align: right;	
+	/*width: 100%;*/
+}
+.change th{
+	color:#b4b4b4;
+	font-size: 14px;
+}
+#myform{
+	margin-left: 100px;
+	padding:32px 0px;
+	margin-top: 24px;
+}
+#myform input{
+	height: 27px;
+}
+#myform input[type='password'],#myform input[type='text']{
+	font-size: 18px;
+	text-indent:4px;
+	margin-left: 15px;
+	
+	width: 232px;
+	background: url(../images/input_bg.png);
+	background-repeat: no-repeat;
+	border: none;
+}
+.ld,.colsel{
+	margin-left: 18px;
+
+}
+.colselect{
+	background-image: url(../images/select_bg.png);
+}
+#myform #dosubmit{
+	border:none;
+	height: 32px;
+	padding: 2px;
+	background: url(../images/hy_xg2.jpg);
+	background-repeat: no-repeat;
+	margin-left: 60px;
+	margin-top: 30px;
+	*margin-top: 20px;
+}

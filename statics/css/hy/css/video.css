@@ -1,0 +1,108 @@
+img{border:0;}
+.content_title{
+
+	width: 920px;
+	margin-bottom: 5px;
+}
+.main{
+	height: 900px;
+	background: #faf8f4;
+}
+
+.list{
+	
+}
+.list ul li{
+	float: left;
+	width:140px ;
+	border: none;
+	padding: 7px;
+	text-align: center;
+	line-height: 20px;
+
+}
+.list ul li b{
+	display: block;
+	margin: 10px 0;
+}
+.list{
+	height: 100%;
+	padding: 15px;
+	padding-top: 20px;
+
+}
+hr{
+	width: 920px;
+	margin-left: 20px;
+	/*border:solid 5px;*/
+	margin-top: 5px;
+	height: 3px;
+	border: none;
+	background: #d6d4d1;
+}
+.concert{
+	height: 1130px;
+	*height: 1150px;
+}
+.concert #messages{
+	border: 0;
+	padding: 0;
+	margin-top: 15px;
+}
+.concert #messages li{
+	margin-bottom: 35px;
+	margin-right: 23px;
+	*width: 289px;
+}
+.concert #messages ul{
+	width: 945px;
+}
+.concert_page #messages{
+	border: 0;
+	width: 865px;
+	background: #faf8f4;
+	padding: 33px 75px;
+	padding-right: 0px;
+}
+.concert_page #messages img{
+	width: 245px;
+	height: 245px;
+	display: block;
+	padding: 1px;
+	border:solid 6px #ffc100;
+}
+.concert_page #messages .message{
+	margin-top: 58px;
+	width: 532px;
+	padding: 20px;
+	padding-right: 0px;
+	height: 160px;
+	background: url(../images/message_bg.png);
+
+}
+.concert_page 
+.concert_page #messages .message h3{
+	line-height: 40px;
+	font-size: 20px;
+}
+.concert_page #messages .message p{
+	line-height: 30px;
+	font-size: 16px;
+}
+.concert_page #messages h4{
+	width: 807px;
+	height: 29px;
+	background: url(../images/ly_header.png) 0 0 no-repeat;
+	color:#fb8608;
+	line-height: 29px;
+	text-indent: 13px;
+}
+.m_b,.m_f{
+	margin-top: 27px;
+	background-color: #fff;
+}
+.m_b div,.m_f div{
+	padding: 20px;
+	width: 767px;
+	line-height: 1.5em;
+}

@@ -1,0 +1,58 @@
+{template "content","header"}
+<!--main-->
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/news.css">
+<script type="text/javascript" src='{JS_PATH}jquery.min.js'></script>
+<style type="text/css">
+li{
+    list-style-type: square;
+  }
+</style>
+<div class="main center2">
+    <div id='new' class='l'>
+        <div class='content_title l'>
+            <h2 class='l'>新闻资讯</h2>
+            <span class='r'>当前位置:首页>新闻资讯</span>
+        </div>
+        <div class='c'></div>
+        <div class="col-auto channel-slide">
+            <div class='newlist'>
+                {pc:content  action="lists" catid="$catid" order="updatetime desc"  num="25"}
+                        <div class="title">
+                        {loop $data $k $v}
+                         <li> <p  {if $n==1}style="display:block"{/if}>
+                          <a href="{$v[url]}" title="{$v[title]}" target='blank' class="blue"{title_style($v[style])}>{str_cut($v[title], 80)}</a>
+                            <span class='time'>{date('Y-m-d H:i:s',$v[inputtime])}</span>
+                          </p>
+                          </li>
+                           <div {if $n%5==0} class='pre'{/if}></div>
+                        {/loop}
+                      </div>
+                {/pc}
+          </div>
+        </div>
+   </div>
+
+    <!--分类新闻-->
+    <!-- 引入右侧文件-->
+	{template "content","new_right"}
+<!--         <div class="col-auto">
+            <div class="left">推广链接</div>
+            <div class="right">这里放广告</div>
+        </div> -->
+  </div>
+
+  <div class="bk10"></div>
+</div>
+<script type="text/javascript">
+function ChannelSlide(Name,Class){
+	$(Name+' ul.photo li').sGallery({
+		titleObj:Name+' div.title p',
+		thumbObj:Name+' .thumb li',
+		thumbNowClass:Class
+	});
+}
+new ChannelSlide(".channel-slide","on",311,260);
+</script>
+{template "content","footer"}
+<script type="text/javascript">
+</script>

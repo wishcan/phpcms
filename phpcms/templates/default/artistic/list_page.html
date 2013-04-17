@@ -1,0 +1,16 @@
+<div class='list_page l'>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
+	<ul class='stars l'>
+	{loop $data $r}
+		 <li>
+		 	<a href="{$r[url]}" target="_blank" title="{$r[title]}">
+		 		<img src="{$r[thumb]}" />
+		 		<span>{str_cut($r[title],'28')}</span>
+		 	</a>
+		 </li>
+
+	{/loop}
+	 </ul>
+	 <div style='clear:both'></div>
+	 {if $pages}<div class=page>{$pages}</div>{/if}
+</div>

@@ -1,0 +1,30 @@
+<div class="col-left cates l">
+	{php $j=1;}
+	{loop subcat(9) $v}
+	{php if($v['type']!=0) continue;}
+         <div class='cate'>
+        	<h3 class="title-1"><a href="{$v[url]}">{$v[catname]}</a></h3>
+             <div class="content">
+
+                <div class="bk15 hr"></div>
+                <ul class="list  lh24 f14">
+                {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
+					{loop $data $v}
+						<li><a href="{$v[url]}" target="_blank">{str_cut($v[title],70)}</a></li>
+					{/loop}
+				{/pc}
+                </ul>
+            </div>
+        
+         </div>
+	{$j++}
+	{/loop}
+     <div class='weibo'><img src='{CSS_PATH}hy/images/weibo_zw.png' /></div>
+    
+     <script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=11"></script>
+
+  </div>
+  <div class="c"></div>
+      <div class="ads" style='margin-top: 15px;'>
+        <div class="col-left"><script language="javascript" src="{APP_PATH}caches/poster_js/4.js"></script></div>
+        <div class='c'></div>

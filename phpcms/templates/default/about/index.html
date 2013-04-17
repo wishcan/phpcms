@@ -1,0 +1,43 @@
+<!-- 引入头部文件开始 -->
+{template "content","header"}
+<!-- 引入头部文件结束 -->
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
+<!-- 内容部分开始 -->
+<script type="text/javascript">
+
+</script>
+<div id='cont' class='center2'>
+	<!-- 左侧选择导航开始 -->
+	<div class='l list'>
+    	{pc:content action="category" catid="31" num="25" siteid="$siteid" order="listorder DESC"}
+        	<ul class="nav-site">
+			{loop $data $r}
+			<li {if $id==$r['catid']} class="liston" {/if}><a href="{$r[url]}" target='con'><span>{$r[catname]}</span></a></li>
+			{/loop}
+            </ul>
+        {/pc}
+		{php echo runhook('glogal_menu')}
+    </div> 
+	<!-- 左侧选择导航结束 -->
+	<!-- 文章内容开始 -->
+	<div class='l content'>
+		<div class='content_title l'>
+			<h2 class='l'>榜单简介</h2>
+			<span class='r'>当前位置:首页>榜单简介</span>
+		</div>
+		<div class='c'></div>
+		<iframe src="" name='con' style='background:#F4F2ED' frameborder="no" width='710'class='l'></iframe>
+
+	</div>
+	<!-- 文章内容结束 -->
+</div>
+<div class='c'></div>
+<!-- 内容部分结束 -->
+<script type="text/javascript">
+	
+	$(function(){
+		$("iframe[name='con']").attr('src',$(".list:first").find("a").attr('href'))
+
+	})
+</script>
+{template 'content',"footer"}

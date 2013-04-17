@@ -1,0 +1,142 @@
+ul li{
+	list-style: none;
+}
+.main{
+margin-top:30px;	
+}
+#new{
+	width:603px;
+	
+	background:#fff;
+}
+#new .content_title{
+	width:563px;
+}
+#new .col-auto{
+	padding:0px 16px;
+	background-color: #faf8f4;
+}
+#new .col-auto .newlist{
+		border-top:solid 2px #d6d4d1;
+		padding:27px 3px;
+}
+#new .col-auto .newlist p{
+	line-height: 2em;
+	padding-top:5px;
+}
+
+#new .col-auto .newlist p a{
+}
+.pre{
+	margin:20px 0;
+	border-bottom:dotted 1px #c0bfbd;
+}
+.cates h3{
+	width:325px;
+	line-height:39px;
+	height:39px;
+	text-indent: 14px;
+	background:url(../images/news_t.png);
+	margin-bottom:10px;
+
+}
+
+.cates h3 a{
+	color:#fff;
+}
+.cates{
+	padding:1px;
+	margin-left:20px;
+}
+.cates .cate{
+	margin-bottom:20px;
+	background:#faf8f4;
+}
+.time{
+	*position: relative;
+	float:right;
+	top:-2.2em;
+}
+
+.cates .content{
+	border:none;
+}
+.list li{
+	border:none;
+	list-style-type: square;
+	padding:8.5px 5px;
+	padding-right:0px;
+	list-style-position:inside;
+}
+.list li a{
+	font-size:12px;	
+}
+.weibo{
+	margin-bottom:20px;
+}
+.new_title{
+	text-align: center;
+	border-bottom:dashed 2px #c0bfbd;
+	padding:20px;
+
+}
+.new_title h4{
+		color:#cc0001;
+		padding:21px 0;
+}
+.news_content *{
+	line-height:2em;
+}
+.cu{
+	cursor:pointer;
+}
+/*合作联盟*/
+#friend{
+width:960px;
+}
+#friend h2{
+	width:956px;
+	height:39px;
+
+}
+#friend .col-left{
+	background:#faf8f4;
+	margin-bottom:20px;
+}
+#friend h5{
+	background-color: #fce2aa;
+	color:#ff6600;
+	padding:8px;
+	margin-top:1px;
+}
+#friend .col-left{
+	background:#faf8f4;
+}
+#friend h5 a{
+	float:right;
+	*position: relative;
+	top:-1.8em;
+	}
+#friend .me_title{
+	background:url(../images/media_title.png);
+}
+#friend .sc_title{
+	background:url(../images/school_title.png);
+}
+#friend .medias{
+	padding:18px 25px;
+	height:42px;
+	overflow: hidden;
+}
+#friend .morem{
+	margin-top:-15px;
+	margin-right:10px;
+	margin-bottom:5px;
+	height:16px;
+	width: 15px;
+	background:url(../images/morem.png);
+
+}
+.media a,.school a{
+	line-height:2em;
+}
