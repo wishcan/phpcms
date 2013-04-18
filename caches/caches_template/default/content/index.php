@@ -203,7 +203,7 @@
 	                    	<td class='td3'><?php echo $d['singer'];?></td>
 	                    	<td class='td4'><?php echo $d['point'];?></td>
 
-	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' target='blank'><b class='st'></b></a></td>
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $d['mid'];?>' target='blank'><b class='st'></b></a></td>
 	                    </tr>
 	              		  <?php $n++;}unset($n); ?>
 	              		  

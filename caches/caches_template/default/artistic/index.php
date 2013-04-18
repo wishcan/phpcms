@@ -47,7 +47,7 @@ $("title").html('艺术人生');
 	<div class="c"></div>
 		<div class='star_list' border='0'>
 			<div class='list_page l'>
-				<div class="auto_art">
+				<div class="auto_art l">
 					<ul class='stars l'>
 					<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
 						 <li class='border <?php if($n%5==0) { ?>l5<?php } ?>'>

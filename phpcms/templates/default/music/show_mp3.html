@@ -29,18 +29,16 @@
 				<div class="c"></div>
 				<div class="messages">
 					<!-- mp3播放器 -->
-					<div class="player">	
-					
-											
-													
+					<div class="player">							
 						<object type="application/x-shockwave-flash" data="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={$mUrl}" width="240" height="20" id="dewplayer-vol">
 							<param name="wmode" value="transparent">
 							<param name="movie" value="{CSS_PATH}hy/player/dewplayer-vol.swf?mp3={$mUrl}">
 						</object>
 					</div>
 
-					<ul>
-						<li>作词：{$writer}</li>
+					<ul>	
+
+						<li>作词：{$witer}</li>
 						<li>作曲：{$comper}</li>
 						<li>专辑：{$spname}</li>
 						<li>唱片公司：{$rcname}</li>
@@ -50,6 +48,13 @@
 
 			</div>
 			<!-- 歌手缩略图 -->
+			<style type="text/css">
+			.mp3_r .thumb img{
+				width: auto;
+				height: auto;
+			}
+
+			</style>
 			<div class="mp3_r l">
 					<div class="thumb l"><img src='{$photo}' /></div>
 					<img class='l' src='{CSS_PATH}hy/images/singer_thumb_bg.png' />

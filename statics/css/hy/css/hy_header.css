@@ -88,7 +88,8 @@ ul li{
 	position: relative;/*top:-80px;*/
 	/*left:40px;*/
 	margin-top:-28px;
-	padding-left:40px;
+	padding-left:80px;
+	text-shadow:1px #fff;
 }
 .menu a{
 	font-family:'微软雅黑';

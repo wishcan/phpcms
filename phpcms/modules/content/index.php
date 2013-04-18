@@ -34,9 +34,11 @@ class index {
 
 		//周榜单数据	
 		$week_n=$this->getChar(26);
+
 		$week_g=$this->getChar(27);
 		$week_m=$this->getChar(28);
 		$week=array($week_n,$week_g,$week_m);
+		
 		include template('content','index',$default_style);
 	}
 
@@ -77,8 +79,7 @@ class index {
 
 
 		$data=$infos=array();
-		$sql='select m.title as music,m.id as mid,m.thumb as mthumb,s.url as surl,s.title, s.id as singerid,s.title as singer,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m inner join '.$this->pre.'singer as s on ch.mid=m.id and ch.sid=s.id ';
-		
+		$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  ';	
 		$info=$this->db->my_listinfo(array('sql'=>$sql),'ch.point desc',$page,$limit);
 		$total=$this->db->number;
 		if($total>0)

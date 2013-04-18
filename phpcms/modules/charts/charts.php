@@ -36,7 +36,7 @@ class charts extends admin{
 	{
 		isset($_GET['id'])?$id=$_GET['id']:showmessage("非法操作",'blank');
 		$tablename=$this->pre.$this->tableName.$id;
-		$sql='select m.title as music,m.id as mid,m.thumb as mthumb,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
+		$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
 		$row=$this->db->queryAll($sql);
 		$num=count($row);
 		include $this->admin_tpl('chart_admin');
@@ -140,7 +140,47 @@ class charts extends admin{
 		}
 
 	}
+	/**
+	 * 删除榜单中的歌曲
+	 * @return [num] 1:删除成功；-1：删除失败
+	 */
+	public function deleteMusic()
+	{
+		if(!$_POST['id']) return '非法操作，请刷新页面后重试';
+		$id=rtrim($_POST['id'],',');
+		echo $id;
+		$tablename=$_POST['tablename'];
+		$sql='delete from '.$tablename.' where id in ('.$id.' )';
 
+		if($this->db->query($sql))
+		{
+			echo 1;
+		}else{
+			echo -1;
+		}
+
+	}
+	/**
+	 * 修改票数
+	 * @param  id        歌曲在榜单中的Id；
+	 * @param  tablename 表单的表名；
+	 * @param  point     修改后需要达到的票数
+	 * @return [num]      1:修改成功；-1：修改失败
+	 */
+	public function changePoint(){
+		if(!$_POST['id'])
+		{
+			return '非法操作，请刷新页面后重试';
+		}
+		$sql='update '.$_POST['tablename'].' set point = '.$_POST['point'];
+		if($this->db->query($sql)){
+
+			echo 1;
+		}else{
+			echo -1;
+		}
+
+	}
 
 
 }

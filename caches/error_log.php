@@ -856,3 +856,40 @@
 <?php exit;?>04-18 00:20:22 | 2 | extract() expects parameter 1 to be array, boolean given | phpcms\modules\artistic\index.php | 33
 <?php exit;?>04-18 00:20:26 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
 <?php exit;?>04-18 00:20:26 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 01:31:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\content\sitemodel_field.php | 67
+<?php exit;?>04-18 10:40:28 | 2 | mkdir() [<a href='function.mkdir'>function.mkdir</a>]: File exists | phpcms\libs\classes\template_cache.class.php | 38
+<?php exit;?>04-18 10:40:32 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 10:40:32 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:36:59 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:36:59 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:37:24 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:37:24 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:38:30 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:38:30 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:40:32 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:40:32 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:43:59 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:43:59 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:48:28 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:48:28 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:51:23 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 11:51:23 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106

@@ -140,6 +140,7 @@ background:url(../images/about_list_on.jpg);
 .list_page{
 	width:561px;
 	overflow: hidden;
+	position: relative;
 }
 .list_page a{
 		text-decoration:none;
@@ -166,6 +167,7 @@ background:url(../images/about_list_on.jpg);
 	margin: 0 auto;
 	height: 50px;
 	margin-left: 400px;
+
 	margin-bottom: 20px;
 }
 .nums li{
@@ -180,6 +182,7 @@ background:url(../images/about_list_on.jpg);
 .nums .numon{
 background-color: #5babdf;
 color:#fff;
+color:#333;
 }
 .page .on{
 	color:#FFAE00;
@@ -411,8 +414,7 @@ background-color: #f3eee4;
 	border-bottom:dashed 1px #dedcd8;
 }
 #music_list_page table td b{
-	float:right;
-
+	margin-left: 60px;
 }
 #music_list_page h3 a{
 	display: block;
@@ -524,8 +526,6 @@ background-color: #f3eee4;
 
 }
 .mp3_content .mp3_r .thumb img{
-	width: 248px;
-	height:248px ;
 }
 .player{
 	padding: 20px;

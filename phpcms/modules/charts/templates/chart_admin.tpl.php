@@ -36,9 +36,10 @@
     	<td><?php echo $v['music'];?></td>
     	<td><?php echo $v['singer'];?></td>
     	<td><?php echo $v['point'];?></td>
+    	
     	<td>
-    		<a name='delete'href='javascript:delete(<?php echo $v["id"]?>)'>删除</a>
-			<a href='javascript:changeVote(<?php echo $v["id"]?>)'name='changepoint'>票数修改</a>
+    		<a name='delete' style='cursor:pointer;'onclick='javascript:deleteMusic(<?php echo $v["id"]?>)'><?php echo L('delete')?></a>
+			<a style='cursor:pointer' onclick='javascript:changePoint(<?php echo $v["id"]?>,<?php echo $v["point"]?>)'name='changepoint'>票数修改</a>
     	</td>	
 		
     </tr>
@@ -48,8 +49,9 @@
 </tbody>
 </table>
 
-<div class="btn"><label for="check_box"><?php echo L('select_all')?>/<?php echo L('cancel')?></label> <input type="submit" class="button" name="dosubmit" value="<?php echo L('delete')?>" onclick="return confirm('<?php echo L('sure_delete')?>')"/>
-<input type="submit" class="button" name="dosubmit" onclick="document.myform.action='?m=member&c=member_model&a=sort'" value="<?php echo L('sort')?>"/>
+<div class="btn">
+	<label for="check_box"><?php echo L('select_all')?>/<?php echo L('cancel')?></label>
+	<input type="button" class="button" id='deletall'name="dosubmit" value="<?php echo L('delete')?>"/>
 </div> 
 <div id="pages"><?php echo $pages?></div>
 </div>
@@ -89,35 +91,89 @@ function _M(menuid) {
 		parent.$("#current_pos").html(data);
 	});
 }
+$(function(){
+	$("#deletall").click(function(){
 
-function delete(id)
+		var ids='';
+		$("input[name='modelid[]']:checked").each(function(i, n){
+			ids += $(this).val()+',';
+		});
+		if(ids==''|| ids==','){
+			alert("你还没有选定歌曲")
+			return;
+		}
+		deleteMusic(ids);
+	})
+
+
+})
+tablename='<?php echo $tablename;?>';
+function changePoint(id,point)
 {
-	if(confirm("确定从榜单中删除吗？")
-	{
-		var id=id;
-		$.post(
-			'?m=charts&c=charts&m=delete',
-			{id:id},
-			function(statu)
-			{
-				alert(statu)
-				switch(parseInt(statu)){
-					case 1:
-					location.reload();
-					break;
-					case 2:
-					alert("删除失败请稍后重试");
-					break;
-					default
-					alert(statu);
-					break;
-				}
-			}
 
+		points=prompt("请输入需要增加的票数，如果想要减去请写为负数");
+		if(!points) return;
+		point=parseInt(point)+(parseInt(points));
 
-			);
-	}
+			$.post(
+					'?m=charts&c=charts&a=changePoint',
+					{id:id,tablename:tablename,point:point},
+					function(statu)
+					{
+						
+						switch(parseInt(statu)){
+							case 1:
+							alert("修改成功")
+							location.reload();
+							break;
+							case -1:
+							alert("修改失败请稍后重试");
+							break;
+							default:
+							alert(statu);
+							break;
+						}
+					}
+					)
+
 }
+
+// 从榜单中删除歌曲
+	function deleteMusic(id)
+		{	
+
+			if(confirm("确定从榜单中删除吗？"))
+			{
+				var id=id;
+		 
+
+				$.post(
+					'?m=charts&c=charts&a=deleteMusic',
+					{id:id,tablename:tablename},
+					function(statu)
+					{
+						
+						switch(parseInt(statu)){
+							case 1:
+							alert("删除成功")
+							location.reload();
+							break;
+							case -1:
+							alert("删除失败请稍后重试");
+							break;
+							default:
+							alert(statu);
+							break;
+						}
+					}
+
+
+					);
+			}
+		}
+	
+
+
 //-->
 </script>
 </body>
