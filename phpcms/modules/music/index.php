@@ -278,8 +278,13 @@ class index{
 	// 网友排行页面
 	public function vote()
 	{
-
 		$week=$this->getNewChart();
+
+		// for($i=0;$i<40;$i++)
+		// {
+		// 	$data[$i]=$week[0]['data'][0];
+		// }
+		$size=10;
 		include template('music','vote');
 
 	}

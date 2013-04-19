@@ -119,29 +119,67 @@ ul{
 .pointUp{
 	position:relative;left:45px;color:red;font-weight:bold;font-family:'微软雅黑';
 }
+.auto_c{
+	position: relative;
+	width: 640px;
+	height: 450px;
+	overflow: hidden;
+}
+	
+.page li{
+	padding: 4px 7px;
+	background-color: #fff;
+	color:#999;
+	margin-right: 8px;
+}
+.page .numon{
+	color:#fff;
+	background-color: #faa943;
+}
+.vote_g .page .numon{
+ background-color: #e73f8f;
+}
+.vote_m .page .numon{
+ background-color: #aa4bf4;
+}
+.page{
+	float: right;
+}
 </style>
 <div class="center2">
 <div class='col_left l'>
 	
 	<?php $n=1; if(is_array($week)) foreach($week AS $k => $v) { ?>
-	<div class="vote border">     
+	<div class="vote border vote_<?php if($k==0) { ?>n<?php } elseif ($k==1) { ?>g<?php } elseif ($k==2) { ?>m<?php } ?>">     
 	<h3 class="vote_title<?php echo $k;?>">至尊<?php if($k==0) { ?>内地<?php } elseif ($k==1 ) { ?>港台<?php } else { ?>民歌<?php } ?>榜
-	<span class="vote_num"><?php echo $v['title'];?></span></h3>
-	<ul>
-		<?php $n=1;if(is_array($v['data'])) foreach($v['data'] AS $r) { ?>
-		<li>
-			<p  class='thumb'><img src="<?php echo $r['thumb'];?>" alt="" ></p>	
-			<p  style=''>
-				<span class='title'><?php echo str_cut($r[music],18);?></span>
-				<a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $r['mid'];?>' target='blank'class='st r'></a>
-			</p>
-			<p><?php echo $r['singer'];?></p>
-			<p class='point'><span>票数： <span class='point_n'><?php echo $r['point'];?></span></span></p>
-			<p class="tp<?php echo $k;?> tp" ids="<?php echo $r['id'];?>" catid="<?php echo $r['id'];?>" b="<?php echo substr($v[tablename],9);?>"></p>
-		</li>
-		<?php $n++;}unset($n); ?>
-
-	</ul>
+	<span class="vote_num "><?php echo $v['title'];?></span></h3>
+		<div class='auto_c'>
+			<ul>
+				<!-- <div class='auto_c'> -->
+				
+				<?php $n=1;if(is_array($v['data'])) foreach($v['data'] AS $r) { ?>
+				<?php $count=count($data);?>
+				<li>
+					<p  class='thumb'><img src="<?php echo $r['thumb'];?>" alt="" ></p>	
+					<p  style=''>
+						<span class='title'><?php echo str_cut($r[music],18);?></span>
+						<a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $r['mid'];?>' target='blank'class='st r'></a>
+					</p>
+					<p><?php echo $r['singer'];?></p>
+					<p class='point'><span>票数： <span class='point_n'><?php echo $r['point'];?></span></span></p>
+					<p class="tp<?php echo $k;?> tp" ids="<?php echo $r['id'];?>" catid="<?php echo $r['id'];?>" b="<?php echo substr($v[tablename],9);?>"></p>
+				</li>
+				<?php if($n==$count) { ?>
+				</ul>
+				<?php } elseif ($n%$size==0) { ?>
+				</ul>
+				<ul>
+				<?php } ?>	
+				<?php $n++;}unset($n); ?>
+			
+		</div>
+		<div class="c"></div>
+		<div class='page nums'></div>
 	</div>
 	<?php $n++;}unset($n); ?>
 </div>	
@@ -185,6 +223,10 @@ ul{
 	</div>
 
 <div class="c"></div>
+<style type="text/css">
+
+
+</style>
 <script type="text/javascript">
 	// 投票异步
 	$(function(){
@@ -221,15 +263,28 @@ ul{
 						alert(statu);
 						break;
 					}
-
-
-
 				}
 
 				)
-
 		})
-
+		$(".vote").each(function(){
+			var i=0;
+			var len=$(this).find("ul").length;
+			for(i;i<len;i++)
+			{
+				$(this).find(".page").append("<li class='l border pagenum'>"+((parseInt(i))+1)+"</li>");
+				$(this).find(".page li").eq(0).addClass("numon");
+			}
+		})
+		$(".page li").on("click",function()
+		{	
+				shows=$(this).parent().parent().find(".auto_c");
+				var index=$(this).index();
+				shows.find("ul").hide();
+				shows.find("ul").eq(index).fadeIn();
+				$(this).parent().find(".numon").removeClass("numon");
+				$(this).addClass("numon")
+		})
 
 	})
 
