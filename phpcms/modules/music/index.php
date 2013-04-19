@@ -33,16 +33,14 @@ class index{
 	 */
 
 	public function lists(){
-
 		if(!$_GET['id'])return false;
-		isset($_GET['hash'])? $pageSize=50:$pageSize=9;
+		isset($_GET['hash'])? $pageSize=50:$pageSize=10;
 		isset($_GET['page'])?$page=$_GET['page']:$page=1;
 		$where=' catid='.$_GET['id'];
 		$row=$this->selectMusic('catid = '.$_GET['id'],0,$page,$pageSize);
 		$page=$row['page'];
 		$data=$row['data'];
 		include template('music','lists');
-
 	}
 	/**
 	 * @param [string] $_POST['search']['musicName']  查询歌曲名

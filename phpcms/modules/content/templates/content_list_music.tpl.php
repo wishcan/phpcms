@@ -1,6 +1,5 @@
 <?php
 defined('IN_ADMIN') or exit('No permission resources.');
-
 include $this->admin_tpl('header','admin');?>
 <script language="javascript" type="text/javascript" src="<?php echo JS_PATH;?>content_addtop.js"></script>
 <style type="text/css">
@@ -253,7 +252,7 @@ $(document).ready(function(){
 		?></td>
 		<td align='center'><?php echo format::date($r['updatetime'],1);?></td>
 		<td align='center'><a href="javascript:;" onclick="javascript:openwinx('?m=content&c=content&a=edit&catid=<?php echo $catid;?>&id=<?php echo $r['id']?>','')"><?php echo L('edit');?></a> | <a href="javascript:view_comment('<?php echo id_encode('content_'.$catid,$r['id'],$this->siteid);?>','<?php echo safe_replace($r['title']);?>')"><?php echo L('comment');?></a>
-			<?php if($r['supstar']) echo '<span style="color:#D13EBE">推荐人物</span>'?>
+			<?php if($r['supstar']) echo '<span style="color:#D13EBE">推荐歌曲</span>'?>
 			<?php  if(!$r['supstar'])echo '<span class="tj">推荐</span>' ?>
 			</td>
 		</tr>

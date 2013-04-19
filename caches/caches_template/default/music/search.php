@@ -1,7 +1,7 @@
-
-{template "content","header"}
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
-<script type="text/javascript" src='{CSS_PATH}hy/js/search.js'></script>
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>
+<?php include template("content","header"); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
+<script type="text/javascript" src='<?php echo CSS_PATH;?>hy/js/search.js'></script>
 <div id='new_music' class='center2 art new_music list_once'>
 
 <!-- 新歌推荐页头部开始 -->
@@ -23,8 +23,8 @@
 <div class='news_m_c l'>
 	<div class='news_m l'>
 		<div class='search_num'>
-			<h3 style='text-align:center'>共位您搜索出<span style='color:red'>{$num}</span>首歌曲
-				{if $num==0}请尝试其他条件搜索{/if}
+			<h3 style='text-align:center'>共位您搜索出<span style='color:red'><?php echo $num;?></span>首歌曲
+				<?php if($num==0) { ?>请尝试其他条件搜索<?php } ?>
 			</h3>
 			
 		</div>
@@ -48,8 +48,8 @@
 			<div class='c'></div>
 			<!-- 内地歌曲推荐开始 -->
 			<div class='music_list music_list_n'>
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/hy_header.css">
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/hy_header.css">
 <div id='music_list_page' class='new_t_n'>
 	<div class='musics'>
 	<table cellspacing="0">
@@ -62,19 +62,19 @@
 					<th width="20">试听</th>
 		</thead>
 		<tbody>
-			{loop $data $r}
+			<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
 			<tr>
 				<!-- 捕捉到跟搜索关键字相符合的字符高亮显示 -->
-				<td>{php echo str_replace($key,'<span class="red">'.$key.'</span>',$r[title]);}</td>
-				<td>{php echo str_replace($key,'<span class="red">'.$key.'</span>',$r[singer]);}</td>
-				<td>{$r[spname]}</td>
-				<td>{$r[rcname]}</td>
-				<td><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$r[id]}' target='blank'><b class='st'></b></a></td>
+				<td><?php echo str_replace($key,'<span class="red">'.$key.'</span>',$r[title]);?></td>
+				<td><?php echo str_replace($key,'<span class="red">'.$key.'</span>',$r[singer]);?></td>
+				<td><?php echo $r['spname'];?></td>
+				<td><?php echo $r['rcname'];?></td>
+				<td><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $r['id'];?>' target='blank'><b class='st'></b></a></td>
 			</tr>
-			{/loop}
+			<?php $n++;}unset($n); ?>
 		</tbody>
 	</table>
-	 {if $pages}<div class=page>{$pages}</div>{/if}
+	 <?php if($pages) { ?><div class=page><?php echo $pages;?></div><?php } ?>
 	</div>
 	 <div style='clear:both'></div>
 	
@@ -85,4 +85,4 @@
 </div>
 </div></div>
 <div class='c'></div>
-{template "content","footer"}
+<?php include template("content","footer"); ?>
