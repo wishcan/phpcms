@@ -1,40 +1,22 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.'); ?> <link rel="stylesheet" href="<?php echo CSS_PATH;?>hy/css/hy_header.css">
  <style type="text/css">
-	div{
-		width: 290px;
-		font-size: 8px;
-	}
-	.week h1,.week .week_t{
-	*width: 300px;
+ ul{
+ 	float: left;
+ }
+ .week_g{
+ 	margin: 0px 22px;
+ }
+ .week h1{
+
+		*width: 300px;
 	}
 
-	td{text-align: center;}
-	.st{
-		float: right;
-		background-repeat: no-repeat;
-		/*padding-right: 10px;*/
-		margin-right: 5px;
-	}
-	.week_g h1{
-	color: #e45757;
-}
-.week_m h1{
-	color: #b078fe;
-}
-.week tbody td{
-	border: 0;
-	font-size: 14px;
-}
-.week tbody .tr2 td{
-	background-color: #f2f1ec;
-}
-.week tbody .td1{
-	width: 35px;
-}
  </style>
- <div class='week'>
-	        <ul class='week_<?php if($id==26) { ?>n<?php } elseif ($id==27) { ?>g<?php } elseif ($id==28) { ?>m<?php } ?>'>
-	          <h1><?php echo $title;?></h1>
+   <div class='week chart'>
+	  	<?php $n=1; if(is_array($week)) foreach($week AS $s => $v) { ?>
+
+	         <ul class='week_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?> border'> 
+	          <h1><?php echo $v['title'];?></h1>
 	          <table cellspacing="0">
 	                <thead>
 	                    <tr>
@@ -46,18 +28,25 @@
 	                    </tr>
 	               </thead>
 	               <tbody>
-	               	<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+	              
+	               		<?php $n=1; if(is_array($v['data'])) foreach($v['data'] AS $k => $d) { ?>
 
-	             		<tr <?php if($n%2==0) { ?> class='tr2' <?php } ?>>
-	                    	<td class='td1'><span class='one num num<?php echo $n;?>'></span></td>
-	                    	<td class='td2'><?php echo str_cut($v[music],18);?></td>
-	                    	<td class='td3'><?php echo $v['singer'];?></td>
-	                    	<td class='td4'><?php echo $v['point'];?></td>
-
-	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' target='blank'><b class='st'></b></a></td>
+	             		<tr <?php if($k%2==1) { ?> class='tr2' <?php } ?>>
+	                    	<td class='td1'><span class='one num num<?php echo $k+1?>'></span></td>
+	                    	<td class='td2'><?php echo str_cut($d[music],18);?></td>
+	                    	<td class='td3'><?php echo $d['singer'];?></td>
+	                    	<td class='td4'><?php echo $d['point'];?></td>
+	
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $d['mid'];?>' target='blank'><b class='st'></b></a></td>
 	                    </tr>
-	                <?php $n++;}unset($n); ?>
+	              		  <?php $n++;}unset($n); ?>
+	              		  
 	               </tbody>
 	          </table>
-	        </ul>
+	          	<p class='bdxq_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?>'>
+	          		<a href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=listCharts&id=<?php echo $s;?>&t=<?php echo $v['title'];?>&b=<?php echo substr($v[tablename],9)?>' target='_blank'></a>
+	          	</p>
+	      	</ul>
+	      	 <?php $n++;}unset($n); ?>
+      </div>
 

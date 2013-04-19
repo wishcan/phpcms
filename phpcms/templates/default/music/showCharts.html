@@ -1,40 +1,22 @@
  <link rel="stylesheet" href="{CSS_PATH}hy/css/hy_header.css">
  <style type="text/css">
-	div{
-		width: 290px;
-		font-size: 8px;
-	}
-	.week h1,.week .week_t{
-	*width: 300px;
+ ul{
+ 	float: left;
+ }
+ .week_g{
+ 	margin: 0px 22px;
+ }
+ .week h1{
+
+		*width: 300px;
 	}
 
-	td{text-align: center;}
-	.st{
-		float: right;
-		background-repeat: no-repeat;
-		/*padding-right: 10px;*/
-		margin-right: 5px;
-	}
-	.week_g h1{
-	color: #e45757;
-}
-.week_m h1{
-	color: #b078fe;
-}
-.week tbody td{
-	border: 0;
-	font-size: 14px;
-}
-.week tbody .tr2 td{
-	background-color: #f2f1ec;
-}
-.week tbody .td1{
-	width: 35px;
-}
  </style>
- <div class='week'>
-	        <ul class='week_{if $id==26}n{elseif $id==27}g{elseif $id==28}m{/if}'>
-	          <h1>{$title}</h1>
+   <div class='week chart'>
+	  	{loop $week $s $v}
+
+	         <ul class='week_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if} border'> 
+	          <h1>{$v[title]}</h1>
 	          <table cellspacing="0">
 	                <thead>
 	                    <tr>
@@ -46,18 +28,25 @@
 	                    </tr>
 	               </thead>
 	               <tbody>
-	               	{loop $data $v}
+	              
+	               		{loop $v['data'] $k $d}
 
-	             		<tr {if $n%2==0} class='tr2' {/if}>
-	                    	<td class='td1'><span class='one num num{$n}'></span></td>
-	                    	<td class='td2'>{str_cut($v[music],18)}</td>
-	                    	<td class='td3'>{$v[singer]}</td>
-	                    	<td class='td4'>{$v[point]}</td>
-
-	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' target='blank'><b class='st'></b></a></td>
+	             		<tr {if $k%2==1} class='tr2' {/if}>
+	                    	<td class='td1'><span class='one num num{php echo $k+1}'></span></td>
+	                    	<td class='td2'>{str_cut($d[music],18)}</td>
+	                    	<td class='td3'>{$d[singer]}</td>
+	                    	<td class='td4'>{$d[point]}</td>
+	
+	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='blank'><b class='st'></b></a></td>
 	                    </tr>
-	                {/loop}
+	              		  {/loop}
+	              		  
 	               </tbody>
 	          </table>
-	        </ul>
+	          	<p class='bdxq_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'>
+	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=listCharts&id={$s}&t={$v[title]}&b={php echo substr($v[tablename],9)}' target='_blank'></a>
+	          	</p>
+	      	</ul>
+	      	 {/loop}
+      </div>
 

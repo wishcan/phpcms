@@ -3,8 +3,6 @@
 
 {template 'content','header'}
 
- <style type="text/css">
- </style>
   <style type="text/css">
  .list_title{
 	width: 780px;
@@ -74,17 +72,17 @@ background: #fcfbf8;
 }
 
  </style>
+</div>
 <div class="center2">
 	<h3 class="page_title list_title">
-		{$title} 至尊{if $_GET[id]==26}内地{elseif $_GET[id]==27}港台{elseif $_GET[id]==28}{/if}榜周榜</h3>
+		{$title} 至尊{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}{/if}榜周榜</h3>
  <div class='week'>
 
- 	{loop $data $v}
+ 	{loop $datas $v}
  	{php if(in_array(($n-1)/10,array(0,1,2,3))){}
-	<!-- {php $num=($n-1)/10;if($num);} -->
 	<div class="border l">
- 	<ul class='week_{if $id==26}n{elseif $id==27}g{elseif $id==28}m{/if} {php if((($n-1)/10)%2>0)echo  "u2";}'>
-	          <table cellspacing="0">
+ 		<ul class='week_{if $_GET[id]==0}n{elseif $_GET[id]==1}g{elseif $_GET[id]==2}m{/if} {php if((($n-1)/10)%2>0)echo  "u2";}'>
+	          <table cellspacing="0" class='l'>
 	                <thead>
 	                    <tr>
 	                    	<td class='td1'>名次</td>
@@ -112,18 +110,13 @@ background: #fcfbf8;
 	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' class='st'></a></td>
 	                    </tr>
 	{php }}
-
 	{php if(in_array($n/10,array(0,1,2,3))){}
 	               </tbody>
 	          </table>
-	        </ul>
-	       </div>
-	{php }}   
+		</ul>         
+	</div>
+{php }} 
 {/loop}
-<!-- 	 <div class="border l">
- 
-	</div>      -->          
-</div>
-</div>
+
 <div class="c"></div>
 {template 'content','footer'}

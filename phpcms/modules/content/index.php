@@ -34,11 +34,9 @@ class index {
 
 		//周榜单数据	
 		$week_n=$this->getChar(26);
-
 		$week_g=$this->getChar(27);
 		$week_m=$this->getChar(28);
 		$week=array($week_n,$week_g,$week_m);
-		
 		include template('content','index',$default_style);
 	}
 
@@ -63,7 +61,6 @@ class index {
 		$id=$id+20;
 		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
 		$chart=$this->db->queryAll($sql);
-
 		$data=$this->getDatas($chart[0]['tablename']);
 		$data['title']=$chart[0]['title'];
 		return $data;

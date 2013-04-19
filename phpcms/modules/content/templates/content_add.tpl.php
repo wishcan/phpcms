@@ -78,26 +78,6 @@ if(is_array($forminfos['base'])) {
 	<tr>
       <th width="80">	<?php if($info['star']){ ?> <font color="red">*</font><?php } ?> <?php echo $info['name']?>
 	  </th>
-	  <?php 
-	 //  if ($forminfos['base']['title']['name']=='歌曲名' || $forminfos['base']['title']['name']=='专辑名')
-	 //  	{
-	 //  			switch($info['name'])
-	 //  			{
-	 //  				case '歌手':
-	 //  				$info['form']='<input type="button" class="sid button" value="请选择" /><input type="hidden" class="info_sid" name="info[sid]" />';
-	 //  				break;
-	 //  				case '专辑':
-	 //  				$info['form']='<input type="button" class="spid button" value="请选择" /><input type="hidden" class="info_spid" name="info[spid]" />';
-	 //  				break;
-	 //  				default:
-	 //  				break;
-
-		// }
-	 //  			}
-	  		
-	  ?>
-	 	
-
       <td><?php echo $info['form']?>  <?php echo $info['tips']?></td>
     </tr>
 <?php
@@ -206,81 +186,6 @@ if(is_array($forminfos['base'])) {
 
 </style>
 <script type="text/javascript">
-
-// $(".aui_state_lock").hide()
-// $(".zz").css({
-// 		"width":$(window).width(),
-// 		"height":$(window).height(),
-// 		"display":'hidden',
-// 	})
-// 	$(".aui_state_focus").css({
-// 		'width':698,
-// 		'left':(parseInt($(window).width())-688)/2,
-// 		'top':(parseInt($(window).height())-parseInt($(".aui_state_focus").height()))/2
-// 	})
-// $(".aui_close").click(function(){
-// 	$(".zz").hide();
-// 	$(".aui_state_focus").hide();
-// })
-
-
-// $(".spid").click(function(){
-// 	if(!$(".info_sid").val()){
-// 		alert("请先选择歌手");
-// 		 $(".hide_sid").show();
-// 		 stopPropagation()
-// 	}else{
-// 		$(".sp").show();
-// 		var sid=$(".info_sid").val();
-// 		if(sid!=$(".has_post").val()){
-// 			$.post(
-// 				'index.php?m=music&c=index&a=getSps',
-// 				{sid:sid},
-// 				function(data){
-// 					$(".hide_spid #ul_birthplace").append('<input type="hidden" class="has_post" value="'+sid+'" />');
-// 					var i=0;
-// 					for(i;i<data.length;i++){
-// 						$(".hide_spid #ul_birthplace").append(
-// 							"<a href='javascript:void(0)' value='"+data[i]['id']+"'>"+data[i]['title']+"</a>"
-// 							)
-// 					}
-// 				},'json');
-// 		}
-// 	}
-	
-
-// })
-// function showAui(element){
-// 	$("."+element).click(function(){
-// 		$(".zz").show();
-// 		$(".hide_"+element).show();
-// 	})
-// }
-// showAui("sid")
-// showAui("spid");
-// /**
-//  * @param element 触发事件的元素节点
-//  * @param getId   获得值的元素节点
-//  * @param child   添加和删除的时间
-//  */
-// function changeId(element,getId,child)
-// {
-// 	$(element).live('click',function(){
-
-// 		if($(this).text()!=='×')
-// 		{
-// 			$("."+child).remove();
-// 			$("."+getId).attr('value',$(this).attr("value"));
-// 			var starName='<span class="'+child+'" style="padding:0 2px;maring-right:4px;">'+$(this).text()+'</span>';
-// 			$(starName).insertBefore($("."+getId).prev("input"));
-// 			$(".zz").hide();
-// 			$(".aui_state_focus").hide();
-
-// 		}
-// 	})
-// }
-// changeId(".hide_sid a",'info_sid',"starName");
-// changeId(".hide_spid #ul_birthplace a",'info_spid',"spName");
 </script>
 <?php endif;?>
 </body>

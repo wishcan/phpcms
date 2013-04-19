@@ -36,9 +36,16 @@ class charts extends admin{
 	{
 		isset($_GET['id'])?$id=$_GET['id']:showmessage("非法操作",'blank');
 		$tablename=$this->pre.$this->tableName.$id;
-		$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
-		$row=$this->db->queryAll($sql);
-		$num=count($row);
+
+		if($this->db->table_exists($this->tableName.$id))
+		{
+			$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
+			$row=$this->db->queryAll($sql);
+			$num=count($row);
+		}else{
+			showmessage('榜单中尚未有歌曲请添加');
+		}
+		
 		include $this->admin_tpl('chart_admin');
 
 	}

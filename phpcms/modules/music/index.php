@@ -1,5 +1,6 @@
 <?php 
 defined('IN_PHPCMS') or exit('No permission resources.');
+
 class index{
 	private $db;
 	public $pre;
@@ -13,7 +14,7 @@ class index{
 		$this->_username=param::get_cookie('_username');
 		$this->_userid=param::get_cookie('_userid');
 		$this->pre=$this->db->db_tablepre;
-		$this->sql='select * from '.$this->pre.'music as m inner join '.$this->pre.'music_data';
+		$this->sql='select * from '.$this->pre.'music as m inner join '.$this->pre.'music_data as md on m.id=md.id  ' ;
 		pc_base::load_app_func('global');
 	}
 	public function init(){
@@ -100,6 +101,7 @@ class index{
 			if(!$photo){
 				$photo=$thumb;
 			}
+			
 		include template('music','show_mp3');
 	}
 
@@ -131,8 +133,6 @@ class index{
 		}
 
 		return $row;
-
-
 	}
 	/**
 	 * 添加投票数
@@ -140,13 +140,13 @@ class index{
 	 */
 	public function addVoteNum()
 	{
-			if(!$this->_userid){
-				echo -1;
-				return;
-			}
+			// if(!$this->_userid){
+			// 	echo -1;
+			// 	return;
+			// }
 			$id=$_POST['id'];
 			$catid=$_POST['catid'];
-			$tablename=$_POST['tablename'];
+			$tablename=$this->pre.'chart_'.$_POST['tablename'];
 			$ip='127.0.0.1';
 			$addTime=time();
 			switch ($this->checkIp($catid,$tablename)) {
@@ -231,31 +231,15 @@ class index{
 			}
 	}
 
-
-	// 获得专辑
-	public function getSps()
-	{
-			if(isset($_POST['sid']))
-			{
-				$sid=$_POST['sid'];
-				$where='sid = '.$sid;
-			}else{
-				$where='';
-			}
-			$db=pc_base::load_model('sp_model');
-			$data=$db->select($where);
-		 	echo json_encode($data);
-		}
-
 	public function getMusic()
 	{
-		if(!$_GET['id']){
+		if(!$_GET['singer']){
 
-			$sql='select m.title as music,m.id as id,s.id s uid ,s.title as singer from v9_music as m inner join v9_singer as s on m.sid = s.id';
+			$sql='select m.title as music,m.id as id,s.id s uid ,s.title as singer from v9_music as m inner join v9_singer as s on m.singer like %s.title%';
 			echo json_decode($this->db->queryAll($sql));
 			return;
 		}
-		$sql='select m.title as music,m.id as id,sp.title as spName from v9_music as m inner join v9_sp as sp on m.spid=sp.id and m.sid = '.$_GET['id'];
+		$sql='select * from v9_music where singer like "'.$_GET['singer'].'"';
 		$data=$this->db->queryAll($sql);
 		include template('music','mp3');
 
@@ -297,7 +281,7 @@ class index{
 	public function vote()
 	{
 
-
+		$week=$this->getNewChart();
 		include template('music','vote');
 
 	}
@@ -315,13 +299,9 @@ class index{
 		{
 			$id=$_GET['id'];
 		}
-
 		$row=$this->getChar($id);
-		$title=$row[0]['title'];
-		$tablename=$row[0]['tablename'];
-		$char=$this->getDatas($tablename,$page,$pageSize);
-		$data=$char['data'];
-		$page=$char['page'];
+		$title=$row['title'];
+		$data=$row['data'];
 		include template("music","showVote");
 
 
@@ -330,19 +310,42 @@ class index{
 	 * 显示周榜的信息
 	 * @param  $catid 栏目的ID
 	 * @return [type] [description]
+	 * @return [title] 
 	 */
 	public function showCharts()
 	{
 
 		isset($_GET['id'])?$id=$_GET['id']:$id=26;
-		$row=$this->getChar($id);
-		$title=$row[0]['title'];
-		$tablename=$row[0]['tablename'];
-		$row=$this->getDatas($tablename);
+		if(!$_GET['title'])
+		{
+			$week=$this->getNewChart();
+		}else
+		{
 
-		$data=$row['data'];
-		$page=$data['page'];
-		include template("music",'showCharts');
+			$title=$_GET['title'];
+			$sql='select * from v9_chart where title = "'.'第'.$title.'"  order by catid';
+			$row=$this->db->queryAll($sql);
+			$week=array();
+			foreach ($row as $k=>$v) {
+				
+				$week[$k]=$this->getDatas($v['tablename']);
+				$week[$k]['tablename']=$v['tablename'];
+				$week[$k]['title']=$v['title'];
+			}
+		}
+			include template("music",'showCharts');
+
+		}
+
+
+	// 获得最新的榜单信息
+	public function getNewChart()
+	{
+		$week_n=$this->getChar(26);
+		$week_g=$this->getChar(27);
+		$week_m=$this->getChar(28);
+		$week=array($week_n,$week_g,$week_m);
+		return $week;
 	}
 	/**
 	 * 获得分类的当前榜单
@@ -350,15 +353,20 @@ class index{
 	 * @param  integer $limit 取数据多少从0开始
 	 * @return array   $data  获得的数据结果集
 	 * @return string  $title 榜单标题 
+	 * 待优化
 	 */
 	public function getChar($id,$limit=1)
 	{
 		if(!$id){
 			exit("请指定榜单");
 		}
+	
 		$id=$id+20;
 		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
-		$data=$this->db->queryAll($sql);
+		$chart=$this->db->queryAll($sql);
+		$data=$this->getDatas($chart[0]['tablename']);
+		$data['tablename']=$chart[0]['tablename'];
+		$data['title']=$chart[0]['title'];
 		return $data;
 	}
 	/**
@@ -380,8 +388,8 @@ class index{
 
 
 		$data=$infos=array();
-		$sql='select m.title as music,m.id as mid,m.thumb as mthumb,s.url as surl,s.title, s.id as singerid,s.title as singer,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m inner join '.$this->pre.'singer as s on ch.mid=m.id and ch.sid=s.id ';
-		
+		$sql='select m.title as music,m.singer,thumb,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m inner join '.$this->pre.'music_data as md on ch.mid=m.id and m.id=md.id ';	
+
 		$info=$this->db->my_listinfo(array('sql'=>$sql),'ch.point desc',$page,$limit);
 		$total=$this->db->number;
 		if($total>0)
@@ -406,15 +414,17 @@ class index{
 	// 单项
  	public function listCharts()
  	{
- 		isset($_GET['id'])?$id=$_GET['id']:$id=26;
-		$row=$this->getChar($id);
-		$title=$row[0]['title'];
-		$tablename=$row[0]['tablename'];
-		$row=$this->getDatas($tablename,'',40);
+ 		isset($_GET['t'])?$title=$_GET['t']:showmessage("非法操作");
+ 		isset($_GET['b'])?$tablename=$this->pre.'chart_'.$_GET['b']:showmessage('非法操作');
+ 		$row=$this->getDatas($tablename,'',40);
 		$data=$row['data'];
 		$page=$data['page'];
+		for($j=0;$j<40;$j++){
+			$datas[$j]=$data[0];
+		}
  		include template('music','list_charts');
  	}
+
 
 
 

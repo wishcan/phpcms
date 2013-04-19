@@ -89,7 +89,6 @@ ul li{
 	/*left:40px;*/
 	margin-top:-28px;
 	padding-left:80px;
-	text-shadow:1px #fff;
 }
 .menu a{
 	font-family:'微软雅黑';
@@ -366,6 +365,9 @@ width:;
 	line-height:39px;
 	text-indent: -2em;
 }
+.week ul{
+	background-color: #fcfbf8;
+}
 .week .week_n h1{
 	background:url(../images/h_1.png);
 }
@@ -392,10 +394,16 @@ width:;
 .week .week_g thead{
 background-color: #fdc3bd;
 }
+
 .week tbody td{
 	padding:5px;
-	background-color: #fff;
+	background-color: #fcfbf8;
+	height: 22px;
 	border-bottom:solid 1px #ddd;
+
+}
+.week tbody .tr2 td{
+	background: #f2f1ec;
 }
 .num{
 	display: block;
@@ -405,35 +413,35 @@ background-color: #fdc3bd;
 	background-repeat: no-repeat;
 	background-position: center 0px;
 }
-#main-body table tbody td .num1{
+table tbody td .num1{
 background-position: left 0px;
 }
-#main-body table tbody td .num2{
+table tbody td .num2{
 	/*color:;*/
 	background-position: left -26px;
 }
-#main-body table tbody td .num3{
+table tbody td .num3{
 	background-position: left -53px;
 }
-#main-body table tbody td .num4{
+table tbody td .num4{
 	background-position: left -79px;
 }
-#main-body table tbody td .num5{
+table tbody td .num5{
 	background-position: left -106px;
 }
-#main-body table tbody td .num6{
+table tbody td .num6{
 	background-position: left -133px;
 }
-#main-body table tbody td .num7{
+table tbody td .num7{
 	background-position: left -159px;
 }
-#main-body table tbody td .num8{
+table tbody td .num8{
 	background-position: left -185px;
 }
-#main-body table tbody td .num9{
+table tbody td .num9{
 	background-position: left -211px;
 }
-#main-body table tbody td .num10{
+table tbody td .num10{
 	background-position: left -240px;
 }
 .week .week_g thead td{
@@ -488,7 +496,6 @@ width:23px;
 height:13px;
 padding-left:5px;
 text-indent:2em;
-background:url(../images/num.png);
 background-repeat: no-repeat;
 }
 #main-body tbody .td2{
@@ -887,4 +894,24 @@ font-size: 14px;
 	*top:-3px;
 	line-height:27px;
 	background:url(../images/search.png);
+}
+/*榜单详情*/
+.chart p{
+	padding-left: 210px;
+}
+.chart p a {
+display: block;
+width: 68px;
+height: 23px;
+background-repeat: no-repeat;
+margin:5px 10px;
+}
+.bdxq_n a {
+background-image: url(../images/bdxq_n.png);
+}
+.bdxq_g a {
+background-image: url(../images/bdxq_g.png);
+}
+.bdxq_m a {
+background-image: url(../images/bdxq_m.png);
 }

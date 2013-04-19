@@ -195,12 +195,14 @@ img{
 	background:#faf8f4;
 	}
 .art_message .thumb{
-	padding:1px;
+	width: 258px;
+	height: 304px;
+	padding:8px;
 	background:url(../images/art_thumb_bg.png);
 }
 .art_message .thumb img{
-	width:270px;
-	height:325px;
+	width: 258px;
+	height:300px;
 }
 .art_message .message{
 	width:580px;
@@ -432,9 +434,6 @@ background-color: #f3eee4;
 	background:url(../images/xgtj_m3.png);
 }
 
-.new_t_g table td{
-	color:#838383;
-}
 .new_t_g table th{
 	background:#FDB0A6;
 }
@@ -526,6 +525,8 @@ background-color: #f3eee4;
 
 }
 .mp3_content .mp3_r .thumb img{
+	width: 248px;
+	height:248px ;
 }
 .player{
 	padding: 20px;

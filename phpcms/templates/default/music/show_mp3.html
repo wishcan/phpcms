@@ -49,9 +49,11 @@
 			</div>
 			<!-- 歌手缩略图 -->
 			<style type="text/css">
-			.mp3_r .thumb img{
+		.mp3_content .mp3_r .thumb img{
 				width: auto;
 				height: auto;
+				max-height: 248px;
+				max-width: 248px;
 			}
 
 			</style>

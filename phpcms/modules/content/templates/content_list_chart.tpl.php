@@ -198,7 +198,6 @@ $(document).ready(function(){
             <th width="37"><?php echo L('listorder');?></th>
             <th width="40">ID</th>
 			<th width='80'><?php echo L('title');?></th>
-			<th>备注</th>
             <th width="">状态</th>
             <th width="70"><?php echo L('publish_user');?></th>
             <th width="118">发布时间</th>
@@ -225,9 +224,6 @@ $(document).ready(function(){
 		<div class="iptd"><input class="tit_ipt" style='text-algin:center;' value="<?php echo $r['title'];?>" type="text" id="title_<?php echo $r['id'];?>"></input>
 		</div>
 		</td>
-		<td align="center">
-	<textarea name="description" cols="96%" rows="3" id="description_<?php echo $r['id'];?>" max="255" class="cps_ipt"><?php echo $r['description']?></textarea>
-		</td>	
 		<td width='100' align='center'><?php switch ($r['statu']) {
 			case '1':
 				echo '已经发布';

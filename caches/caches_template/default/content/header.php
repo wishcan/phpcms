@@ -10,7 +10,7 @@
 <!-- <link href="<?php echo CSS_PATH;?>reset.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo CSS_PATH;?>default_blue.css" rel="stylesheet" type="text/css" /> -->
 <!-- 系统自带CSS和JS结束 -->
- <script type="text/javascript" src="<?php echo JS_PATH;?>jquery.min.js"></script>
+ <script type="text/javascript" src="<?php echo JS_PATH;?>jquery-1.4.4.min.js"></script>
 
 <script type="text/javascript" src="<?php echo JS_PATH;?>search_common.js"></script>
 <!--  -->

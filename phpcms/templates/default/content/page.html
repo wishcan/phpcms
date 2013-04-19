@@ -12,8 +12,11 @@ $(function(){
 </script>
     <div id="content">
 
-      <div class="col-auto">
+      <div class="col-auto" style='margin: 0 auto;'>
+          {if $_GET['catid']==32}
+        <img src='{CSS_PATH}hy/images/jj_logo.png'  style='margin-left:200px;height:195px'/>
 
+          {/if}
             <div class="content" style='line-height:2em;margin-top:55px;text-algin:center;'>
             	    {$content}
             </div>

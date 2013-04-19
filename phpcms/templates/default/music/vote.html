@@ -14,7 +14,8 @@
 		margin-top: 25px;
 	}
 	.col_left{
-		float: left;
+		width: 640px;
+
 	}
 	.col_right{
 		float: right;
@@ -30,20 +31,207 @@
 		*height: 358px;
 		border:solid 1px #e3d8bf;
 	}
+.vote{
+	background: #faf8f4;
+	float: left;
+	height: 544px;
+	/*width: 634px;*/
+}
+.vote h3{
+	height: 41px;
+	/*width:629px;*/
+	line-height: 41px;
+	text-indent: 5px;
 
+	background-repeat: repeat-x;
+}
+
+.vote_title0{
+	background: url({CSS_PATH}hy/images/wytp_bg_n.png);
+	color:#ff7200;
+}
+.vote_title0 .vote_num{
+	color:#ff7635;
+}
+.vote_title1{
+	background: url({CSS_PATH}hy/images/wytp_bg_g.png);
+	color:#f0686c;
+}
+.vote_title1 .vote_num{
+color:#e35657;
+}
+.vote_title2{
+	background: url({CSS_PATH}hy/images/wytp_bg_m.png);
+	color:#ae89d8;
+}
+.vote_title2 .vote_num{
+	color:#b077fe;
+}
+
+.thumb img{
+	width: 95px;
+	height: 95px;
+}
+
+ul li{
+	list-style: none;
+	width: 102px;
+	float: left;
+	margin-right: 22px;
+	*margin-right: 20px;
+	margin-bottom:10px;
+}
+ul li p{
+	height: 16px;
+	margin-top: 10px;
+	font-size: 14px;
+	padding-left:5px;
+}
+ul li .thumb{
+	height: 95px;
+	border: solid 1px #d7d5d2;
+	padding: 3px;
+	 
+}
+ul li .st{
+	*position: relative;
+	*top:-16px;
+}
+.tp{
+	width: 45px;
+	height: 23px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+.tp0{
+	background-image: url({CSS_PATH}hy/images/tp_4.png);
+}
+.tp1{
+	background-image: url({CSS_PATH}hy/images/tp_5.png);
+}
+.tp2{
+	background-image: url({CSS_PATH}hy/images/tp_6.png);
+}
+ul{
+	padding-left: 19px;
+}
+.pointUp{
+	position:relative;left:45px;color:red;font-weight:bold;font-family:'微软雅黑';
+}
 </style>
 <div class="center2">
-<div class='col_left'>
+<div class='col_left l'>
+	
+	{loop $week $k $v}
+	<div class="vote border">     
+	<h3 class="vote_title{$k}">至尊{if $k==0}内地{elseif $k==1 }港台{else}民歌{/if}榜
+	<span class="vote_num">{$v['title']}</span></h3>
+	<ul>
+		{loop $v['data'] $r}
+		<li>
+			<p  class='thumb'><img src="{$r[thumb]}" alt="" ></p>	
+			<p  style=''>
+				<span class='title'>{str_cut($r[music],18)}</span>
+				<a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$r[mid]}' target='blank'class='st r'></a>
+			</p>
+			<p>{$r[singer]}</p>
+			<p class='point'><span>票数： <span class='point_n'>{$r[point]}</span></span></p>
+			<p class="tp{$k} tp" ids="{$r[id]}" catid="{$r[id]}" b="{substr($v[tablename],9)}"></p>
+		</li>
+		{/loop}
 
-	<iframe class='vote' src="{APP_PATH}index.php?m=music&c=index&a=showVote&id=26" frameborder="0" name="#week_n"></iframe>
-	<iframe class='vote' src="{APP_PATH}index.php?m=music&c=index&a=showVote&id=27" frameborder="0" name="#week_g"></iframe>
-	<iframe class='vote' src="{APP_PATH}index.php?m=music&c=index&a=showVote&id=28" frameborder="0" name="#week_m"></iframe>
+	</ul>
 	</div>
-	<div class='col_right'>
-	<iframe class='chart' src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=26" frameborder="0"></iframe>
-	<iframe class='chart' src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=27" frameborder="0"></iframe>
-	<iframe class='chart' src="{APP_PATH}index.php?m=music&c=index&a=showCharts&id=28" frameborder="0"></iframe>
+	{/loop}
+</div>	
+	<div class='col_right l'>
+ 	<div class='week'>
+	  <!--  -->
+	  	{loop $week $k $v}
+
+	         <ul class='week_{if $k==0}n{elseif $k==1}g{elseif $k==2}m{/if} border' style='margin-top:25px;'> 
+	          <h1>{$v[title]}</h1>
+	          <table cellspacing="0">
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>票数</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	              
+	               		{loop $v['data'] $n $d}
+	             		<tr {if $n%2==1} class='tr2' {/if}>
+	                    	<td class='td1'><span class='one num num{php echo $n+1}'></span></td>
+	                    	<td class='td2'>{str_cut($d[music],18)}</td>
+	                    	<td class='td3'>{$d[singer]}</td>
+	                    	<td class='td4'>{$d[point]}</td>	
+	
+	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='blank'><b class='st'></b></a></td>
+	                    </tr>
+	                   	{php if($n==10) break;}
+	           			{/loop}
+	              		  
+	               </tbody>
+	          </table>
+	      	</ul>
+	      	 {/loop}
+      </div>
+
 	</div>
-</div>
+
 <div class="c"></div>
+<script type="text/javascript">
+	// 投票异步
+	$(function(){
+		$(".tp").click(function(){
+
+			var id=$(this).attr("ids");
+			var catid=$(this).attr("catid");
+			var tablename=$(this).attr("b");
+			th=$(this);
+			$.post(
+				"<?php echo APP_PATH;?>index.php?m=music&c=index&a=addVoteNum",
+				{id:id,catid:catid,tablename:tablename},
+				function(statu)
+				{
+					switch(parseInt(statu)){
+						case 1:
+						var point_n=th.prev("p").find(".point_n");
+							
+						th.append("<span class='pointUp'>+1</span>");
+						$(".pointUp").animate({"top":"-12px"},500).fadeOut(500);
+						setTimeout(function(){
+							point_n.html(parseInt(point_n.text())+1)},500)
+						break;
+						case -1:
+						alert("你尚未登陆，请登陆后再投票");
+						break;
+						case -2:
+						alert("响应超时，请重试");
+						break;
+						case 0:
+						alert("您今天在此榜单已经投过票了");
+						break;
+						default:
+						alert(statu);
+						break;
+					}
+
+
+
+				}
+
+				)
+
+		})
+
+
+	})
+
+</script>
 {template "content",'footer'}
+

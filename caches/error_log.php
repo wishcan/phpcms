@@ -893,3 +893,16 @@
 <?php exit;?>04-18 11:48:28 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-18 11:51:23 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-18 11:51:23 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-18 12:24:26 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 107
+<?php exit;?>04-18 12:24:26 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 90 and defined | phpcms\modules\music\index.php | 107
+<?php exit;?>04-18 19:39:14 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-18 19:39:14 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-18 22:49:23 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-18 22:49:23 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 09:30:00 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\templates\chart_admin.tpl.php | 29
+<?php exit;?>04-19 10:12:29 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 10:12:29 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 10:12:57 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 10:12:57 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 13:16:56 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 13:16:56 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
