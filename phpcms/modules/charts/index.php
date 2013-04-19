@@ -11,7 +11,13 @@ class index{
 	// 榜单回顾
 	public function init()
 	{
-		$row=$this->db->select('id!=0 group by title','title');
+		$row=$this->db->select('id!=0 group by title','title,count(*) as num');
+		$data=array();
+		foreach ($row as $k => $v) {
+			if(intval($v['num'])===3){
+				$data[]=$v;
+			}				
+		}
 		include template('charts','index');
 	}
 	// 榜单显示大页面

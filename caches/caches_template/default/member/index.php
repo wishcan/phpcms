@@ -11,9 +11,8 @@
         <span><?php echo $modelName;?></span><b><?php echo trim(get_nickname(),'()');?></b>
         <a href='<?php echo APP_PATH;?>index.php?m=member&c=index&a=account_manage_password&t=1'class='change' target='con'><h3 class='on'></h3></a>
         <a href='<?php echo APP_PATH;?>index.php?m=music&c=member&a=collect'class='collect' target='con'><h3></h3></a>
-        <a href=​"index.php?m=member&c=index&a=account_manage_info&t=1"></a>​
         <?php if(in_array($modelid,array('23','24','25'))) { ?>
-        <a href='javascript:void(0)'class='collect'><h3></h3></a>
+        <a href='javascript:void(0)'class='grade'><h3></h3></a>
         <?php } ?>
 
      </div>

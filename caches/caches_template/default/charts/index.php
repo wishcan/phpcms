@@ -40,7 +40,7 @@
 	<h3 class="page_title">
 		<div class="bdhg_w bdhg_title">
 			<ul class='select'>
-				<?php $n=1;if(is_array($row)) foreach($row AS $v) { ?>
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 				<li <?php if($n==1) { ?>class='on'<?php } ?> title='<?php echo mb_substr($v["title"],1,20,"UTF-8")?>'>
 				<?php echo mb_substr($v["title"],1,20,'UTF-8')?>
 				</li>

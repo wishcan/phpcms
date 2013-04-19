@@ -40,7 +40,7 @@
 	<h3 class="page_title">
 		<div class="bdhg_w bdhg_title">
 			<ul class='select'>
-				{loop $row  $v}
+				{loop $data  $v}
 				<li {if $n==1}class='on'{/if} title='{php echo mb_substr($v["title"],1,20,"UTF-8")}'>
 				{php echo mb_substr($v["title"],1,20,'UTF-8')}
 				</li>

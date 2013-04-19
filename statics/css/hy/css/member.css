@@ -1,3 +1,5 @@
+/*前台会员中心页面*/
+
 #member{
 	margin-top: 20px;
 }
@@ -35,15 +37,20 @@ ul li{
 
 }
 .link .change .on{
-background-position:left -75px; 
+background-position:left -96px; 
 }
 .link .collect h3{
-
-background-position:left -115px; 	
+background-position:left -32px; 	
 
 }
 .link .collect .on{
-background-position:left -42px; 
+background-position:left -128px; 
+}
+.link .grade h3{
+background-position:left -64px; 
+}
+.link .grade .on{
+background-position:left -160px; 
 }
 #con{
 width: 690px;

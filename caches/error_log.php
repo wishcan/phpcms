@@ -926,3 +926,5 @@
 <?php exit;?>04-19 14:03:40 | 2 | mb_substr() expects parameter 3 to be long, string given | caches\caches_template\default\charts\index.php | 45
 <?php exit;?>04-19 15:50:36 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
 <?php exit;?>04-19 15:50:36 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 16:27:28 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
+<?php exit;?>04-19 16:27:28 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 91 and defined | phpcms\modules\music\index.php | 108
