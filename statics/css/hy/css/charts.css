@@ -35,24 +35,28 @@
 .bdhg_title .select li{
 	width: 82%;
 	height: 24px;
-	text-indent: -18px;
 	font-size: 14px;
 	line-height: 27px;
 	*margin-left: -18px;
+	*margin-top: -3px;
 	cursor: pointer;
 	display: none;
 	background-color: #f8f8f8;
+	color:#333;
+	
 }
+
 .bdhg_title .select .on{
 	display: block;
+	margin-top: 0;
+	
+	color:#ff6600;
 }
 .bdhg_title .select li:hover
 {
 	background-color: #e8e6ef;
 }
 .chart p{
-	/*height: 43px;*/
-	/*float: left;*/
 	padding-left: 210px;
 }
 .chart p a{

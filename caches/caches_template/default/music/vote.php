@@ -82,10 +82,11 @@ ul li{
 	margin-bottom:10px;
 }
 ul li p{
-	height: 16px;
+	height: 12px;
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 12px;
 	padding-left:5px;
+	font-family: '微软雅黑';
 }
 ul li .thumb{
 	height: 95px;

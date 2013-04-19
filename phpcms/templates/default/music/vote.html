@@ -82,10 +82,11 @@ ul li{
 	margin-bottom:10px;
 }
 ul li p{
-	height: 16px;
+	height: 12px;
 	margin-top: 10px;
-	font-size: 14px;
+	font-size: 12px;
 	padding-left:5px;
+	font-family: '微软雅黑';
 }
 ul li .thumb{
 	height: 95px;
@@ -127,6 +128,7 @@ ul{
 	<h3 class="vote_title{$k}">至尊{if $k==0}内地{elseif $k==1 }港台{else}民歌{/if}榜
 	<span class="vote_num">{$v['title']}</span></h3>
 	<ul>
+		<div class='auto_c'>
 		{loop $v['data'] $r}
 		<li>
 			<p  class='thumb'><img src="{$r[thumb]}" alt="" ></p>	
@@ -138,6 +140,8 @@ ul{
 			<p class='point'><span>票数： <span class='point_n'>{$r[point]}</span></span></p>
 			<p class="tp{$k} tp" ids="{$r[id]}" catid="{$r[id]}" b="{substr($v[tablename],9)}"></p>
 		</li>
+		
+		</div>
 		{/loop}
 
 	</ul>

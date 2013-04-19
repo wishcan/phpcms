@@ -100,8 +100,9 @@ class member{
 		isset($_GET['page'])?$page=$_GET['page']:$page=1;
 		$data=$infos=array();
 		$id=$this->_userid;
-		$sql='select m.title as music,m.id,s.title as singer ,sp.title as spName ,sc.addtime from v9_music as m inner join v9_singer as s inner join v9_sp as sp inner join v9_member_sc as sc on m.sid=s.id and m.spid = sp.id and m.id = sc.mid where sc.id = '.$id;
-		$info=$this->db->my_listinfo(array('sql'=>$sql),'m.listorder desc',$page,$pageSize);
+		// $sql='select m.title as music,m.id,s.title as singer ,sp.title as spName ,sc.addtime from v9_music as m inner join v9_singer as s inner join v9_sp as sp inner join v9_member_sc as sc on m.sid=s.id and m.spid = sp.id and m.id = sc.mid where sc.id = '.$id;
+		$sql='select m.title as music ,m.id as id, m.spName,m.singer,sc.addtime from  v9_music as m inner join v9_member_sc as sc on sc.mid = m.id where sc.id = '.$id;
+		$info=$this->db->my_listinfo(array('sql'=>$sql),'sc.addtime desc',$page,$pageSize);
 		$total=$this->db->number;	
 		include template('music','collect');
 

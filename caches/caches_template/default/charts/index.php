@@ -40,11 +40,12 @@
 	<h3 class="page_title">
 		<div class="bdhg_w bdhg_title">
 			<ul class='select'>
-				<li class='on' title='20130101期'>20130101期</li>
-				<li title='20130102期'>20130102期</li>
-				<li>20130103期</li>
-				<li>20130104期</li>
-			</ul>
+				<?php $n=1;if(is_array($row)) foreach($row AS $v) { ?>
+				<li <?php if($n==1) { ?>class='on'<?php } ?> title='<?php echo mb_substr($v["title"],1,20,"UTF-8")?>'>
+				<?php echo mb_substr($v["title"],1,20,'UTF-8')?>
+				</li>
+				<?php $n++;}unset($n); ?>
+			</ul>	
 		</div>
 	</h3>
 	<div class="center3">
