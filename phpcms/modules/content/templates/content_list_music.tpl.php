@@ -222,8 +222,9 @@ $(document).ready(function(){
         <td align='center'><input name='listorders[<?php echo $r['id'];?>]' type='text' size='3' value='<?php echo $r['listorder'];?>' class='input-text-c'></td>
 		<td align='center' class='id'><?php echo $r['id'];?></td>
 		<td align="center">
-		<div   class="iptd"><input class="tit_ipt"  value="<?php echo $r['title'];?>" type="text" id="title_<?php echo $r['id'];?>"></input>
-		</div>
+		<?php echo $r['title']?>
+		<?php if($r['bestpost'])echo "<span style='color:#FFCC00;'>至</span>";?>
+		<?php if($r['pos'])echo "<span style='color:#E504D2;'>荐</span>";?>
 		</td>
 		<td align='center'>
 		<?php echo $r['singer'];?>
@@ -252,8 +253,6 @@ $(document).ready(function(){
 		?></td>
 		<td align='center'><?php echo format::date($r['updatetime'],1);?></td>
 		<td align='center'><a href="javascript:;" onclick="javascript:openwinx('?m=content&c=content&a=edit&catid=<?php echo $catid;?>&id=<?php echo $r['id']?>','')"><?php echo L('edit');?></a> | <a href="javascript:view_comment('<?php echo id_encode('content_'.$catid,$r['id'],$this->siteid);?>','<?php echo safe_replace($r['title']);?>')"><?php echo L('comment');?></a>
-			<?php if($r['supstar']) echo '<span style="color:#D13EBE">推荐歌曲</span>'?>
-			<?php  if(!$r['supstar'])echo '<span class="tj">推荐</span>' ?>
 			</td>
 		</tr>
      <?php }
@@ -431,9 +430,9 @@ setInterval("refersh_window()", 3000);
  */
 $(".tj").click(function()
 {
-	var id=$(this).parent().parent().find('.id').text();
+	var id=$(this).parent().parent().find('input[name="id"]').text();
 	$.post(
-		'index.php?m=artistic&c=index&a=setSupstar',
+		'index.php?m=music&c=index&a=setPos',
 			{id:id},
 			function(data){
 				if(data==1){
@@ -444,7 +443,22 @@ $(".tj").click(function()
 
 		)
 })
+// function setPos(id,statu,best)
+// {
+// 		$.post(
+// 		'index.php?m=music&c=index&a=setPos',
+// 			{id:id,statu:statu},
+// 			function(data){
+// 				if(data==1){
+// 					alert('推荐成功');
+// 					location.reload();
+// 				}else{
+// 					alert('推荐失败请重试');
+// 				}
+// 			}
 
+// 		)
+// }
 
 //-->
 </script>

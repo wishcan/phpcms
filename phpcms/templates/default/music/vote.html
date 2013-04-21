@@ -167,7 +167,7 @@ ul{
 					</p>
 					<p>{$r[singer]}</p>
 					<p class='point'><span>票数： <span class='point_n'>{$r[point]}</span></span></p>
-					<p class="tp{$k} tp" ids="{$r[id]}" catid="{$r[id]}" b="{substr($v[tablename],9)}"></p>
+					<p class="tp{$k} tp" ids="{$r[id]}" catid="{$k}" b="{substr($v[tablename],9)}"></p>
 				</li>
 				{if $n==$count}
 				</ul>

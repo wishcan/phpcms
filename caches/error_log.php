@@ -946,3 +946,20 @@
 <?php exit;?>04-19 17:09:43 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 73 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-19 17:09:45 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
 <?php exit;?>04-19 17:09:45 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 19:17:00 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 19:17:00 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 23:02:06 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 23:02:06 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 23:04:38 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-19 23:04:38 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-20 00:04:52 | 2 | file_put_contents(D:\wamp\www\phpcms\uploadfile/2013/0420/thumb_158_242_20130418113822685.jpg) [<a href='function.file-put-contents'>function.file-put-contents</a>]: failed to open stream: No such file or directory | phpcms\modules\attachment\attachments.php | 133
+<?php exit;?>04-20 00:07:31 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-20 00:07:31 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:10 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:10 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:21 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:21 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:30 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:30 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:37 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-21 23:46:37 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106

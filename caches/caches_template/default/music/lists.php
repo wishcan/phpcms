@@ -1,8 +1,6 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php if($_GET[hash]==1) { ?>
 <?php include template("content","header"); ?>
 <SCRIPT TYPE="text/javascript">
-	APP_PATH=<?php echo APP_PATH;?>;
-	// $('title').text($("title").html())
 	$('title').html('新歌推荐——<?php if($_GET[id]==26) { ?>内地推荐<?php } elseif ($_GET[id]==27) { ?>港台推荐<?php } else { ?>民歌推荐<?php } ?>')
 </SCRIPT>
 <title></title>
@@ -46,14 +44,14 @@
 		<!-- 搜索栏结束 -->	
 			<div class='c'></div>
 			<!-- 内地歌曲推荐开始 -->
-			<div class='music_list music_list_n'>
+			<div class='music_list music_list_n' style='height:auto;'>
 <?php } ?>
 <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/hy_header.css">
 <link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
-<div id='music_list_page' class='<?php if($_GET[id]==26) { ?>new_t_n<?php } elseif ($_GET[id]==27) { ?>new_t_g<?php } else { ?>new_t_m<?php } ?>'>
+<div id='music_list_page' style='height:auto;' class='<?php if($_GET[id]==26) { ?>new_t_n<?php } elseif ($_GET[id]==27) { ?>new_t_g<?php } else { ?>new_t_m<?php } ?>'>
 	<h3 class=''>
 		<?php if(!$_GET['hash']) { ?><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=lists&id=<?php echo $_GET['id'];?>&hash=1' target='blank'></a><?php } ?></h3>
-	<div class='musics'>
+	<div class='musics' style='height:auto;'>
 	<table cellspacing="0">
 		<thead>
 		

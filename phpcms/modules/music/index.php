@@ -145,7 +145,6 @@ class index{
 			$id=$_POST['id'];
 			$catid=$_POST['catid'];
 			$tablename=$this->pre.'chart_'.$_POST['tablename'];
-			$ip='127.0.0.1';
 			$addTime=time();
 			switch ($this->checkIp($catid,$tablename)) {
 				case 0:
@@ -155,12 +154,12 @@ class index{
 				$sql="update ".$tablename."_ip"." set  addtime = ".$addTime." ,catids = concat_ws('|',catids,".$catid.")";
 				break;
 				case 2:
+				$ip=ip();
 				$sql="insert into ".$tablename."_ip"."(ip,addtime,catids)values('".$ip."' , ".$addTime.",".$catid." )";
 				default:
 					# code...
 					break;
 			}
-
 			if($this->db->query($sql))
 				{
 					$addVoteNumSql='update '.$tablename.' set point = point+1 where id='.$id;
@@ -187,9 +186,8 @@ class index{
 	private function checkIp($catid,$tablename)
 	{
 		$ip=ip();
-		$ip='127.0.0.1';
 		$iptable=$tablename.'_ip';
-		if(!$catid) exit('你没有权限进行此操作');
+		if(!isset($catid)) exit('你没有权限进行此操作');
 		$sql='select  catids ,addtime from '.$iptable.' where ip = "'.$ip.'"';
 		$row=$this->db->queryAll($sql);
 		$statu=1;
@@ -205,7 +203,6 @@ class index{
 			}else{
 				$statu=0;
 			}
-
 		}else{
 			$statu=2;
 		}
@@ -426,6 +423,34 @@ class index{
 			$datas[$j]=$data[0];
 		}
  		include template('music','list_charts');
+ 	}
+
+ 	public function setPos()
+ 	{
+
+ 		if(!$_POST['id']) showmessage("非法操作");
+
+ 		if($_POST['statu']==1)
+ 		{
+ 			$statu=0;
+ 		}elseif($_POST['statu']==0){
+ 			$statu=1;
+
+ 		}else{
+ 			showmessage("非法操作");
+
+ 		}
+
+ 		$sql=$this->db->update(array("pos"=>$statu),'id = '.$$_POST['id']);
+
+ 		if($sql){
+ 			echo 1;
+ 		}else{
+ 			echo 2;
+ 		}
+
+
+
  	}
 
 

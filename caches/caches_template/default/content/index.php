@@ -32,75 +32,63 @@
             <div class='good_h'></div>
             <ul class='classes l'>
                 <li class='l good_l1'>
-                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
+               	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b69252b3748fdcdb641a13f103299780&action=lists&catid=26&order=listorder+asc%2Cupdatetime+desc&num=3&return=data&where=bestpost+%3D+1+and+catid%3D26&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'26','order'=>'listorder asc,updatetime desc','where'=>'bestpost = 1 and catid=26','moreinfo'=>'\'1\'  ','limit'=>'3',));}?>
+               	<?php $keys=array_keys($data)?>
+                <img src='<?php echo $data[$keys['0']]['thumb'];?>' class='l'/> 
                 <ul class='l'>
                     <div class='good_h2'></div>
                     <table>
-                        <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
+                
+					<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+                        <tr thumb='<?php echo $v["thumb"];?>'>
+                           <td class='good_t1'><?php echo $v['title'];?></td> 
+                           <td class='good_t2'><?php echo $v['singer'];?></td>
+                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
-                         <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr> 
-                        <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr>   
+					<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>                                 
                     </table>
                 </ul>
-
                 </li>
                 <div class='c'></div>
                  <li class='l  good_l2'>
-                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=a9d192abb61f96f34f6c85a62721e09b&action=lists&catid=27&order=listorder+asc%2Cupdatetime+desc&num=3&return=data&where=bestpost+%3D+1++and+catid%3D27&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'27','order'=>'listorder asc,updatetime desc','where'=>'bestpost = 1  and catid=27','moreinfo'=>'\'1\'  ','limit'=>'3',));}?> 	
+                               	<?php $keys=array_keys($data)?>
+                <img src='<?php echo $data[$keys['0']]['thumb'];?>' class='l'/> 
                 <ul class='l'>
                     <div class='good_h3'></div>
                     <table>
-                        <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
+                   
+					<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+                        <tr thumb='<?php echo $v["thumb"];?>'>
+                           
+                           <td class='good_t1'><?php echo $v['title'];?></td> 
+                           <td class='good_t2'><?php echo $v['singer'];?></td>
+                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
-                         <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr> 
-                        <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr>   
+					<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>           
                     </table>
                 </ul>
 
                 </li>
                 <div class='c'></div>
                 <li class='l good_l3'>
-                <img src='<?php echo CSS_PATH;?>hy/images/zw3.png' class='l'/> 
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=c0a85a147f0f17af6d7dffb013623f65&action=lists&catid=28&order=listorder+asc%2Cupdatetime+desc&num=3&return=data&where=bestpost+%3D+1++and+catid%3D28&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'28','order'=>'listorder asc,updatetime desc','where'=>'bestpost = 1  and catid=28','moreinfo'=>'\'1\'  ','limit'=>'3',));}?> 	
+                <?php $keys=array_keys($data)?>
+                <img src='<?php echo $data[$keys['0']]['thumb'];?>' class='l'/>
                 <ul class='l'>
                     <div class='good_h4'></div>
                     <table>
+
+					<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
                         <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
+                           <td class='good_t1'><?php echo $v['title'];?></td> 
+                           <td class='good_t2'><?php echo $v['singer'];?></td>
+                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
-                         <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr> 
-                        <tr>
-                           <td class='good_t1'>《天使的梦》</td> 
-                           <td class='good_t2'>白若溪</td>
-                           <td class='good_t3'><b class='st'></b></td>
-                        </tr>   
+					<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>          
                     </table>
                 </ul>
 
@@ -511,42 +499,16 @@
 				<h3 class='l'></h3>
 				<div class='center2 l'>
 				<ul>
+				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b8c4d1c992eddf767f2f9c2cd76c4c73&action=lists&catid=26&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D26&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'26','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=26','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span><span>Dear Diary</span></span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
+						<img src='<?php echo $v["thumb"];?>' />
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='singer'><?php echo $v['singer'];?></p>
+						<i class='tp'></i>
 					</li>
-					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
-					</li>
-					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
-					</li>
-					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
-					</li>
-					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
-					</li>
-					<li>
-						<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-						<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-						<p class='singer'>Robynn & Kendy</p>
-						<i></i>
-					</li>					
+				<?php $n++;}unset($n); ?>	
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>			
 				</ul>
 			</div>
 			</div>
@@ -563,46 +525,21 @@
 			    	</div>
 		    </div>	
 				<div class='c'></div>
+				<!-- 港台新歌推荐 -->
 		 		<div class='music_g'>
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>					
+						<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=7ed9fc4a7eda779456dc76e5dca8c5ac&action=lists&catid=27&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D27&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'27','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=27','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+					<li>
+						<img src='<?php echo $v["thumb"];?>' />
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='singer'><?php echo $v['singer'];?></p>
+						<i class='tp'></i>
+					</li>
+				<?php $n++;}unset($n); ?>	
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>				
 						</ul>
 					</div>
 				</div>
@@ -619,46 +556,21 @@
 			    	</div>
 		    </div>	
 		    <div class='c'></div>
+		    <!-- 民歌新歌推荐 -->
 			<div class='music_m'>
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name l'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>
-							<li>
-								<img src='<?php echo CSS_PATH;?>hy/images/zw4-7.png' />
-								<p class='music_name'><span>Dear Diary</span><b class='st'></b></p>
-								<p class='singer'>Robynn & Kendy</p>
-								<i></i>
-							</li>					
+							<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=64d86dedd524cb1e68c615149cceed46&action=lists&catid=28&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D28&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'28','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=28','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+					<li>
+						<img src='<?php echo $v["thumb"];?>' />
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='singer'><?php echo $v['singer'];?></p>
+						<i class='tp'></i>
+					</li>
+				<?php $n++;}unset($n); ?>	
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>					
 						</ul>
 			</div>
 			</div>		
