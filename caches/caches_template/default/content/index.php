@@ -43,7 +43,7 @@
                         <tr thumb='<?php echo $v["thumb"];?>'>
                            <td class='good_t1'><?php echo $v['title'];?></td> 
                            <td class='good_t2'><?php echo $v['singer'];?></td>
-                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
 					<?php $n++;}unset($n); ?>
 				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>                                 
@@ -64,7 +64,7 @@
                            
                            <td class='good_t1'><?php echo $v['title'];?></td> 
                            <td class='good_t2'><?php echo $v['singer'];?></td>
-                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
 					<?php $n++;}unset($n); ?>
 				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>           
@@ -85,7 +85,7 @@
                         <tr>
                            <td class='good_t1'><?php echo $v['title'];?></td> 
                            <td class='good_t2'><?php echo $v['singer'];?></td>
-                           <td class='good_t3'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
                         </tr>
 					<?php $n++;}unset($n); ?>
 				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>          
@@ -114,7 +114,7 @@
                     	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=70e60edaff7f2f83f3be09bbd3707e1d&action=position&posid=2&order=listorder+DESC&num=1&return=info\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'position')) {$info = $content_tag->position(array('posid'=>'2','order'=>'listorder DESC','limit'=>'1',));}?>
                     	
                     	<?php $n=1;if(is_array($info)) foreach($info AS $v) { ?>
-                    <a href="<?php echo $v['url'];?>" target="_blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>>
+                    <a href="<?php echo $v['url'];?>" target="__blank" title="<?php echo $v['title'];?>"<?php echo title_style($v[style]);?>>
                           <h3 class='hot_title'><?php echo str_cut($v['title'],50);?></h3>
                           <p class='hot_desc'>
                             <?php echo str_cut($v['description'],100);?> <span class='more'>查看详细 >></span>
@@ -191,7 +191,7 @@
 	                    	<td class='td3'><?php echo $d['singer'];?></td>
 	                    	<td class='td4'><?php echo $d['point'];?></td>
 
-	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $d['mid'];?>' target='blank'><b class='st'></b></a></td>
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $d['mid'];?>' target='_blank'><b class='st'></b></a></td>
 	                    </tr>
 	              		  <?php $n++;}unset($n); ?>
 	              		  
@@ -499,16 +499,16 @@
 				<h3 class='l'></h3>
 				<div class='center2 l'>
 				<ul>
-				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b8c4d1c992eddf767f2f9c2cd76c4c73&action=lists&catid=26&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D26&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'26','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=26','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
-				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+
+				<?php $n=1;if(is_array($pos_n['data'])) foreach($pos_n['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a taget="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
-				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>			
+							
 				</ul>
 			</div>
 			</div>
@@ -530,16 +530,16 @@
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-						<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=7ed9fc4a7eda779456dc76e5dca8c5ac&action=lists&catid=27&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D27&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'27','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=27','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
-				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+						
+				<?php $n=1;if(is_array($pos_g['data'])) foreach($pos_g['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a target="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
-				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>				
+								
 						</ul>
 					</div>
 				</div>
@@ -561,16 +561,15 @@
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-							<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=64d86dedd524cb1e68c615149cceed46&action=lists&catid=28&order=listorder+asc%2Cupdatetime+desc&num=6&return=data&where=pos+%3D+1++and+catid%3D28&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'28','order'=>'listorder asc,updatetime desc','where'=>'pos = 1  and catid=28','moreinfo'=>'\'1\'  ','limit'=>'6',));}?> 
-				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+				<?php $n=1;if(is_array($pos_m['data'])) foreach($pos_m['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
-				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>					
+									
 						</ul>
 			</div>
 			</div>		
@@ -606,7 +605,7 @@
 
 				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 				<li>
-					<a href='<?php echo $v['url'];?>' title='<?php echo $v['title'];?>'>
+					<a href='<?php echo $v['url'];?>' title='<?php echo $v['title'];?>' target='_blank'>
 						<img src='<?php echo $v['thumb'];?>' class='l' />
 						<div class='message l'>
 							

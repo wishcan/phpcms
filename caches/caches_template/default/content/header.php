@@ -64,17 +64,16 @@ $(function(){
 		</div>
 		<div class='center'>
 			<div class='menu'>
-				<a href="<?php echo APP_PATH;?>">首页</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=about'>榜单简介</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=9'>新闻资讯</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=12'>新歌推荐</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=vote'>网友投票</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=charts'>榜单回顾</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=15'>合作联盟</a>
-				<a href='<?php echo APP_PATH;?>index.php?m=artistic'>艺术人生</a>
+				<a href="<?php echo APP_PATH;?>" target="_blank">首页</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=about'target="_blank" >榜单简介</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=9' target="_blank">新闻资讯</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=12'target="_blank">新歌推荐</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=vote' target="_blank">网友投票</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=charts' target="_blank">榜单回顾</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=15' target="_blank">合作联盟</a>
+				<a href='<?php echo APP_PATH;?>index.php?m=artistic' target="_blank">艺术人生</a>
 			</div>
 		</div>
-
 	</div>
 	<!--LOGO 结束-->
 	<!-- 登陆和注册开始 -->
@@ -82,4 +81,3 @@ $(function(){
 	<!-- 登陆和注册结束-->
 </div>
 <!-- 头部结束 -->
- 

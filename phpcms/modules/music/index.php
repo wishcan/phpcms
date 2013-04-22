@@ -138,24 +138,21 @@ class index{
 	 */
 	public function addVoteNum()
 	{
-			// if(!$this->_userid){
-			// 	echo -1;
-			// 	return;
-			// }
 			$id=$_POST['id'];
+			// echo 1;exit;
 			$catid=$_POST['catid'];
 			$tablename=$this->pre.'chart_'.$_POST['tablename'];
 			$addTime=time();
-			switch ($this->checkIp($catid,$tablename)) {
+			switch ($this->checkIp($id,$tablename)) {
 				case 0:
 					echo 0;
 					return ;
 				case 1:
-				$sql="update ".$tablename."_ip"." set  addtime = ".$addTime." ,catids = concat_ws('|',catids,".$catid.")";
+				$sql="update ".$tablename."_ip"." set  addtime = ".$addTime." ,catids = concat_ws('|',catids,".$id.")";
 				break;
 				case 2:
 				$ip=ip();
-				$sql="insert into ".$tablename."_ip"."(ip,addtime,catids)values('".$ip."' , ".$addTime.",".$catid." )";
+				$sql="insert into ".$tablename."_ip"."(ip,addtime,catids)values('".$ip."' , ".$addTime.",".$id." )";
 				default:
 					# code...
 					break;
@@ -183,11 +180,11 @@ class index{
 	 * @param  [int] $catid [description]
 	 * @return [int] $stau  1:没投过票，0：投过票,2:没有投过票需要新建一条记录]; 
 	 */
-	private function checkIp($catid,$tablename)
+	private function checkIp($id,$tablename)
 	{
 		$ip=ip();
 		$iptable=$tablename.'_ip';
-		if(!isset($catid)) exit('你没有权限进行此操作');
+		if(!isset($id)) exit('你没有权限进行此操作');
 		$sql='select  catids ,addtime from '.$iptable.' where ip = "'.$ip.'"';
 		$row=$this->db->queryAll($sql);
 		$statu=1;
@@ -197,7 +194,7 @@ class index{
 		if(!empty($row))
 		{	
 			$arr=explode('|',$row[0]['catids']);
-			if((!in_array($catid, $arr)) && $this->checkAddtime($row[0]['addtime']))
+			if((!in_array($id, $arr)) && $this->checkAddtime($row[0]['addtime']))
 			{
 				$statu=1;
 			}else{

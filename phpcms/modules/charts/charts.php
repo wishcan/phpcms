@@ -39,7 +39,7 @@ class charts extends admin{
 
 		if($this->db->table_exists($this->tableName.$id))
 		{
-			$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
+			$sql='select m.title as music,sid,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  order by ch.point desc';
 			$row=$this->db->queryAll($sql);
 			$num=count($row);
 		}else{
@@ -155,7 +155,6 @@ class charts extends admin{
 	{
 		if(!$_POST['id']) return '非法操作，请刷新页面后重试';
 		$id=rtrim($_POST['id'],',');
-		echo $id;
 		$tablename=$_POST['tablename'];
 		$sql='delete from '.$tablename.' where id in ('.$id.' )';
 
@@ -172,14 +171,14 @@ class charts extends admin{
 	 * @param  id        歌曲在榜单中的Id；
 	 * @param  tablename 表单的表名；
 	 * @param  point     修改后需要达到的票数
-	 * @return [num]      1:修改成功；-1：修改失败
+	 * @return [statu]      1:修改成功；-1：修改失败
 	 */
 	public function changePoint(){
 		if(!$_POST['id'])
 		{
 			return '非法操作，请刷新页面后重试';
 		}
-		$sql='update '.$_POST['tablename'].' set point = '.$_POST['point'];
+		$sql='update '.$_POST['tablename'].' set point = '.$_POST['point'].' where id = '.$_POST['id'];
 		if($this->db->query($sql)){
 
 			echo 1;
@@ -188,7 +187,31 @@ class charts extends admin{
 		}
 
 	}
+	/**
+	 * @param  id       歌曲在榜单中的Id 
+	 * @param  tablname 表单名
+	 * @param  pos      是否推荐
+	 * @return [statu]  1:修改成功；-1：修改失败
+	 */
+	public function setPos()
+	{
+		if(!$_POST['id'])
+		{
+			return '非法操作，请刷新页面后重试';
+		}
+		if($_POST['pos']==1){
+			$pos=0;
+		}else if($_POST['pos']==0){
+			$pos=1;
+		}
+		$sql='update '.$_POST['tablename'].' set sid = '.$pos.' where id = '.$_POST['id'];
+		if($this->db->query($sql)){
 
+			echo 1;
+		}else{
+			echo -1;
+		}
+	}
 
 }
 ?>

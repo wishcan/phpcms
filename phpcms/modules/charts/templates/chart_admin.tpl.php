@@ -36,10 +36,21 @@
     	<td><?php echo $v['music'];?></td>
     	<td><?php echo $v['singer'];?></td>
     	<td><?php echo $v['point'];?></td>
-    	
+
     	<td>
     		<a name='delete' style='cursor:pointer;'onclick='javascript:deleteMusic(<?php echo $v["id"]?>)'><?php echo L('delete')?></a>
-			<a style='cursor:pointer' onclick='javascript:changePoint(<?php echo $v["id"]?>,<?php echo $v["point"]?>)'name='changepoint'>票数修改</a>
+			|<a style='cursor:pointer' onclick='javascript:changePoint(<?php echo $v["id"]?>,<?php echo $v["point"]?>)'name='changepoint'>票数修改</a>
+    		|<a style='cursor:pointer' onclick='javascript:setPos(<?php echo $v["id"]?><?php if($v["sid"]) echo ",".$v["sid"]?>)'>
+		<?php 
+			if ($v["sid"]) {
+				echo "取消推荐";
+			}else{
+				echo "推荐到首页";
+			}
+		?>
+
+
+    	</a>
     	</td>	
 		
     </tr>
@@ -145,8 +156,6 @@ function changePoint(id,point)
 			if(confirm("确定从榜单中删除吗？"))
 			{
 				var id=id;
-		 
-
 				$.post(
 					'?m=charts&c=charts&a=deleteMusic',
 					{id:id,tablename:tablename},
@@ -171,7 +180,32 @@ function changePoint(id,point)
 					);
 			}
 		}
-	
+//推荐到首页
+function setPos(id,pos)
+{
+				$.post(
+					'?m=charts&c=charts&a=setPos',
+					{id:id,pos:pos,tablename:tablename},
+					function(statu)
+					{
+						
+						switch(parseInt(statu)){
+							case 1:
+							alert("操作成功")
+							location.reload();
+							break;
+							case -1:
+							alert("操作失败请稍后重试");
+							break;
+							default:
+							alert(statu);
+							break;
+						}
+					}
+
+
+					);
+} 
 
 
 //-->

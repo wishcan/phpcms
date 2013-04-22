@@ -43,7 +43,7 @@
                         <tr thumb='{$v["thumb"]}'>
                            <td class='good_t1'>{$v['title']}</td> 
                            <td class='good_t2'>{$v['singer']}</td>
-                           <td class='good_t3'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
                         </tr>
 					{/loop}
 				{/pc}                                 
@@ -64,7 +64,7 @@
                            
                            <td class='good_t1'>{$v['title']}</td> 
                            <td class='good_t2'>{$v['singer']}</td>
-                           <td class='good_t3'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
                         </tr>
 					{/loop}
 				{/pc}           
@@ -85,7 +85,7 @@
                         <tr>
                            <td class='good_t1'>{$v['title']}</td> 
                            <td class='good_t2'>{$v['singer']}</td>
-                           <td class='good_t3'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
+                           <td class='good_t3'><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
                         </tr>
 					{/loop}
 				{/pc}          
@@ -114,7 +114,7 @@
                     	{pc:content  action="position" posid="2" order="listorder DESC" num="1" return="info"}
                     	
                     	{loop $info $v}
-                    <a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>
+                    <a href="{$v['url']}" target="__blank" title="{$v['title']}"{title_style($v[style])}>
                           <h3 class='hot_title'>{str_cut($v['title'],50)}</h3>
                           <p class='hot_desc'>
                             {str_cut($v['description'],100)} <span class='more'>查看详细 >></span>
@@ -191,7 +191,7 @@
 	                    	<td class='td3'>{$d[singer]}</td>
 	                    	<td class='td4'>{$d[point]}</td>
 
-	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='blank'><b class='st'></b></a></td>
+	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='_blank'><b class='st'></b></a></td>
 	                    </tr>
 	              		  {/loop}
 	              		  
@@ -499,16 +499,16 @@
 				<h3 class='l'></h3>
 				<div class='center2 l'>
 				<ul>
-				{pc:content  action="lists"  catid="26" order="listorder asc,updatetime desc" num="6"  return="data" where="pos = 1  and catid=26" moreinfo='1'  } 
-				{loop $data $v}
+
+				{loop $pos_n['data'] $v}
 					<li>
 						<img src='{$v["thumb"]}' />
-						<p class='music_name'><span><span>{$v['title']}</span></span><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
+						<p class='music_name'><span><span>{$v['title']}</span></span><a taget="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
 						<i class='tp'></i>
 					</li>
 				{/loop}	
-				{/pc}			
+							
 				</ul>
 			</div>
 			</div>
@@ -530,16 +530,16 @@
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-						{pc:content  action="lists"  catid="27" order="listorder asc,updatetime desc" num="6"  return="data" where="pos = 1  and catid=27" moreinfo='1'  } 
-				{loop $data $v}
+						
+				{loop $pos_g['data'] $v}
 					<li>
 						<img src='{$v["thumb"]}' />
-						<p class='music_name'><span><span>{$v['title']}</span></span><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
+						<p class='music_name'><span><span>{$v['title']}</span></span><a target="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
 						<i class='tp'></i>
 					</li>
 				{/loop}	
-				{/pc}				
+								
 						</ul>
 					</div>
 				</div>
@@ -561,16 +561,15 @@
 						<h3 class='l'></h3>
 						<div class='center2 l'>
 						<ul>
-							{pc:content  action="lists"  catid="28" order="listorder asc,updatetime desc" num="6"  return="data" where="pos = 1  and catid=28" moreinfo='1'  } 
-				{loop $data $v}
+				{loop $pos_m['data'] $v}
 					<li>
 						<img src='{$v["thumb"]}' />
-						<p class='music_name'><span><span>{$v['title']}</span></span><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
+						<p class='music_name'><span><span>{$v['title']}</span></span><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
 						<i class='tp'></i>
 					</li>
 				{/loop}	
-				{/pc}					
+									
 						</ul>
 			</div>
 			</div>		
@@ -606,7 +605,7 @@
 
 				{loop $data $v}
 				<li>
-					<a href='{$v[url]}' title='{$v[title]}'>
+					<a href='{$v[url]}' title='{$v[title]}' target='_blank'>
 						<img src='{$v[thumb]}' class='l' />
 						<div class='message l'>
 							

@@ -14,7 +14,6 @@
   <i class='l'></i>
 </div>
 <div class='music_link r'>
-  
   <i class='l'></i>
   <i class='l'></i>
 </div>

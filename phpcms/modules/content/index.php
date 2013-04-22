@@ -5,11 +5,18 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 pc_base::load_app_func('util','content');
 class index {
 	private $db;
+	private $week_n;
+	private $week_g;
+	private $week_m;
+
 	function __construct() {
 		$this->db = pc_base::load_model('content_model');
 		$this->_userid = param::get_cookie('_userid');
 		$this->_username = param::get_cookie('_username');
 		$this->_groupid = param::get_cookie('_groupid');
+		// $this->week_n=$this->getChar(26);
+		// $this->week_g=$this->getChar(27);
+		// $this->week_m=$this->getChar(28);
 		$this->pre=$this->db->db_tablepre;
 	}
 	//首页
@@ -31,12 +38,16 @@ class index {
 		$default_style = $sitelist[$siteid]['default_style'];
 		$CATEGORYS = getcache('category_content_'.$siteid,'commons');
 
-
 		//周榜单数据	
 		$week_n=$this->getChar(26);
 		$week_g=$this->getChar(27);
 		$week_m=$this->getChar(28);
 		$week=array($week_n,$week_g,$week_m);
+		// 首页推荐数据
+		$pos_n=$this->getChar(26,' where sid = 1',6);
+		$pos_g=$this->getChar(27,' where sid = 1',6);
+		$pos_m=$this->getChar(28,' where sid = 1',6);
+		
 		include template('content','index',$default_style);
 	}
 
@@ -52,20 +63,20 @@ class index {
 	 * @return string  $title 榜单标题 
 	 * 待优化
 	 */
-	public function getChar($id,$limit=1)
+	public function getChar($id,$where,$size=10)
 	{
 		if(!$id){
 			exit("请指定榜单");
 		}
 	
 		$id=$id+20;
-		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
+		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit 1';
 		$chart=$this->db->queryAll($sql);
-		$data=$this->getDatas($chart[0]['tablename']);
+		$data=$this->getDatas($chart[0]['tablename'],$where,$size);
 		$data['title']=$chart[0]['title'];
 		return $data;
 	}
-	public function getDatas($tablename='',$page=1,$limit=10)
+	public function getDatas($tablename='',$where,$size=10)
 	{
 
 		if(!$tablename || !$this->db->table_exists(substr($tablename, mb_strlen($this->pre))))
@@ -76,24 +87,9 @@ class index {
 
 
 		$data=$infos=array();
-		$sql='select m.title as music,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  ';	
-		$info=$this->db->my_listinfo(array('sql'=>$sql),'ch.point desc',$page,$limit);
-		$total=$this->db->number;
-		if($total>0)
-		{
-				$pages=$this->db->pages;
-				foreach($info as $_v)
-				{
-					if(strpos($_v['url'],'://')===false)$v['url']='1'.$v['url'];
-					$data[]=$_v;
-				}
-
-		}else{
-			$data=$info;
-		}
-		
-		$row['page']=$pages;
-		$row['data']=$data;
+		$sql='select m.title as music,m.thumb as thumb,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  '.$where .' order by ch.point desc limit '.$size;	
+		$info=$this->db->queryAll($sql);
+		$row['data']=$info;
 		return $row;
 	}
 
