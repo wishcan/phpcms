@@ -82,6 +82,9 @@ background: #fcfbf8;
  	<?php if(in_array(($n-1)/10,array(0,1,2,3))){?>
 	<div class="border l">
  		<ul class='week_<?php if($_GET[id]==0) { ?>n<?php } elseif ($_GET[id]==1) { ?>g<?php } elseif ($_GET[id]==2) { ?>m<?php } ?> <?php if((($n-1)/10)%2>0)echo  "u2";?>'>
+ 		<style type="text/css">
+
+ 		</style>
 	          <table cellspacing="0" class='l'>
 	                <thead>
 	                    <tr>

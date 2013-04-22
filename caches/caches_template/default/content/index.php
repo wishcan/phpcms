@@ -503,7 +503,7 @@
 				<?php $n=1;if(is_array($pos_n['data'])) foreach($pos_n['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a taget="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['music'];?></span></span><a taget="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
@@ -534,7 +534,7 @@
 				<?php $n=1;if(is_array($pos_g['data'])) foreach($pos_g['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a target="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['music'];?></span></span><a target="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
@@ -564,7 +564,7 @@
 				<?php $n=1;if(is_array($pos_m['data'])) foreach($pos_m['data'] AS $v) { ?>
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
-						<p class='music_name'><span><span><?php echo $v['title'];?></span></span><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
+						<p class='music_name'><span><span><?php echo $v['music'];?></span></span><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
 						<i class='tp'></i>
 					</li>
