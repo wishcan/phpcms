@@ -1079,3 +1079,352 @@
 <?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
 <?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
 <?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 19:27:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 19:27:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 19:27:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 20:21:36 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-23 20:21:36 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-23 20:21:43 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-23 20:21:43 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-23 20:29:55 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:30:03 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:30:29 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:30:35 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:30:35 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 311
+<?php exit;?>04-23 20:30:35 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 311
+<?php exit;?>04-23 20:31:16 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:31:16 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 312
+<?php exit;?>04-23 20:31:16 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 312
+<?php exit;?>04-23 20:31:29 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:32:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:32:56 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:33:40 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:35:18 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:36:48 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:38:34 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:59:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:59:27 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:59:42 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 20:59:42 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:02:53 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:02:53 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:03 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:03 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:03 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:03 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:03 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:03 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:21 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:21 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:21 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:21 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:21 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:21 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:04:52 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:04:52 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:07 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:07 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:08 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:08 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:22 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:22 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:27 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:46 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:05:46 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:14 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:14 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:41 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:41 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:54 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:06:54 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:07:05 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:07:05 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:07:41 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:07:41 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:07:41 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 358
+<?php exit;?>04-23 21:07:41 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 358
+<?php exit;?>04-23 21:07:41 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 358
+<?php exit;?>04-23 21:07:41 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 358
+<?php exit;?>04-23 21:08:22 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:08:22 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:08:44 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:08:44 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:09:42 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:09:42 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:09:57 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:09:57 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:10:20 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:10:20 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:10:58 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:10:58 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:10:58 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:10:58 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:10:58 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:10:58 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:11:05 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:11:05 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:11:05 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:11:05 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:11:05 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:11:05 | 2 | Cannot use a scalar value as an array | phpcms\modules\charts\charts.php | 357
+<?php exit;?>04-23 21:11:13 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:11:13 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:00 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:00 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:11 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:11 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:42 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:12:42 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:13:38 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:13:38 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:13:47 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:13:47 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:02 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:02 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:34 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:34 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:56 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:14:56 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:15:16 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:15:16 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:32:33 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:32:33 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:32:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:32:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:33:35 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:33:35 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:38:16 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:38:16 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:41:52 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:41:52 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:42:05 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:42:05 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:42:56 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:42:56 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:06 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:06 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:56 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:43:56 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:45:10 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:45:10 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:45:37 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:45:37 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:49 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:49 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:59 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:59 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:59 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:49:59 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:04 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:04 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:06 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:06 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:15 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:15 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:29 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:50:29 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:00 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:00 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:40 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:40 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:54:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:05 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:05 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:33 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:33 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:39 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:39 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:58 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:55:58 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:09 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:09 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:20 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:20 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:34 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:34 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:56:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:57:22 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:57:22 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:57:37 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:57:37 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:14 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:14 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:27 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:30 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:30 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:38 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:58:38 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:10 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:10 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:18 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:18 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:24 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:24 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:25 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:25 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:52 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 21:59:52 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:00:19 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:00:19 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:00:31 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:00:31 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:09 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:09 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:27 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:33 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:33 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:41 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:41 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:55 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:01:55 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:06 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:06 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:31 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:31 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:32 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:32 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:56 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:02:56 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:06 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:06 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:13 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:13 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:17 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:17 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:25 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:25 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:35 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:35 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:40 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:40 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:57 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:03:57 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:04:49 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:04:49 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:05 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:05 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:14 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:14 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:22 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:22 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:36 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:36 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:43 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:43 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:59 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:05:59 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:09 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:09 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:33 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:33 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:51 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:06:51 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:07:13 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:07:13 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:07:44 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:07:44 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:23 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:23 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:51 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:51 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:55 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:08:55 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:04 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:04 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:13 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:13 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:32 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:32 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:36 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:36 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:42 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:09:42 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:10:44 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:10:44 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:10:51 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:10:51 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:40 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:40 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:41 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:41 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:58 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:11:58 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:12:10 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:12:10 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:12:16 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:12:16 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:02 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:02 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:18 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:18 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:36 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:36 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:44 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:14:44 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:15:24 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:15:24 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:17:31 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:17:31 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:17:54 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:17:54 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:18:24 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:18:24 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:18:35 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:18:35 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:20:22 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:20:22 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:20:30 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:20:30 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:21 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:21 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:31 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:31 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:40 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:40 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:55 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:21:55 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:26:12 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:26:12 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:26:37 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:26:37 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:27:33 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:27:33 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:27:33 | 2 | Division by zero               | phpcms\modules\charts\charts.php | 341
+<?php exit;?>04-23 22:27:33 | 2 | Division by zero               | phpcms\modules\charts\charts.php | 341
+<?php exit;?>04-23 22:27:33 | 2 | Division by zero               | phpcms\modules\charts\charts.php | 341
+<?php exit;?>04-23 22:27:33 | 2 | Division by zero               | phpcms\modules\charts\charts.php | 341
+<?php exit;?>04-23 22:27:33 | 2 | Division by zero               | phpcms\modules\charts\charts.php | 341
+<?php exit;?>04-23 22:27:45 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:27:45 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:28:13 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:28:13 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:28:39 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:28:39 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:10 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:10 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:27 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:27 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:42 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:29:42 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:09 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:09 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:23 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:23 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:37 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:30:37 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:32:02 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:32:02 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:32:15 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 22:32:15 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 301
+<?php exit;?>04-23 23:08:59 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 302
+<?php exit;?>04-23 23:08:59 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 302
+<?php exit;?>04-23 23:08:59 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 391

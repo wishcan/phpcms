@@ -587,8 +587,8 @@ return array (
     'siteid' => '1',
     'field' => 'content',
     'name' => '内容',
-    'tips' => '<div class="content_attr"><label><input name="add_introduce" type="checkbox"  value="1" checked>是否截取内容</label><input type="text" name="introcude_length" value="200" size="3">字符至内容摘要
-<label><input type=\'checkbox\' name=\'auto_thumb\' value="1" checked>是否获取内容第</label><input type="text" name="auto_thumb_no" value="1" size="2" class="">张图片作为标题图片
+    'tips' => '<div class="content_attr"><label><input name="add_introduce" type="checkbox"  value="1">是否截取内容</label><input type="text" name="introcude_length" value="200" size="3">字符至内容摘要
+<label><input type=\'checkbox\' name=\'auto_thumb\' value="1" >是否获取内容第</label><input type="text" name="auto_thumb_no" value="1" size="2" class="">张图片作为标题图片
 </div>',
     'css' => '',
     'minlength' => '0',

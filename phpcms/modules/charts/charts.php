@@ -8,9 +8,9 @@ pc_base::load_sys_class('form','',0);
 pc_base::load_app_func('util');
 pc_base::load_sys_class('format','',0);
 class charts extends admin{
-	public $db;
-	public $rid;
-
+	public  $db;
+	public  $rid;
+	private $min;
 	public $tableName;
 	public function __construct()
 	{
@@ -244,14 +244,15 @@ class charts extends admin{
 				
 				if($this->db->query($crSQL))
 				{
-					echo 1;
+					$statu=1;
 				}else{
-					echo -1;
+					$stau=0;
 				}
 			}
 		}
-
-
+		$data=$this->getMusics($catid+10,$chids);
+		
+		$this->addMusicToMounth($data,$id);
 	}
 	/**
 	 * 验证月榜中周榜的Id
@@ -294,76 +295,194 @@ class charts extends admin{
 			}
 
 	}
-	public function test()
+	/**
+	 * @param  [integer] $catid 月榜单的类别
+	 * @param  [integer] $ids   周榜的Id
+	 * @return [array]	 $data  mid为歌曲的Id point为歌曲的票数 从0开始计算
+	 */
+	public function getMusics($catid,$ids)
 	{
-		$c1=array(
-				0=>array("mid"=>20,"point"=>10),
-				1=>array("mid"=>22,"point"=>13),
-				2=>array("mid"=>23,"point"=>14),
-				3=>array("mid"=>24,"point"=>15),
-				4=>array("mid"=>26,"point"=>9),
-				5=>array("mid"=>27,"point"=>11),
-				6=>array("mid"=>30,"point"=>31),
-				7=>array("mid"=>2,"point"=>50),
-				8=>array("mid"=>11,"point"=>15),
-				9=>array("mid"=>12,"point"=>14),
-				10=>array("mid"=>25,"point"=>15),
-				11=>array("mid"=>13,"point"=>17),
-				12=>array("mid"=>14,"point"=>18),
-				13=>array("mid"=>17,"point"=>22),
-				14=>array("mid"=>18,"point"=>29),
-				15=>array("mid"=>19,"point"=>25),
-			);
-		$c2=array(
-				0=>array("mid"=>31,"point"=>33),
-				1=>array("mid"=>32,"point"=>14),
-				2=>array("mid"=>33,"point"=>12),
-				3=>array("mid"=>34,"point"=>11),
-				4=>array("mid"=>35,"point"=>31),
-				5=>array("mid"=>36,"point"=>50),
-				6=>array("mid"=>37,"point"=>23),
-				7=>array("mid"=>38,"point"=>24),
-				8=>array("mid"=>39,"point"=>26),
-				9=>array("mid"=>40,"point"=>31),
-				10=>array("mid"=>41,"point"=>39),
-				11=>array("mid"=>42,"point"=>50),
-				12=>array("mid"=>43,"point"=>51),
-				13=>array("mid"=>44,"point"=>17),
-				14=>array("mid"=>45,"point"=>19),
-				15=>array("mid"=>46,"point"=>22),
-			);
-		$c3=array(
-				0=>array("mid"=>20,"point"=>31),
-				1=>array("mid"=>11,"point"=>22),
-				2=>array("mid"=>10,"point"=>25),
-				3=>array("mid"=>42,"point"=>29),
-				4=>array("mid"=>50,"point"=>31),
-				5=>array("mid"=>41,"point"=>38),
-				6=>array("mid"=>52,"point"=>41),
-				7=>array("mid"=>53,"point"=>42),
-				8=>array("mid"=>55,"point"=>46),
-				9=>array("mid"=>59,"point"=>55),
-				10=>array("mid"=>22,"point"=>67),
-				11=>array("mid"=>8,"point"=>66),
-				12=>array("mid"=>22,"point"=>33),
-				13=>array("mid"=>16,"point"=>39),
-				14=>array("mid"=>43,"point"=>15),
-				15=>array("mid"=>46,"point"=>7),
-			);
-		$array=array($c1,$c2,$c3);
-		$min=25;
-		$mounth=array();
-		foreach ($array as $key => $v) {
-				
-				foreach ($v as $n => $r)
+		//6,8
+		$musics=$this->getDatas($ids);
+		switch (intval($catid)) {
+			case 56:
+				$this->min=25;
+				break;
+			case 57:
+				$this->min=20;
+				break;
+			case 58:
+			$this->min=15;
+				break;
+			default:
+				# code...
+				break;
+		}
+
+		// 如果歌曲数目不够就获取差的数据；
+		if(count($musics)<$this->min)
+		{
+
+			$minus=$this->min-count($musics);
+			$moreMusic=$this->getDatas($ids,'10,1000',1);
+			$temp='';
+			$keys=array_keys($moreMusic);
+			$i=$j=$n=0;
+			$len=count($moreMusic);
+			$more=array();
+			// 将获得的第二次获得的数据排序
+			foreach ($moreMusic as $k=>$v)
+			{
+
+				if(in_array($k,array_keys($musics)))
+				{	
+					continue;
+				}else{
+				$more[$i]['mid']=$k;
+				$more[$i]['point']=$v['point']/$v['time'];
+				}
+
+				$i++;
+			}
+			for($n=0;$n<count($more);$n++)
+			{	
+
+				for($j=0;$j<count($more);$j++)
 				{
-					
+					if($more[$j]['point']<$more[$n]['point'])
+					{
+						$temp=$more[$n];
+						// $temp['mid']=$more[];
+						$more[$n]=$more[$j];
+						$more[$j]=$temp;
+					}
+				}
+			}
+			// 获得差的数据条数
+			foreach ($more as $m => $n) {
+					$musics[$n['mid']]['point']=$n['point'];
+
+					if($m+1==$minus)
+					{
+						break;
+					}
+			}
+		}
+		$data=array();
+		$x=0;
+		foreach ($musics as $key => $value) {
+			
+				$data[$x]['point']=$value['point'];
+				$data[$x]['mid']=$key;
+			$x++;	
+		}
+		return $data;
+	}
+
+	/**
+	 * 获得周榜中的歌曲
+	 * @param  [type]  $ids   [description]
+	 * @param  integer $limit [description]
+	 * @return [type]         [description]
+	 */
+	public function getDatas($ids,$limit=10,$time=0)
+	{
+		if(is_string($ids))$ids=explode(',', $ids);
+		$musics=array();
+		foreach ($ids as $v)
+		{
+				$sql='select mid,point from '.$this->pre.'chart_'.$v.' order by point desc limit '.$limit;
+				$row=$this->db->queryAll($sql);
+				foreach ($row as $n) {
+
+					if(array_key_exists($n['mid'], $musics))
+					{
+
+						$musics[$n['mid']]['point']+=$n['point'];
+					}else
+					{
+						$musics[$n['mid']]=array();
+						$musics[$n['mid']]['point']=$n['point'];
+					}
+					if($time)$musics[$n['mid']]['time']+=1;
 				}
 
 		}
-
-
+		return $musics;
 	}
+	/**
+	 * 将歌曲添加到月榜单中
+	 * @param  [mixed]   $mids 歌曲的Id可为2维数组也可为一维数组也可以是字符串也可是数字
+	 * @param  [integer] $id   对应的表单Id
+	 * @return [integer]       1:成功；-1：数据库执行失败； -2：缺少参数；
+	 */
+	public function addMusicToMounth($mids,$id)
+	{
+		if(!$mids || !$id)
+		{
+			echo -2;
+		}
+		$str=array();
+		if(is_array($mids))
+		{
+			foreach ($mids as $key => $value)
+			{
+				if(array_key_exists('mid', $value))
+				{
+					$str[]=$value['mid'];
+				}else{
+					$str=$mids;
+				}
+			}
+		}else{
+			$str[]=$mids;
+		}
+		$tablename=$this->pre.'mounth_'.$id;
+		$musisc=array();
+		$sql='select mid from '.$tablename;
+		$music=$this->db->queryAll($sql);
+		$ids=array();
+		$insertids='';
+		$updateids='';
+		foreach ($music as $k => $v) {
+			$ids[]=$v['mid'];
+		}
+		foreach ($str as $m => $n) {
+			if(in_array($n, $ids))
+			{
+				$updateids.=$n.',';
+			}else{
+				$insertids.="($n),";
+			}
+		}
+	
+		$statu=1;
+		if($updateids){
+			$updateSQL='update '.$tablename.' set updatetime = '.time().' where mid in ('.trim($updateids,',').')';
+			if($this->db->query($updateSQL))
+			{
+				$statu=1;
+			}else{
+				$statu=0;
+			}
+		}
+
+		if($insertids)
+		{
+			$insertSQL='insert into '.$tablename.' (mid) values'.trim($insertids,',');
+			if($this->db->query($insertSQL))
+			{
+				$statu=1;
+			}else{
+				$statu=0;
+			}
+		}
+		return $statu;
+	}
+
+
+
+
 
 
 }
