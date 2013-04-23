@@ -206,12 +206,165 @@ class charts extends admin{
 		}
 		$sql='update '.$_POST['tablename'].' set sid = '.$pos.' where id = '.$_POST['id'];
 		if($this->db->query($sql)){
-
 			echo 1;
 		}else{
 			echo -1;
 		}
 	}
+
+
+
+
+	/**
+	 * 月榜的生成与后台管理
+	 */
+
+	public function createMounth()
+	{
+		$catid=$_POST['catid'];
+		$id=$_POST['id'];
+		$lastDay=date("t");
+		// 获得当前月的最后一天和第一天的时间戳；
+		$first=strtotime(date("Y-m-1"));
+		$last=strtotime(date("Y-m-".$lastDay));	
+		//获取对应周榜中的Id
+		$sql='select * from v9_chart where catid='.$catid.' and inputtime between '.$first.' and '.$last;
+		$row=$this->db->queryAll($sql);
+		$chids=array();
+		foreach ($row as $k=> $v) {	
+			$chids[]=$v['id'];		
+		}
+		if($this->updateMounth($id,$chids))
+		{
+			$tablename=$this->pre.'mounth_'.$id;
+
+			if(!$this->db->table_exists('mounth_'.$id))
+			{
+				$crSQL=' create table '.$tablename.' (id int not null primary key auto_increment,mid int ,hids text,meids varchar (400),eids varchar (400),hgrade int,megrade int,exgrade int,commit text)';
+				
+				if($this->db->query($crSQL))
+				{
+					echo 1;
+				}else{
+					echo -1;
+				}
+			}
+		}
+
+
+	}
+	/**
+	 * 验证月榜中周榜的Id
+	 * @param  [integer] $id   [月榜的主键]
+	 * @return [array]   $data [周榜Id素组]
+	 */
+	public function getchids($id,$chids)
+	{
+		$mouSQL='select chids from v9_mounth where id='.$id;
+		$data=$this->db->queryAll($mouSQL);
+		$data=explode(',', $data[0]['chids']);
+		$chid='';
+		foreach ($chids as $v) {
+			if(!in_array($v, $data))
+			{
+				$chid.=$v.',';
+			}
+		}
+
+		return rtrim($chid,',');
+	}	
+	/**
+	 * 更新月榜的chids
+	 * @param  [integer] $ids [需要添加的字段]
+	 * @return [integer] 1:更新成功  0：失败
+	 */
+	public function updateMounth($id,$chids)
+	{		
+
+			isset($_POST['chids'])?$chids=$_POST['chids']:$chids=$chids;
+			isset($_POST['id'])?$id=$_POST['id']:$id=$id;
+			$chids=$this->getchids($id,$chids);
+			$updateSQL='update v9_mounth set chids= concat_ws(",",chids,"'.$chids.'") where id='.$id;
+			// return $updateSQL;
+			if($this->db->query($updateSQL))
+			{
+				return 1;
+			}else{
+				return 0;
+			}
+
+	}
+	public function test()
+	{
+		$c1=array(
+				0=>array("mid"=>20,"point"=>10),
+				1=>array("mid"=>22,"point"=>13),
+				2=>array("mid"=>23,"point"=>14),
+				3=>array("mid"=>24,"point"=>15),
+				4=>array("mid"=>26,"point"=>9),
+				5=>array("mid"=>27,"point"=>11),
+				6=>array("mid"=>30,"point"=>31),
+				7=>array("mid"=>2,"point"=>50),
+				8=>array("mid"=>11,"point"=>15),
+				9=>array("mid"=>12,"point"=>14),
+				10=>array("mid"=>25,"point"=>15),
+				11=>array("mid"=>13,"point"=>17),
+				12=>array("mid"=>14,"point"=>18),
+				13=>array("mid"=>17,"point"=>22),
+				14=>array("mid"=>18,"point"=>29),
+				15=>array("mid"=>19,"point"=>25),
+			);
+		$c2=array(
+				0=>array("mid"=>31,"point"=>33),
+				1=>array("mid"=>32,"point"=>14),
+				2=>array("mid"=>33,"point"=>12),
+				3=>array("mid"=>34,"point"=>11),
+				4=>array("mid"=>35,"point"=>31),
+				5=>array("mid"=>36,"point"=>50),
+				6=>array("mid"=>37,"point"=>23),
+				7=>array("mid"=>38,"point"=>24),
+				8=>array("mid"=>39,"point"=>26),
+				9=>array("mid"=>40,"point"=>31),
+				10=>array("mid"=>41,"point"=>39),
+				11=>array("mid"=>42,"point"=>50),
+				12=>array("mid"=>43,"point"=>51),
+				13=>array("mid"=>44,"point"=>17),
+				14=>array("mid"=>45,"point"=>19),
+				15=>array("mid"=>46,"point"=>22),
+			);
+		$c3=array(
+				0=>array("mid"=>20,"point"=>31),
+				1=>array("mid"=>11,"point"=>22),
+				2=>array("mid"=>10,"point"=>25),
+				3=>array("mid"=>42,"point"=>29),
+				4=>array("mid"=>50,"point"=>31),
+				5=>array("mid"=>41,"point"=>38),
+				6=>array("mid"=>52,"point"=>41),
+				7=>array("mid"=>53,"point"=>42),
+				8=>array("mid"=>55,"point"=>46),
+				9=>array("mid"=>59,"point"=>55),
+				10=>array("mid"=>22,"point"=>67),
+				11=>array("mid"=>8,"point"=>66),
+				12=>array("mid"=>22,"point"=>33),
+				13=>array("mid"=>16,"point"=>39),
+				14=>array("mid"=>43,"point"=>15),
+				15=>array("mid"=>46,"point"=>7),
+			);
+		$array=array($c1,$c2,$c3);
+		$min=25;
+		$mounth=array();
+		foreach ($array as $key => $v) {
+				
+				foreach ($v as $n => $r)
+				{
+					
+				}
+
+		}
+
+
+	}
+
 
 }
 ?>

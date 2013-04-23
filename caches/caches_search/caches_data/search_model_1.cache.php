@@ -48,6 +48,12 @@ return array (
     'name' => '榜单',
     'sort' => '0',
   ),
+  30 => 
+  array (
+    'typeid' => '67',
+    'name' => '月榜单',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',

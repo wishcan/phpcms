@@ -22,11 +22,11 @@ class index{
 	}
 	// 榜单显示大页面
 	// 单项
-
  	// 查分结果页面显示
  	
  	public function searchPoint()
  	{
+ 		
  		include template('charts','search_point');
  	}
 

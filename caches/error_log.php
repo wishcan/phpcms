@@ -1033,3 +1033,49 @@
 <?php exit;?>04-22 20:35:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
 <?php exit;?>04-22 20:35:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
 <?php exit;?>04-22 20:35:52 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:06:06 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-22 22:06:06 | 2 | Missing argument 4 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 89 and defined | phpcms\modules\music\index.php | 106
+<?php exit;?>04-22 22:06:17 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:06:17 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:06:17 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:15:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:15:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:15:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:30:47 | 2 | Missing argument 2 for category::delete_child(), called in D:\wamp\www\phpcms\phpcms\modules\admin\category.php on line 345 and defined | phpcms\modules\admin\category.php | 340
+<?php exit;?>04-22 22:33:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:33:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-22 22:33:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 14:45:07 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 232
+<?php exit;?>04-23 14:45:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 239
+<?php exit;?>04-23 14:45:07 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 239
+<?php exit;?>04-23 15:07:43 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:07:43 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:07:43 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:08:54 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:08:54 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:08:54 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:09:25 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:09:25 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:09:25 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:09:51 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:09:51 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:09:51 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:10:14 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:10:14 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:10:14 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:11:51 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:11:51 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:11:51 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:11:55 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:11:55 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:11:55 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:12:46 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 262
+<?php exit;?>04-23 15:12:46 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 265
+<?php exit;?>04-23 15:12:46 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 265
+<?php exit;?>04-23 15:13:34 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 261
+<?php exit;?>04-23 15:13:34 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:13:34 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\charts\charts.php | 264
+<?php exit;?>04-23 15:16:00 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\charts\charts.php | 240
+<?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-23 18:38:31 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
