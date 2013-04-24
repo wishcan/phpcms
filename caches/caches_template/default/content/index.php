@@ -8,12 +8,7 @@
         <!-- 幻灯片开始 -->
         <div class='h_images l'>  
             <div class='imgs'>
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
-	                <img src='<?php echo CSS_PATH;?>hy/images/zw1.png' />
+			<script language="javascript" src="<?php echo APP_PATH;?>caches/poster_js/12.js"></script>
             </div>
             <div class='zz'></div>
             <ul class='h_num'>
@@ -34,7 +29,7 @@
                 <li class='l good_l1'>
                	<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=b69252b3748fdcdb641a13f103299780&action=lists&catid=26&order=listorder+asc%2Cupdatetime+desc&num=3&return=data&where=bestpost+%3D+1+and+catid%3D26&moreinfo=%271%27++\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'26','order'=>'listorder asc,updatetime desc','where'=>'bestpost = 1 and catid=26','moreinfo'=>'\'1\'  ','limit'=>'3',));}?>
                	<?php $keys=array_keys($data)?>
-                <img src='<?php echo $data[$keys['0']]['thumb'];?>' class='l'/> 
+                <img src='<?php echo $data[$keys['0']]['thumb'];?>' class='l imgthumb'/> 
                 <ul class='l'>
                     <div class='good_h2'></div>
                     <table>
@@ -82,7 +77,7 @@
                     <table>
 
 					<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
-                        <tr>
+                        <tr thumb='<?php echo $v["thumb"];?>'>
                            <td class='good_t1'><?php echo $v['title'];?></td> 
                            <td class='good_t2'><?php echo $v['singer'];?></td>
                            <td class='good_t3'><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></td>
@@ -169,8 +164,8 @@
       <!-- 周排行榜 -->
       <div class='week'>
 	  <!--  -->
-	  	<?php $n=1; if(is_array($week)) foreach($week AS $n => $v) { ?>
-	         <ul class='week_<?php if($n==0) { ?>n<?php } elseif ($n==1) { ?>g<?php } elseif ($n==2) { ?>m<?php } ?>'> 
+	  	<?php $n=1; if(is_array($week)) foreach($week AS $s => $v) { ?>
+	         <ul class='week_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?>'> 
 	          <h1><?php echo $v['title'];?></h1>
 	          <table cellspacing="0">
 	                <thead>
@@ -199,7 +194,7 @@
 	          </table>
 	          	<div class='week_t'>
 	          		<span>为您喜欢的歌曲投上一票吧</span>
-	          		<a href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=vote'></a>
+	          		<a target='_blank' href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=vote#vote_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?>'></a>
 	          	</div>
 	      	</ul>
 	      	 <?php $n++;}unset($n); ?>
@@ -505,7 +500,7 @@
 						<img src='<?php echo $v["thumb"];?>' />
 						<p class='music_name'><span><span><?php echo str_cut($v['music'],24);?></span></span><a taget="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
-						<i class='tp'></i>
+						<i class='tp' ids="<?php echo $v['mid'];?>" b=<?php echo substr($pos_n['table_name'],9);?>></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
 							
@@ -532,11 +527,12 @@
 						<ul>
 						
 				<?php $n=1;if(is_array($pos_g['data'])) foreach($pos_g['data'] AS $v) { ?>
+
 					<li>
 						<img src='<?php echo $v["thumb"];?>' />
 						<p class='music_name'><span><span><?php echo $v['music'];?></span></span><a target="_blank" href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['id'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
-						<i class='tp'></i>
+						<i class='tp' ids="<?php echo $v['mid'];?>" b=<?php echo substr($pos_g['table_name'],9);?>></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
 								
@@ -566,7 +562,7 @@
 						<img src='<?php echo $v["thumb"];?>' />
 						<p class='music_name'><span><span><?php echo $v['music'];?></span></span><a target='_blank' href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>'><b class='st'></b></a></p>
 						<p class='singer'><?php echo $v['singer'];?></p>
-						<i class='tp'></i>
+						<i class='tp' ids="<?php echo $v['mid'];?>" b=<?php echo substr($pos_m['table_name'],9);?>></i>
 					</li>
 				<?php $n++;}unset($n); ?>	
 									
@@ -601,7 +597,7 @@
 		<div id='messages' class='l'>
 			<h6><a href='<?php echo APP_PATH;?>index.php?m=content&c=index&a=lists&catid=44'>更多</a></h6>
 			<ul class='l'>
-				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=e17acbc9726c4059b5565b020baae7dc&action=lists&catid=44&order=updatetime+desc&num=3&return=data&moreinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'44','order'=>'updatetime desc','moreinfo'=>'1','limit'=>'3',));}?>
+				<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=15b76812b4a4fa1682a86eb9abfbfd08&action=lists&catid=44&order=updatetime+desc&num=3&return=data&moreinfo=1\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'lists')) {$data = $content_tag->lists(array('catid'=>'44','order'=>'updatetime desc','moreinfo'=>'1','limit'=>'3',));}?>
 
 				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
 				<li>
@@ -632,11 +628,54 @@
 <!--引入尾部结束-->
 <!-- 页面结束 -->
 
-        </div>
+</div>
   
 <script type="text/javascript"> 
 $(function(){
-	new slide("#main-slide","cur",310,260,1);//焦点图
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+	$("a").attr("target",'_blank');
+
+	$(".good_sound tr").mouseover(function()
+	{
+
+		$(this).parent().parent().parent().prev("img").attr("src",$(this).attr("thumb"));
+	})
+
+		$(".tp").click(function(){
+
+			var id=$(this).attr("ids");
+			var catid=$(this).attr("catid");
+			var tablename=$(this).attr("b");
+			th=$(this);
+			$.post(
+				"<?php echo APP_PATH;?>index.php?m=music&c=index&a=addVoteNum",
+				{id:id,tablename:tablename},
+				function(statu)
+				{
+					switch(parseInt(statu)){
+						case 1:
+						var point_n=th.prev("p").find(".point_n");
+						th.append("<span class='pointUp' >+1</span>");
+						$(".pointUp").animate({"top":"-80px"},500).fadeOut(500);
+						setTimeout(function(){
+							point_n.html(parseInt(point_n.text())+1)},500)
+						break;
+						case -1:
+						alert("你尚未登陆，请登陆后再投票");
+						break;
+						case -2:
+						alert("响应超时，请重试");
+						break;
+						case 0:
+						alert("您今天已经对此歌曲已经投过票了");
+						break;
+						default:
+						alert(statu);
+						break;
+					}
+				}
+
+				)
+		})
+
 })
 </script>

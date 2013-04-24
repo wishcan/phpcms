@@ -501,17 +501,15 @@ class charts extends admin{
 	 * 显示月榜中的歌曲
 	 * @return [type] [description]
 	 */
-	public function showMounth($id)
+	public function mounthAdmin($id)
 	{
 		isset($_GET['id'])?$id=$_GET['id']:$id=$id;
 		$tablename=$this->pre.'mounth_'.$id;
-		$sql='select m.id as mid,m.title ,m.singer,mo.id as id from '.$tablename.' as mo inner join v9_music as m on m.id=mo.mid';
-		echo $sql;
+		$sql='select m.id as mid,m.title as music ,m.singer,mo.id as id from '.$tablename.' as mo inner join v9_music as m on m.id=mo.mid';
+
 		$row=$this->db->queryAll($sql);
-		echo '<pre>';
-		print_r($row);
-
-
+		$num=count($row);
+		include $this->admin_tpl('mounth_admin');
 	}
 
 

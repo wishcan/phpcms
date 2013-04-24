@@ -273,11 +273,6 @@ class index{
 	public function vote()
 	{
 		$week=$this->getNewChart();
-
-		// for($i=0;$i<40;$i++)
-		// {
-		// 	$data[$i]=$week[0]['data'][0];
-		// }
 		$size=10;
 		include template('music','vote');
 
@@ -331,16 +326,15 @@ class index{
 			}
 		}
 			include template("music",'showCharts');
-
 		}
 
 
 	// 获得最新的榜单信息
 	public function getNewChart()
 	{
-		$week_n=$this->getChar(26);
-		$week_g=$this->getChar(27);
-		$week_m=$this->getChar(28);
+		$week_n=$this->getChar(26,100);
+		$week_g=$this->getChar(27,100);
+		$week_m=$this->getChar(28,100);
 		$week=array($week_n,$week_g,$week_m);
 		return $week;
 	}
@@ -352,16 +346,16 @@ class index{
 	 * @return string  $title 榜单标题 
 	 * 待优化
 	 */
-	public function getChar($id,$limit=1)
+	public function getChar($id,$size)
 	{
 		if(!$id){
 			exit("请指定榜单");
 		}
 	
 		$id=$id+20;
-		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
+		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit 1';
 		$chart=$this->db->queryAll($sql);
-		$data=$this->getDatas($chart[0]['tablename']);
+		$data=$this->getDatas($chart[0]['tablename'],$size);
 		$data['tablename']=$chart[0]['tablename'];
 		$data['title']=$chart[0]['title'];
 		return $data;
@@ -374,7 +368,7 @@ class index{
 	 * @return integer $id        榜单表中的主键
 	 * @return array   $row       [二维数组包括得到的数据和分页]
 	 */
-	public function getDatas($tablename='',$page=1,$limit=10)
+	public function getDatas($tablename='',$limit=10,$page=1)
 	{
 
 		if(!$tablename || !$this->db->table_exists(substr($tablename, mb_strlen($this->pre))))

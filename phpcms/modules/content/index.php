@@ -47,7 +47,7 @@ class index {
 		$pos_n=$this->getChar(26,' where sid = 1',6);
 		$pos_g=$this->getChar(27,' where sid = 1',6);
 		$pos_m=$this->getChar(28,' where sid = 1',6);
-		
+
 		include template('content','index',$default_style);
 	}
 
@@ -74,6 +74,7 @@ class index {
 		$chart=$this->db->queryAll($sql);
 		$data=$this->getDatas($chart[0]['tablename'],$where,$size);
 		$data['title']=$chart[0]['title'];
+		$data['table_name']=$chart[0]['tablename'];
 		return $data;
 	}
 	public function getDatas($tablename='',$where,$size=10)

@@ -8,12 +8,7 @@
         <!-- 幻灯片开始 -->
         <div class='h_images l'>  
             <div class='imgs'>
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
-	                <img src='{CSS_PATH}hy/images/zw1.png' />
+			<script language="javascript" src="{APP_PATH}caches/poster_js/12.js"></script>
             </div>
             <div class='zz'></div>
             <ul class='h_num'>
@@ -34,7 +29,7 @@
                 <li class='l good_l1'>
                	{pc:content  action="lists"  catid="26" order="listorder asc,updatetime desc" num="3"  return="data" where="bestpost = 1 and catid=26" moreinfo='1'  }
                	{php $keys=array_keys($data)}
-                <img src='{$data[$keys[0]][thumb]}' class='l'/> 
+                <img src='{$data[$keys[0]][thumb]}' class='l imgthumb'/> 
                 <ul class='l'>
                     <div class='good_h2'></div>
                     <table>
@@ -82,7 +77,7 @@
                     <table>
 
 					{loop $data $v}
-                        <tr>
+                        <tr thumb='{$v["thumb"]}'>
                            <td class='good_t1'>{$v['title']}</td> 
                            <td class='good_t2'>{$v['singer']}</td>
                            <td class='good_t3'><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></td>
@@ -169,8 +164,8 @@
       <!-- 周排行榜 -->
       <div class='week'>
 	  <!--  -->
-	  	{loop $week $n $v}
-	         <ul class='week_{if $n==0}n{elseif $n==1}g{elseif $n==2}m{/if}'> 
+	  	{loop $week $s $v}
+	         <ul class='week_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'> 
 	          <h1>{$v[title]}</h1>
 	          <table cellspacing="0">
 	                <thead>
@@ -199,7 +194,7 @@
 	          </table>
 	          	<div class='week_t'>
 	          		<span>为您喜欢的歌曲投上一票吧</span>
-	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=vote'></a>
+	          		<a target='_blank' href='{APP_PATH}/index.php?m=music&c=index&a=vote#vote_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'></a>
 	          	</div>
 	      	</ul>
 	      	 {/loop}
@@ -505,7 +500,7 @@
 						<img src='{$v["thumb"]}' />
 						<p class='music_name'><span><span>{str_cut($v['music'],24)}</span></span><a taget="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp'></i>
+						<i class='tp' ids="{$v['mid']}" b={substr($pos_n['table_name'],9)}></i>
 					</li>
 				{/loop}	
 							
@@ -532,11 +527,12 @@
 						<ul>
 						
 				{loop $pos_g['data'] $v}
+
 					<li>
 						<img src='{$v["thumb"]}' />
 						<p class='music_name'><span><span>{$v['music']}</span></span><a target="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp'></i>
+						<i class='tp' ids="{$v['mid']}" b={substr($pos_g['table_name'],9)}></i>
 					</li>
 				{/loop}	
 								
@@ -566,7 +562,7 @@
 						<img src='{$v["thumb"]}' />
 						<p class='music_name'><span><span>{$v['music']}</span></span><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp'></i>
+						<i class='tp' ids="{$v['mid']}" b={substr($pos_m['table_name'],9)}></i>
 					</li>
 				{/loop}	
 									
@@ -601,7 +597,7 @@
 		<div id='messages' class='l'>
 			<h6><a href='{APP_PATH}index.php?m=content&c=index&a=lists&catid=44'>更多</a></h6>
 			<ul class='l'>
-				{pc:content  action="lists"  catid="44" order="updatetime desc" num="3" return="data"moreinfo="1"}
+				{pc:content  action="lists"  catid="44" order="updatetime desc" num="3" return="data"  moreinfo="1"}
 
 				{loop $data $v}
 				<li>
@@ -632,11 +628,54 @@
 <!--引入尾部结束-->
 <!-- 页面结束 -->
 
-        </div>
+</div>
   
 <script type="text/javascript"> 
 $(function(){
-	new slide("#main-slide","cur",310,260,1);//焦点图
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
+	$("a").attr("target",'_blank');
+
+	$(".good_sound tr").mouseover(function()
+	{
+
+		$(this).parent().parent().parent().prev("img").attr("src",$(this).attr("thumb"));
+	})
+
+		$(".tp").click(function(){
+
+			var id=$(this).attr("ids");
+			var catid=$(this).attr("catid");
+			var tablename=$(this).attr("b");
+			th=$(this);
+			$.post(
+				"<?php echo APP_PATH;?>index.php?m=music&c=index&a=addVoteNum",
+				{id:id,tablename:tablename},
+				function(statu)
+				{
+					switch(parseInt(statu)){
+						case 1:
+						var point_n=th.prev("p").find(".point_n");
+						th.append("<span class='pointUp' >+1</span>");
+						$(".pointUp").animate({"top":"-80px"},500).fadeOut(500);
+						setTimeout(function(){
+							point_n.html(parseInt(point_n.text())+1)},500)
+						break;
+						case -1:
+						alert("你尚未登陆，请登陆后再投票");
+						break;
+						case -2:
+						alert("响应超时，请重试");
+						break;
+						case 0:
+						alert("您今天已经对此歌曲已经投过票了");
+						break;
+						default:
+						alert(statu);
+						break;
+					}
+				}
+
+				)
+		})
+
 })
 </script>

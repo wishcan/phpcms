@@ -136,6 +136,7 @@ ul{
 	background-color: #fff;
 	color:#999;
 	margin-right: 8px;
+	cursor: pointer;
 }
 .page .numon{
 	color:#fff;
@@ -153,35 +154,34 @@ ul{
 </style>
 <div class="center2">
 <div class='col_left l'>
-	
 	{loop $week $k $v}
-	<div class="vote border vote_{if $k==0}n{elseif $k==1}g{elseif $k==2}m{/if}">     
+	<div class="vote border vote_{if $k==0}n{elseif $k==1}g{elseif $k==2}m{/if}"name="vote_{if $k==0}n{elseif $k==1}g{elseif $k==2}m{/if}" id="vote_{if $k==0}n{elseif $k==1}g{elseif $k==2}m{/if}">     
 	<h3 class="vote_title{$k}">至尊{if $k==0}内地{elseif $k==1 }港台{else}民歌{/if}榜
 	<span class="vote_num ">{$v['title']}</span></h3>
 		<div class='auto_c'>
 			<ul>
-				<!-- <div class='auto_c'> -->
-				
-				{loop $v['data']  $r}
-				{php $count=count($data);}
+
+				{loop $v['data'] $n $r}
+
+				{php $count=count($v['data']);}
 				<li>
 					<p  class='thumb'><img src="{$r[thumb]}" alt="" ></p>	
 					<p  style=''>
-						<span class='title'>{str_cut($r[music],18)}</span>
+						<span class='title '>{str_cut($r[music],18)}</span>
 						<a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$r[mid]}' target='blank'class='st r'></a>
 					</p>
 					<p>{$r[singer]}</p>
 					<p class='point'><span>票数： <span class='point_n'>{$r[point]}</span></span></p>
 					<p class="tp{$k} tp" ids="{$r[id]}" catid="{$k}" b="{substr($v[tablename],9)}"></p>
 				</li>
-				{if $n==$count}
+				{if $n+1==$count}
+
 				</ul>
-				{elseif $n%$size==0}
+				{elseif ($n+1)%$size==0 && $n!==0}
 				</ul>
 				<ul>
 				{/if}	
 				{/loop}
-			
 		</div>
 		<div class="c"></div>
 		<div class='page nums'></div>
@@ -212,11 +212,10 @@ ul{
 	                    	<td class='td1'><span class='one num num{php echo $n+1}'></span></td>
 	                    	<td class='td2'>{str_cut($d[music],18)}</td>
 	                    	<td class='td3'>{$d[singer]}</td>
-	                    	<td class='td4'>{$d[point]}</td>	
-	
+	                    	<td class='td4'>{$d[point]}</td>
 	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='blank'><b class='st'></b></a></td>
 	                    </tr>
-	                   	{php if($n==10) break;}
+	                   	{php if($n==9) break;}
 	           			{/loop}
 	              		  
 	               </tbody>
@@ -228,10 +227,7 @@ ul{
 	</div>
 
 <div class="c"></div>
-<style type="text/css">
-
-
-</style>
+</div>
 <script type="text/javascript">
 	// 投票异步
 	$(function(){
@@ -249,7 +245,6 @@ ul{
 					switch(parseInt(statu)){
 						case 1:
 						var point_n=th.prev("p").find(".point_n");
-							
 						th.append("<span class='pointUp' >+1</span>");
 						$(".pointUp").animate({"top":"-80px"},500).fadeOut(500);
 						setTimeout(function(){
@@ -274,8 +269,8 @@ ul{
 		})
 		$(".vote").each(function(){
 			var i=0;
-			var len=$(this).find("ul").length-1;
-			if((len-1)==1)return;
+			var len=$(this).find("ul").length;
+			if(len==1) return false;
 			for(i;i<len;i++)
 			{
 				$(this).find(".page").append("<li class='l border pagenum'>"+((parseInt(i))+1)+"</li>");

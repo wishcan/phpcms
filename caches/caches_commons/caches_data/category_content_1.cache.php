@@ -119,7 +119,7 @@ return array (
     'parentdir' => '',
     'catdir' => 'mounth_g',
     'url' => 'http://www.haomusic.net',
-    'items' => '1',
+    'items' => '2',
     'hits' => '0',
     'setting' => 'array (
   \'workflowid\' => \'\',
@@ -170,7 +170,7 @@ return array (
     'parentdir' => '',
     'catdir' => 'mounth_m',
     'url' => 'http://www.haomusic.net',
-    'items' => '1',
+    'items' => '2',
     'hits' => '0',
     'setting' => 'array (
   \'workflowid\' => \'\',

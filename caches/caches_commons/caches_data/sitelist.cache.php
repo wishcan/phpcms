@@ -18,7 +18,7 @@ return array (
   \'watermark_enable\' => \'0\',
   \'watermark_minwidth\' => \'300\',
   \'watermark_minheight\' => \'300\',
-  \'watermark_img\' => \'statics/images/water//mark.png\',
+  \'watermark_img\' => \'statics/images/water/\',
   \'watermark_pct\' => \'85\',
   \'watermark_quality\' => \'80\',
   \'watermark_pos\' => \'9\',

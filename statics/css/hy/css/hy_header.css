@@ -110,6 +110,10 @@ margin-top:23px;
 	height:384px;
 	overflow: hidden;
 }
+.imgs li{
+	list-style: none;
+	list-style-position: outside;
+}
 .h_images{
 	height:408px;
 }
@@ -693,6 +697,9 @@ background:url(../images/tp_6.png);
 	padding:1px;
 
 }
+.tp{
+	cursor: pointer;
+}
 #video img{
 	width:171px;
 	height:172px;
@@ -872,6 +879,14 @@ font-size: 14px;
 	width:476px;
 	height:23px;
 	padding:2px;
+}
+.pointUp{
+	font-size: 16px;
+	position:relative;
+	left:45px;
+	color:red;
+	font-weight:bold;
+	font-family:'微软雅黑';
 }
 .search span{
 	color:#6b6965;

@@ -254,7 +254,7 @@ $(document).ready(function(){
 			|
 
 			<a href="javascript:view_music('<?php echo id_encode('content_'.$catid,$r['id'],$this->siteid);?>','<?php echo safe_replace($r['title']);?>',<?php echo $catid?>,<?php echo $r['id'];?>)">添加打榜歌曲</a>
-			<a href='<?php echo APP_PATH.'index.php?m=charts&c=charts&a=showMounth&id='.$r['id']?>' target='right'>查看打榜歌曲</a>
+			<a href='<?php echo APP_PATH.'index.php?m=charts&c=charts&a=mounthAdmin&id='.$r['id']?>' target='right'>查看打榜歌曲</a>
 			<a href='javascript:change(<?php echo $r["id"];?>,<?php echo $r["statu"];?>)'>
 			<?php switch (intval($r['statu'])) {
 				case 1:
