@@ -274,7 +274,8 @@ ul{
 		})
 		$(".vote").each(function(){
 			var i=0;
-			var len=$(this).find("ul").length;
+			var len=$(this).find("ul").length-1;
+			if((len-1)==1)return;
 			for(i;i<len;i++)
 			{
 				$(this).find(".page").append("<li class='l border pagenum'>"+((parseInt(i))+1)+"</li>");

@@ -49,13 +49,6 @@ class charts extends admin{
 		include $this->admin_tpl('chart_admin');
 
 	}
-	public function add()
-	{
-
-
-
-	}
-
 		
 	// }
 	/**
@@ -252,7 +245,7 @@ class charts extends admin{
 		}
 		$data=$this->getMusics($catid+10,$chids);
 		
-		$this->addMusicToMounth($data,$id);
+		echo $this->addMusicToMounth($data,$id);
 	}
 	/**
 	 * 验证月榜中周榜的Id
@@ -281,19 +274,22 @@ class charts extends admin{
 	 */
 	public function updateMounth($id,$chids)
 	{		
-
+			$statu=1;
 			isset($_POST['chids'])?$chids=$_POST['chids']:$chids=$chids;
 			isset($_POST['id'])?$id=$_POST['id']:$id=$id;
 			$chids=$this->getchids($id,$chids);
+			if(!$chids || $chids=',') return $statu;
+		
 			$updateSQL='update v9_mounth set chids= concat_ws(",",chids,"'.$chids.'") where id='.$id;
+		
 			// return $updateSQL;
 			if($this->db->query($updateSQL))
 			{
-				return 1;
+				$statu=1;
 			}else{
-				return 0;
+				$statu=0;
 			}
-
+			return $statu;
 	}
 	/**
 	 * @param  [integer] $catid 月榜单的类别
@@ -418,6 +414,7 @@ class charts extends admin{
 	 */
 	public function addMusicToMounth($mids,$id)
 	{
+		
 		if(!$mids || !$id)
 		{
 			echo -2;
@@ -434,8 +431,8 @@ class charts extends admin{
 					$str=$mids;
 				}
 			}
-		}else{
-			$str[]=$mids;
+		}elseif(is_string($mids)){
+			$str=explode(',', $mids);
 		}
 		$tablename=$this->pre.'mounth_'.$id;
 		$musisc=array();
@@ -449,13 +446,15 @@ class charts extends admin{
 		}
 		foreach ($str as $m => $n) {
 			if(in_array($n, $ids))
-			{
-				$updateids.=$n.',';
+			{	
+				if($n)$updateids.=$n.',';
+				
 			}else{
-				$insertids.="($n),";
+				if($n)$insertids.="($n),";
+				
 			}
 		}
-	
+
 		$statu=1;
 		if($updateids){
 			$updateSQL='update '.$tablename.' set updatetime = '.time().' where mid in ('.trim($updateids,',').')';
@@ -467,7 +466,7 @@ class charts extends admin{
 			}
 		}
 
-		if($insertids)
+		if($insertids && $insertids!=="(),")
 		{
 			$insertSQL='insert into '.$tablename.' (mid) values'.trim($insertids,',');
 			if($this->db->query($insertSQL))
@@ -479,8 +478,41 @@ class charts extends admin{
 		}
 		return $statu;
 	}
+	/**
+	 * 添加歌曲进入月榜单
+	 * @param  [integer] $_POST['mids'] 歌曲的Id
+	 * @param  [integer] $_POST['id']    榜单的Id
+	 * @return [integer] 1:成功 -1：失败；0：错误的操作
+	 */
+	public function insertToMounth()
+	{
+		if(!$_POST['mids'] || !$_POST['id'])
+		{
+			echo -1;return;
+		}
 
 
+		$id=$_POST['id'];
+		$mids=$_POST['mids'];
+		echo $this->addMusicToMounth($mids,$id);
+
+	}
+	/**
+	 * 显示月榜中的歌曲
+	 * @return [type] [description]
+	 */
+	public function showMounth($id)
+	{
+		isset($_GET['id'])?$id=$_GET['id']:$id=$id;
+		$tablename=$this->pre.'mounth_'.$id;
+		$sql='select m.id as mid,m.title ,m.singer,mo.id as id from '.$tablename.' as mo inner join v9_music as m on m.id=mo.mid';
+		echo $sql;
+		$row=$this->db->queryAll($sql);
+		echo '<pre>';
+		print_r($row);
+
+
+	}
 
 
 

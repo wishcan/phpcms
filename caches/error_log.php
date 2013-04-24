@@ -1428,3 +1428,16 @@
 <?php exit;?>04-23 23:08:59 | 2 | Missing argument 1 for charts::getMusics() | phpcms\modules\charts\charts.php | 302
 <?php exit;?>04-23 23:08:59 | 2 | Missing argument 2 for charts::getMusics() | phpcms\modules\charts\charts.php | 302
 <?php exit;?>04-23 23:08:59 | 2 | Invalid argument supplied for foreach() | phpcms\modules\charts\charts.php | 391
+<?php exit;?>04-24 11:13:10 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 11:13:10 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 11:13:10 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 11:13:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 11:13:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 11:13:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 66
+<?php exit;?>04-24 12:36:51 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:36:55 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:37:13 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:38:28 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:38:30 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:38:36 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504
+<?php exit;?>04-24 12:39:09 | 2 | Missing argument 1 for charts::showMounth() | phpcms\modules\charts\charts.php | 504

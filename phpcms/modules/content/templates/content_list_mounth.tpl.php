@@ -246,14 +246,15 @@ $(document).ready(function(){
 		?></td>
 		<td align='center'><?php echo format::date($r['updatetime'],1);?></td>
 		<td align='center'>
-			<a href="javascript:create_mounth('<?php echo $r['id']?>',<?php echo $r['catid'];?>)">
-				榜单生成</a>
-			|
 			<a href="javascript:;" onclick="javascript:openwinx('?m=content&c=content&a=edit&catid=<?php echo $catid;?>&id=<?php echo $r['id']?>','')">
 				<?php echo L('edit');?>
 			</a>|
-			<a href='<?php echo APP_PATH.'index.php?m=charts&c=charts&a=admin&id='.$r['id']?>' target='right'>查看</a>|
-			<a href='<?php echo APP_PATH.'index.php?m=charts&c=charts&a=admin&id='.$r['id']?>' target='right'>查看打榜歌曲</a>
+			<a href="javascript:create_mounth('<?php echo $r['id']?>',<?php echo $r['catid'];?>)">
+				榜单生成</a>
+			|
+
+			<a href="javascript:view_music('<?php echo id_encode('content_'.$catid,$r['id'],$this->siteid);?>','<?php echo safe_replace($r['title']);?>',<?php echo $catid?>,<?php echo $r['id'];?>)">添加打榜歌曲</a>
+			<a href='<?php echo APP_PATH.'index.php?m=charts&c=charts&a=showMounth&id='.$r['id']?>' target='right'>查看打榜歌曲</a>
 			<a href='javascript:change(<?php echo $r["id"];?>,<?php echo $r["statu"];?>)'>
 			<?php switch (intval($r['statu'])) {
 				case 1:
@@ -375,7 +376,13 @@ function upthumb(fid) {
 		}
 	});window.top.art.dialog({id:'update_thumb'}).close();} else {alert('请先选择缩略图！');return false;}}, function(){window.top.art.dialog({id:'update_thumb'}).close()});
 }
-
+// 选择歌曲添加进入帮当
+function view_music(id, name,mounth,selfid) {
+	window.top.art.dialog({id:'view_comment'}).close();
+	 charid=mounth;
+	 catid=mounth-30;
+	window.top.art.dialog({yesText:'<?php echo L('dialog_close');?>',title:'添加打榜歌曲：'+name,id:'view_comment',iframe:'index.php?m=content&c=content&a=init&menuid=822&catid='+catid+'&mounthid='+charid+'&selfid='+selfid+'&pc_hash=GEc1ri',width:'900',height:'500'}, function(){window.top.art.dialog({id:'edit'}).close()});
+}
 setcookie('refersh_time', 0);
 function refersh_window() {
 	var refersh_time = getcookie('refersh_time');
@@ -397,7 +404,6 @@ function create_mounth(id,catid)
 		{id:id,catid:catid},
 		function(statu)
 		{
-			alert(statu)
 			switch(parseInt(statu))
 			{
 				case 1:
@@ -412,9 +418,7 @@ function create_mounth(id,catid)
 			}
 
 
-		}
-
-
+}
 
 		);
 

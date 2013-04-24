@@ -337,6 +337,61 @@ $(document).ready(function(){
 		})
 		</script>
 		<?php endif;?>
+		<?php 
+		if(isset($_GET['mounthid'])):?>
+		<input type="button" value="加入榜单" class="button joinChar">
+		<script type="text/javascript">
+
+		$(function(){
+			var status=1;
+
+			$(".joinChar").on("click",function(){
+				if(status){
+					status=0
+					var i=0;
+					var len=$("input[checked=checked]").length;
+					var ids=sids='';
+					var str = 0;
+					var id='<?php echo $_GET["selfid"]?>';
+					$("input[name='ids[]']").each(function() {
+						if($(this).attr('checked')=='checked') 
+						{
+							ids+=$(this).val()+',';
+							sids+=$(this).attr("sid")+',';
+						}
+					});
+					$.post(
+						"<?php echo WEB_PATH;?>index.php?m=charts&c=charts&a=insertToMounth",
+						{mids:ids,id:id},
+							function(statu){
+								switch(parseInt(statu)){
+									case 1:
+									alert("添加成功");
+									status=1;
+									break;
+									case -1:
+									alert("操作超时，请重试");
+									status=1;
+									break;
+									case -0:
+									alert("非法操作");
+									break;
+									default:
+									alert(statu);
+									status=1;
+									break;
+								}
+							}
+						)
+					
+			}
+					
+		})
+
+		})
+		</script>
+		<?php endif;?>
+	
 	</div>
     <div id="pages"><?php echo $pages;?></div>
 </div>

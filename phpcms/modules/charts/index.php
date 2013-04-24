@@ -26,7 +26,9 @@ class index{
  	
  	public function searchPoint()
  	{
- 		
+
+
+
  		include template('charts','search_point');
  	}
 
