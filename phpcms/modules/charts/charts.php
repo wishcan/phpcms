@@ -233,7 +233,7 @@ class charts extends admin{
 
 			if(!$this->db->table_exists('mounth_'.$id))
 			{
-				$crSQL=' create table '.$tablename.' (id int not null primary key auto_increment,mid int ,hids text,meids varchar (400),eids varchar (400),hgrade int,megrade int,exgrade int,commit text)';
+				$crSQL=' create table '.$tablename.' (id int not null primary key auto_increment,mid int ,hids text,meids varchar (400),eids varchar (400),hgrade int,megrade int,exgrade int,commit text,updatetime varchar(20))';
 				
 				if($this->db->query($crSQL))
 				{

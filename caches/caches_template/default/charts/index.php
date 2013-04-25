@@ -1,6 +1,6 @@
-<title>榜单回顾</title>
-{template "content",'header'}
-<link rel="stylesheet" href="{CSS_PATH}/hy/css/charts.css">
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><title>榜单回顾</title>
+<?php include template("content",'header'); ?>
+<link rel="stylesheet" href="<?php echo CSS_PATH;?>/hy/css/charts.css">
 <style type="text/css">
 		.chart{
 		margin-top: 25px;
@@ -40,37 +40,37 @@
 	<h3 class="page_title">
 		<div class="bdhg_w bdhg_title">
 			<ul class='select'>
-				{loop $data  $v}
-				<li {if $n==1}class='on'{/if} title='{php echo mb_substr($v["title"],1,20,"UTF-8")}'>
-				{php echo mb_substr($v["title"],1,20,'UTF-8')}
+				<?php $n=1;if(is_array($data)) foreach($data AS $v) { ?>
+				<li <?php if($n==1) { ?>class='on'<?php } ?> title='<?php echo mb_substr($v["title"],1,20,"UTF-8")?>'>
+				<?php echo mb_substr($v["title"],1,20,'UTF-8')?>
 				</li>
-				{/loop}
+				<?php $n++;}unset($n); ?>
 			</ul>	
 		</div>
 	</h3>
 	<div class="center3">
 		<div class='chart' >
-		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showCharts" frameborder="0" name='con'></iframe>
+		<iframe src="<?php echo APP_PATH;?>index.php?m=music&c=index&a=showCharts" frameborder="0" name='con'></iframe>
 		</div>
 	</div>
 	<div class="c"></div>
 	<h3 class="page_title">
 		<div class="bdhg_m bdhg_title" >
 			<ul class='select'>
-				{loop $mounths  $v}
-				<li {if $n==1}class='on'{/if} title='{php echo mb_substr($v["title"],1,20,"UTF-8")}'>
-				{php echo mb_substr($v["title"],1,20,'UTF-8')}
+				<?php $n=1;if(is_array($mounths)) foreach($mounths AS $v) { ?>
+				<li <?php if($n==1) { ?>class='on'<?php } ?> title='<?php echo mb_substr($v["title"],1,20,"UTF-8")?>'>
+				<?php echo mb_substr($v["title"],1,20,'UTF-8')?>
 				</li>
-				{/loop}
+				<?php $n++;}unset($n); ?>
 			</ul>
 		</div>
 	</h3>
 	<div class="center3">
 		<div class='chart' style='width:960px;' >
-		<iframe src="{APP_PATH}index.php?m=music&c=index&a=showMounths" frameborder="0"></iframe>
+		<iframe src="<?php echo APP_PATH;?>index.php?m=music&c=index&a=showMounths" frameborder="0"></iframe>
 		</div>
 	</div>
 </div>
 
 <div class="c"></div>
-{template "content","footer"}
+<?php include template("content","footer"); ?>

@@ -107,6 +107,20 @@ class member{
 		include template('music','collect');
 
 	}
+	public function grade()
+	{
+		if(!isset($this->_userid)) exit('非法操作');
+		
+
+
+	}
+	// 获得最新的月榜的数据
+	public function getNewMounth()
+	{
+		$sql='select * from v9_mounth where catid = '.$catid.' order by updatetime limit 1';
+		$row=$this->db->queryAll($sql);
+		
+	}
 
 }
 

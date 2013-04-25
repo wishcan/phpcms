@@ -47,7 +47,11 @@ class index {
 		$pos_n=$this->getChar(26,' where sid = 1',6);
 		$pos_g=$this->getChar(27,' where sid = 1',6);
 		$pos_m=$this->getChar(28,' where sid = 1',6);
-
+		// 月票榜数据获取
+		// $mounth_n=$this->getNewMounth(56);
+ 	// 	$mounth_g=$this->getNewMounth(57);
+ 	// 	$mounth_m=$this->getNewMounth(58);
+ 		$mounth=array($mounth_n,$mounth_g,$mounth_m);
 		include template('content','index',$default_style);
 	}
 
@@ -82,20 +86,33 @@ class index {
 
 		if(!$tablename || !$this->db->table_exists(substr($tablename, mb_strlen($this->pre))))
 		{
-
 			return $data='此表不存在';
 		}
-
-
 		$data=$infos=array();
 		$sql='select m.title as music,m.thumb as thumb,m.singer,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m on ch.mid=m.id  '.$where .' order by ch.point desc limit '.$size;	
 		$info=$this->db->queryAll($sql);
 		$row['data']=$info;
 		return $row;
 	}
+	// 获取最新的月榜的信息
+	public function getNewMounth($catid,$limit=10)
+ 	{
+ 		if(!$catid) exit('非法操作');
+ 		$sql='select id,title from v9_mounth where catid ='.$catid.' order by updatetime desc,inputtime desc limit 1';
+ 		$row=$this->db->queryAll($sql);
+ 		if(empty($row))return false;
+ 		$data['title']=$row[0]['title'];
+ 		$data['data']=$this->getMounthData($row[0]['id']);
+ 		return $data;
+ 	}
 
-
-
+ 	public function getMounthData($id,$limit=10,$where='')
+ 	{
+ 		
+ 		$sql='select mo.hgrade+mo.megrade+mo.exgrade as grade ,m.id as mid,mo.id as id,m.title as music,m.singer from v9_mounth_'.$id.' as mo inner join v9_music as m on mo.mid=m.id '.$where.' order by grade desc,mo.updatetime desc limit '.$limit;
+ 		$row=$this->db->queryAll($sql);
+ 		return $row;
+ 	}
 
 	//内容页
 	public function show() {

@@ -1,7 +1,7 @@
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?>
+<title><?php echo $title;?>-<?php if($_GET[id]==0) { ?>内地<?php } elseif ($_GET[id]==1) { ?>港台<?php } elseif ($_GET[id]==2) { ?><?php } ?>榜<?php if($_GET['type']==w) { ?>周<?php } elseif ($_GET['type']=='m') { ?>月<?php } ?>榜</title>
 
-<title>{$title}-{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}{/if}榜{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜</title>
-
-{template 'content','header'}
+<?php include template('content','header'); ?>
 
   <style type="text/css">
  .list_title{
@@ -35,7 +35,7 @@
 background: #fcfbf8;
 }
 .week thead td{
-	background: url({CSS_PATH}hy/images/bdhg_list_tbg.png);
+	background: url(<?php echo CSS_PATH;?>hy/images/bdhg_list_tbg.png);
 	padding: 8px 0;
 
 }
@@ -75,12 +75,12 @@ background: #fcfbf8;
 </div>
 <div class="center2">
 	<h3 class="page_title list_title">
-		{$title} 至尊{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}{/if}榜{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜</h3>
+		<?php echo $title;?> 至尊<?php if($_GET[id]==0) { ?>内地<?php } elseif ($_GET[id]==1) { ?>港台<?php } elseif ($_GET[id]==2) { ?><?php } ?>榜<?php if($_GET['type']==w) { ?>周<?php } elseif ($_GET['type']=='m') { ?>月<?php } ?>榜</h3>
  <div class='week'>
 
- 	{loop $datas $v}
+ 	<?php $n=1;if(is_array($datas)) foreach($datas AS $v) { ?>
 	<div class="border l">
- 		<ul class='week_{if $_GET[id]==0}n{elseif $_GET[id]==1}g{elseif $_GET[id]==2}m{/if} {php if((($n-1)/10)%2>0)echo  "u2";}'>
+ 		<ul class='week_<?php if($_GET[id]==0) { ?>n<?php } elseif ($_GET[id]==1) { ?>g<?php } elseif ($_GET[id]==2) { ?>m<?php } ?> <?php if((($n-1)/10)%2>0)echo  "u2";?>'>
  		<style type="text/css">
 
  		</style>
@@ -95,19 +95,19 @@ background: #fcfbf8;
 	                    </tr>
 	               </thead>
 	               <tbody>
-	               		    <tr {if $n%2==1} class='tr2' {/if}>
-	                    	<td class='td1'><span class='one' style='color:#ff6600;font-w:bold;'>{$n}</span></td>
-	                    	<td class='td2'>{$v[music]}</td>
-	                    	<td class='td3'>{$v[singer]}</td>
-	                    	<td class='td4'>{$v[point]}</td>
-	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' class='st'></a></td>
+	               		    <tr <?php if($n%2==1) { ?> class='tr2' <?php } ?>>
+	                    	<td class='td1'><span class='one' style='color:#ff6600;font-w:bold;'><?php echo $n;?></span></td>
+	                    	<td class='td2'><?php echo $v['music'];?></td>
+	                    	<td class='td3'><?php echo $v['singer'];?></td>
+	                    	<td class='td4'><?php echo $v['point'];?></td>
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' class='st'></a></td>
 	                    </tr>
 	               </tbody>
 	          </table>
 		</ul>         
 	</div>
-	{/loop}
+	<?php $n++;}unset($n); ?>
 <div class="c"></div>
 </div>
 </div>
-{template 'content','footer'}
+<?php include template('content','footer'); ?>

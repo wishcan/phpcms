@@ -4,12 +4,16 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 class index{
 	private $db;
 	public $pre;
+	public $tb;
+	public $field;
 	/**
 	 * 
 	 * @param string $pre 表前缀
 	 */
 	
 	public function __construct(){
+		$this->tb='v9_chart';
+		$this->field='id,title,tablename';
 		$this->db=pc_base::load_model("music_model");
 		$this->_username=param::get_cookie('_username');
 		$this->_userid=param::get_cookie('_userid');
@@ -272,7 +276,7 @@ class index{
 	// 网友排行页面
 	public function vote()
 	{
-		$week=$this->getNewChart();
+		$week=$this->getNewChart(100);
 		$size=10;
 		include template('music','vote');
 
@@ -310,12 +314,12 @@ class index{
 		isset($_GET['id'])?$id=$_GET['id']:$id=26;
 		if(!$_GET['title'])
 		{
-			$week=$this->getNewChart();
+			$week=$this->getNewChart(10,'1,1');
 		}else
 		{
 
 			$title=$_GET['title'];
-			$sql='select * from v9_chart where title = "'.'第'.$title.'"  order by catid';
+			$sql='select * from '.$this->tb.' where title = "'.'第'.$title.'"  order by catid';
 			$row=$this->db->queryAll($sql);
 			$week=array();
 			foreach ($row as $k=>$v) {
@@ -330,11 +334,11 @@ class index{
 
 
 	// 获得最新的榜单信息
-	public function getNewChart()
+	public function getNewChart($size=10,$limit)
 	{
-		$week_n=$this->getChar(26,100);
-		$week_g=$this->getChar(27,100);
-		$week_m=$this->getChar(28,100);
+		$week_n=$this->getChar(26,$size,$limit);
+		$week_g=$this->getChar(27,$size,$limit);
+		$week_m=$this->getChar(28,$size,$limit);
 		$week=array($week_n,$week_g,$week_m);
 		return $week;
 	}
@@ -346,14 +350,14 @@ class index{
 	 * @return string  $title 榜单标题 
 	 * 待优化
 	 */
-	public function getChar($id,$size)
+	public function getChar($id,$size=10,$limit=1)
 	{
 		if(!$id){
 			exit("请指定榜单");
 		}
 	
 		$id=$id+20;
-		$sql='select id,title,tablename from v9_chart where catid='.$id.' and statu = 1 order by updatetime desc limit 1';
+		$sql='select '.$this->field.' from '.$this->tb.' where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
 		$chart=$this->db->queryAll($sql);
 		$data=$this->getDatas($chart[0]['tablename'],$size);
 		$data['tablename']=$chart[0]['tablename'];
@@ -364,11 +368,11 @@ class index{
 	 * 获得数据并分页
 	 * @param  string  $tablename [周榜表名]
 	 * @param  integer $page      [分页号]
-	 * @param  integer $limit     [数量条数]
+	 * @param  integer $size      [数量条数]
 	 * @return integer $id        榜单表中的主键
 	 * @return array   $row       [二维数组包括得到的数据和分页]
 	 */
-	public function getDatas($tablename='',$limit=10,$page=1)
+	public function getDatas($tablename='',$size=10,$page=1)
 	{
 
 		if(!$tablename || !$this->db->table_exists(substr($tablename, mb_strlen($this->pre))))
@@ -381,7 +385,7 @@ class index{
 		$data=$infos=array();
 		$sql='select m.title as music,m.singer,thumb,m.id as mid,ch.id as id,ch.point from '.$tablename.' as ch inner join '.$this->pre.'music as m inner join '.$this->pre.'music_data as md on ch.mid=m.id and m.id=md.id ';	
 
-		$info=$this->db->my_listinfo(array('sql'=>$sql),'ch.point desc',$page,$limit);
+		$info=$this->db->my_listinfo(array('sql'=>$sql),'ch.point desc',$page,$size);
 		$total=$this->db->number;
 		if($total>0)
 		{
@@ -407,12 +411,10 @@ class index{
  	{
  		isset($_GET['t'])?$title=$_GET['t']:showmessage("非法操作");
  		isset($_GET['b'])?$tablename=$this->pre.'chart_'.$_GET['b']:showmessage('非法操作');
- 		$row=$this->getDatas($tablename,'',40);
-		$data=$row['data'];
-		$page=$data['page'];
-		for($j=0;$j<40;$j++){
-			$datas[$j]=$data[0];
-		}
+ 		$row=$this->getDatas($tablename,40);
+		$datas=$row['data'];
+		$page=$datas['page'];
+
  		include template('music','list_charts');
  	}
 
@@ -439,13 +441,55 @@ class index{
  		}else{
  			echo 2;
  		}
+ 	}
 
+ 	// 显示月榜榜单
+ 	public function showMounths()
+ 	{
+ 		if(!$_GET['title'])
+ 		{
+ 			$mounth_n=$this->getNewMounth(56,'','1,1');
+ 			$mounth_g=$this->getNewMounth(57,'','1,1');
+ 			$mounth_m=$this->getNewMounth(58,'','1,1');
+ 			$mounth=array($mounth_n,$mounth_g,$mounth_m);
+ 		}else{
+ 			$title=$_GET['title'];
+ 			$sql='select * from v9_mounth where title like "第'.$title.'" order by catid';
+ 			$row=$this->db->queryAll($sql);
+			$mounth=array();
+			foreach ($row as $k=>$v){
+				
+				$mounth[$k]=$this->getMounthData($v['id']);
+				$mounth[$k]['title']=$v['title'];
+			}
 
+ 		}
+ 		include template("music",'showMounths');
 
  	}
 
+ 	// 获得最新的月榜内容(
+ 	 	public function getNewMounth($catid,$size=10,$limit=1)
+ 	 	{
+ 	 		if(!$catid) exit('非法操作');
+ 	 		$sql='select id,title from v9_mounth where catid ='.$catid.' order by updatetime desc,inputtime desc limit '.$limit;
+ 	 		$row=$this->db->queryAll($sql);
+ 	 		if(empty($row))
+ 	 		{
+ 	 			showmessage('暂无榜单请发布');
+ 		}
+ 		$data['title']=$row[0]['title'];
+ 		$data['data']=$this->getMounthData($row[0]['id']);
+ 		return $data;
+ 	}
 
-
+ 	public function getMounthData($id,$limit=10,$where='')
+ 	{
+ 		
+ 		$sql='select mo.hgrade+mo.megrade+mo.exgrade as grade ,m.id as mid,mo.id as id,m.title as music,m.singer from v9_mounth_'.$id.' as mo inner join v9_music as m on mo.mid=m.id '.$where.' order by grade desc,mo.updatetime desc limit '.$limit;
+ 		$row=$this->db->queryAll($sql);
+ 		return $row;
+ 	}
 
 }
 

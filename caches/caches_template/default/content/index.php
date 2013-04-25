@@ -202,7 +202,37 @@
       <!-- 月排行榜 -->
       <div class='c'></div>
       <div class='month week'>
-	      	<ul class='week_n'>
+      	<?php $n=1; if(is_array($mounth)) foreach($mounth AS $s => $v) { ?>
+	         <ul class='week_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?>'> 
+	          <h1><?php echo $v['title'];?></h1>
+	          <table cellspacing="0">
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>票数</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	              
+	               		<?php $n=1; if(is_array($v['data'])) foreach($v['data'] AS $k => $d) { ?>
+	             		<tr <?php if($n%2==0) { ?> class='tr2' <?php } ?>>
+	                    	<td class='td1'><span class='one num num<?php echo $k+1?>'></span></td>
+	                    	<td class='td2'><?php echo str_cut($d[music],18);?></td>
+	                    	<td class='td3'><?php echo $d['singer'];?></td>
+	                    	<td class='td4'><?php echo $d['point'];?></td>
+
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $d['mid'];?>' target='_blank'><b class='st'></b></a></td>
+	                    </tr>
+	              		  <?php $n++;}unset($n); ?>
+	              		  
+	               </tbody>
+	          </table>
+	      	</ul>
+	      	 <?php $n++;}unset($n); ?>
+	      <!-- 	<ul class='week_n'>
 	          <h1>第201301期</h1>
 	          <table cellspacing="0">
 	                <thead>
@@ -454,7 +484,7 @@
 	               </tbody>
 
 	          </table>
-	        </ul>
+	        </ul> -->
       </div>
     <!-- 首页排行榜结束 -->
     <div class='c'></div>

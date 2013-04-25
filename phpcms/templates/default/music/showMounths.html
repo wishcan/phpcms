@@ -1,0 +1,52 @@
+ <link rel="stylesheet" href="{CSS_PATH}hy/css/hy_header.css">
+ <style type="text/css">
+ ul{
+ 	float: left;
+ }
+ .week_g{
+ 	margin: 0px 22px;
+ }
+ .week h1{
+
+		*width: 300px;
+	}
+
+ </style>
+   <div class='week chart'>
+	  	{loop $mounth $s $v}
+
+	         <ul class='week_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if} border'> 
+	          <h1>{$v[title]}</h1>
+	          <table cellspacing="0">
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>分数</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	              
+	               		{loop $v['data'] $k $d}
+
+	             		<tr {if $k%2==1} class='tr2' {/if}>
+	                    	<td class='td1'><span class='one num num{php echo $k+1}'></span></td>
+	                    	<td class='td2'>{str_cut($d[music],18)}</td>
+	                    	<td class='td3'>{$d[singer]}</td>
+	                    	<td class='td4' style='text-align:center;'>{intval($d[grade]/3)}</td>
+	
+	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='blank'><b class='st'></b></a></td>
+	                    </tr>
+	              		  {/loop}
+	              		  
+	               </tbody>
+	          </table>
+	          	<p class='bdxq_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'>
+	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=listCharts&id={$s}&t={$v[title]}&b={php echo substr($v[tablename],9)}' target='_blank'></a>
+	          	</p>
+	      	</ul>
+	      	 {/loop}
+      </div>
+

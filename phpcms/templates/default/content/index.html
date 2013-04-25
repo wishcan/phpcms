@@ -202,7 +202,37 @@
       <!-- 月排行榜 -->
       <div class='c'></div>
       <div class='month week'>
-	      	<ul class='week_n'>
+      	{loop $mounth $s $v}
+	         <ul class='week_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'> 
+	          <h1>{$v[title]}</h1>
+	          <table cellspacing="0">
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>票数</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	              
+	               		{loop $v['data'] $k $d}
+	             		<tr {if $n%2==0} class='tr2' {/if}>
+	                    	<td class='td1'><span class='one num num{php echo $k+1}'></span></td>
+	                    	<td class='td2'>{str_cut($d[music],18)}</td>
+	                    	<td class='td3'>{$d[singer]}</td>
+	                    	<td class='td4'>{$d[point]}</td>
+
+	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$d[mid]}' target='_blank'><b class='st'></b></a></td>
+	                    </tr>
+	              		  {/loop}
+	              		  
+	               </tbody>
+	          </table>
+	      	</ul>
+	      	 {/loop}
+	      <!-- 	<ul class='week_n'>
 	          <h1>第201301期</h1>
 	          <table cellspacing="0">
 	                <thead>
@@ -454,7 +484,7 @@
 	               </tbody>
 
 	          </table>
-	        </ul>
+	        </ul> -->
       </div>
     <!-- 首页排行榜结束 -->
     <div class='c'></div>
