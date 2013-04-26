@@ -1,16 +1,27 @@
+
+
 <div class="col-left cates l">
 	{php $j=1;}
 	{loop subcat(9) $v}
 	{php if($v['type']!=0) continue;}
-         <div class='cate'>
+         <div class='cate {if $v[catid]==37}imgnews{/if}'>
         	<h3 class="title-1"><a href="{$v[url]}">{$v[catname]}</a></h3>
              <div class="content">
-
                 <div class="bk15 hr"></div>
-                <ul class="list  lh24 f14">
-                {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
-					{loop $data $v}
-						<li><a href="{$v[url]}" target="_blank">{str_cut($v[title],70)}</a></li>
+                
+                <ul class="list  lh24 f14 " style='width:324px;'>
+                {pc:content action="lists" catid="$v[catid]" num="4" order="updatetime DESC"}
+					{loop $data $r}
+                      {if $v[catid]==37}
+						<li> <a href="{$r[url]}" target="_blank"> 
+                           <img src='{$r[thumb]}' />
+                           <p> {str_cut($r[title],40)}</p>
+                            {else}
+                            <li> <a href="{$r[url]}" target="_blank"> 
+                             {str_cut($r[title],70)}
+                             {/if}  
+                             </a>
+                        </li>
 					{/loop}
 				{/pc}
                 </ul>
@@ -19,12 +30,12 @@
          </div>
 	{$j++}
 	{/loop}
-     <div class='weibo'><img src='{CSS_PATH}hy/images/weibo_zw.png' /></div>
+    <div class="c"></div>
+     <div class='weibo'><iframe width="328" height="224" class="share_self"  style='background:#faf8f4'frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=328&height=230&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=3189165094&verifier=fd3040f8&colors=d6f3f7,f8faf4,666666,0082cb,ecfbfd&dpc=1"></iframe></div>
     
      <script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=11"></script>
 
   </div>
   <div class="c"></div>
       <div class="ads" style='margin-top: 15px;'>
-        <div class="col-left"><script language="javascript" src="{APP_PATH}caches/poster_js/4.js"></script></div>
         <div class='c'></div>

@@ -54,6 +54,12 @@ return array (
     'name' => '月榜单',
     'sort' => '0',
   ),
+  31 => 
+  array (
+    'typeid' => '69',
+    'name' => '广告',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',

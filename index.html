@@ -106,7 +106,7 @@ $(function(){
             <div class='good_h'></div>
             <ul class='classes l'>
                 <li class='l good_l1'>
-               	               	                <img src='http://www.haomusic.net/uploadfile/2013/0423/20130423114057516.jpg' class='l'/> 
+               	               	                <img src='http://www.haomusic.net/uploadfile/2013/0423/20130423114057516.jpg' class='l imgthumb'/> 
                 <ul class='l'>
                     <div class='good_h2'></div>
                     <table>
@@ -169,17 +169,17 @@ $(function(){
                     <div class='good_h4'></div>
                     <table>
 
-					                        <tr>
+					                        <tr thumb='http://www.haomusic.net/uploadfile/2013/0418/20130418034338595.jpg'>
                            <td class='good_t1'>好起来</td> 
                            <td class='good_t2'>李丹阳</td>
                            <td class='good_t3'><a target='_blank' href='http://localhost/index.php?m=music&c=index&a=mp3&id=30'><b class='st'></b></a></td>
                         </tr>
-					                        <tr>
+					                        <tr thumb='http://www.haomusic.net/uploadfile/2013/0419/20130419035500653.jpg'>
                            <td class='good_t1'>山水情</td> 
                            <td class='good_t2'>祖海</td>
                            <td class='good_t3'><a target='_blank' href='http://localhost/index.php?m=music&c=index&a=mp3&id=48'><b class='st'></b></a></td>
                         </tr>
-					                        <tr>
+					                        <tr thumb='http://www.haomusic.net/uploadfile/2013/0419/20130419044022617.jpg'>
                            <td class='good_t1'>女儿花</td> 
                            <td class='good_t2'>谭晶</td>
                            <td class='good_t3'><a target='_blank' href='http://localhost/index.php?m=music&c=index&a=mp3&id=52'><b class='st'></b></a></td>
@@ -207,12 +207,11 @@ $(function(){
                   <div class='news l'>
                     <!-- 热点新闻开始 -->
                     <div class='hot'>
-                    	                    	
-                    	                    <a href="http://www.haomusic.net/index.php?m=content&c=index&a=show&catid=37&id=25" target="__blank" title="青春美少女组合北京排练备战济南演唱会" style="" >
+                    	                    	                    <a href="http://www.haomusic.net/index.php?m=content&c=index&a=show&catid=37&id=25" target="__blank" title="青春美少女组合北京排练备战济南演唱会" style="" >
                           <h3 class='hot_title'>青春美少女组合北京排练备战济南...</h3>
                           <p class='hot_desc'>
                             青春美少女组合录制央视节目青春美少女组合献唱本月20日，青春美少... <span class='more'>查看详细 >></span>
-                          </p>
+                                                      </p>
                      </a>
                                  		    
                     </div>
@@ -220,7 +219,7 @@ $(function(){
                     <!-- 新新闻 -->
                     <ul class='new'>
 
-             		 	             		 	             		 	                                     		 	                        <li>
+             		 	             		 	             		 	                        <li>
                             <a href='http://www.haomusic.net/index.php?m=content&c=index&a=show&catid=36&id=24'><span class='news_title'>林俊杰泪谢娘藤条管教 被催婚相亲</span>
                             <span class='time'>2013-04-17</span>
                             </a>
@@ -256,7 +255,7 @@ $(function(){
         <div class='c'></div>
     <!-- 广告位 -->
       <div class='gg'>
-        <img src='http://localhost/statics/css/hy/images/zw4.png' />
+        <script language="javascript" src="http://localhost/caches/poster_js/14.js"></script>
       </div>
     </div>
     <!-- 首页上部分结束 -->
@@ -270,7 +269,7 @@ $(function(){
       <!-- 月排行榜 -->
       <div class='c'></div>
       <div class='month week'>
-	      	<ul class='week_n'>
+      		      <!-- 	<ul class='week_n'>
 	          <h1>第201301期</h1>
 	          <table cellspacing="0">
 	                <thead>
@@ -522,7 +521,7 @@ $(function(){
 	               </tbody>
 
 	          </table>
-	        </ul>
+	        </ul> -->
       </div>
     <!-- 首页排行榜结束 -->
     <div class='c'></div>
@@ -751,12 +750,54 @@ $(function(){
 </html><!--引入尾部结束-->
 <!-- 页面结束 -->
 
-        </div>
+</div>
   
 <script type="text/javascript"> 
 $(function(){
-	new slide("#main-slide","cur",310,260,1);//焦点图
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//排行TAB
 	$("a").attr("target",'_blank');
+
+	$(".good_sound tr").mouseover(function()
+	{
+
+		$(this).parent().parent().parent().prev("img").attr("src",$(this).attr("thumb"));
+	})
+
+		$(".tp").click(function(){
+
+			var id=$(this).attr("ids");
+			var catid=$(this).attr("catid");
+			var tablename=$(this).attr("b");
+			th=$(this);
+			$.post(
+				"http://localhost/index.php?m=music&c=index&a=addVoteNum",
+				{id:id,tablename:tablename},
+				function(statu)
+				{
+					switch(parseInt(statu)){
+						case 1:
+						var point_n=th.prev("p").find(".point_n");
+						th.append("<span class='pointUp' >+1</span>");
+						$(".pointUp").animate({"top":"-80px"},500).fadeOut(500);
+						setTimeout(function(){
+							point_n.html(parseInt(point_n.text())+1)},500)
+						break;
+						case -1:
+						alert("你尚未登陆，请登陆后再投票");
+						break;
+						case -2:
+						alert("响应超时，请重试");
+						break;
+						case 0:
+						alert("您今天已经对此歌曲已经投过票了");
+						break;
+						default:
+						alert(statu);
+						break;
+					}
+				}
+
+				)
+		})
+
 })
 </script>

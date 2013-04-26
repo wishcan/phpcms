@@ -506,7 +506,6 @@ class charts extends admin{
 		isset($_GET['id'])?$id=$_GET['id']:$id=$id;
 		$tablename=$this->pre.'mounth_'.$id;
 		$sql='select m.id as mid,m.title as music ,m.singer,mo.id as id from '.$tablename.' as mo inner join v9_music as m on m.id=mo.mid';
-
 		$row=$this->db->queryAll($sql);
 		$num=count($row);
 		include $this->admin_tpl('mounth_admin');

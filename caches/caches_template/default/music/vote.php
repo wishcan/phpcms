@@ -257,7 +257,7 @@ ul{
 						alert("响应超时，请重试");
 						break;
 						case 0:
-						alert("您今天已经对此歌曲已经投过票了");
+						alert("您今天对此歌曲已经投过票了");
 						break;
 						default:
 						alert(statu);

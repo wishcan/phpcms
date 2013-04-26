@@ -414,6 +414,7 @@ function create_mounth(id,catid)
 				alert("操作失败请重试");
 				break;
 				default:
+				alert(statu);
 				break;
 			}
 

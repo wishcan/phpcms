@@ -25,6 +25,7 @@ ul li{
 	font-size: 14px;
 	padding: 5px;
 }
+
 .link h3{
 	width: 216px;
 	height: 12px;
@@ -36,6 +37,15 @@ ul li{
 	left: -24.5px;
 
 }
+.link .grade h3{
+		background: url(../images/grade_button.png);
+		background-position:left 0;
+		background-repeat: no-repeat;
+		text-align: center;
+		color: #ff6600;
+		left: -26px;
+		line-height: 12px;
+}
 .link .change .on{
 background-position:left -96px; 
 }
@@ -46,11 +56,10 @@ background-position:left -32px;
 .link .collect .on{
 background-position:left -128px; 
 }
-.link .grade h3{
-background-position:left -64px; 
-}
+
 .link .grade .on{
-background-position:left -160px; 
+background-position:left -43px; 
+color: #fff
 }
 #con{
 width: 690px;

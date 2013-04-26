@@ -9,6 +9,7 @@
 	margin: 0 auto;
 	margin-top: 25px;
 	line-height: 42px;
+	text-align: center;
 } 
 	.week h1,.week .week_t{
 	*width: 300px;
@@ -36,6 +37,7 @@ background: #fcfbf8;
 }
 .week thead td{
 	background: url(<?php echo CSS_PATH;?>hy/images/bdhg_list_tbg.png);
+	background-repeat:repeat-x;
 	padding: 8px 0;
 
 }
@@ -70,21 +72,43 @@ background: #fcfbf8;
 .st{
 	margin-right: 15px;
 }
-
+.week .week_m thead td,.week .week_g thead td{
+	color:#ff5a00;
+}
  </style>
 </div>
 <div class="center2">
+
 	<h3 class="page_title list_title">
-		<?php echo $title;?> 至尊<?php if($_GET[id]==0) { ?>内地<?php } elseif ($_GET[id]==1) { ?>港台<?php } elseif ($_GET[id]==2) { ?><?php } ?>榜<?php if($_GET['type']==w) { ?>周<?php } elseif ($_GET['type']=='m') { ?>月<?php } ?>榜</h3>
+		<?php echo $title;?> 至尊<?php if($_GET[id]==0) { ?>内地<?php } elseif ($_GET[id]==1) { ?>港台<?php } elseif ($_GET[id]==2) { ?><?php } ?><?php if($_GET['type']==w) { ?>周<?php } elseif ($_GET['type']=='m') { ?>月<?php } ?>榜
+	</h3>
  <div class='week'>
 
- 	<?php $n=1;if(is_array($datas)) foreach($datas AS $v) { ?>
+ 	
 	<div class="border l">
- 		<ul class='week_<?php if($_GET[id]==0) { ?>n<?php } elseif ($_GET[id]==1) { ?>g<?php } elseif ($_GET[id]==2) { ?>m<?php } ?> <?php if((($n-1)/10)%2>0)echo  "u2";?>'>
- 		<style type="text/css">
-
- 		</style>
-	          <table cellspacing="0" class='l'>
+ 		<ul class='week_n <?php if((($n-1)/10)%2>0)echo  "u2";?>'>
+	        <table cellspacing="0" class='l'>
+	                <thead>
+	                    <tr>
+	                    	<td class='td1'>名次</td>
+	                    	<td class='td2'>歌曲</td>
+	                    	<td class='td3'>歌手</td>
+	                    	<td class='td4'>票数</td>
+	                    	<td class='td5'>试听</td>
+	                    </tr>
+	               </thead>
+	               <tbody>
+	               	<?php $n=1;if(is_array($datas)) foreach($datas AS $v) { ?>
+					<?php $count=count($datas)?>
+						<?php if($n%10==0) { ?>	
+					</tbody>
+					</table>
+					</ul>
+				</div>
+				
+	<div class="border l">	
+				<ul class='week_n <?php if((($n-1)/10)%2>0)echo  "u2";?>'>
+	        <table cellspacing="0" class='l'>
 	                <thead>
 	                    <tr>
 	                    	<td class='td1'>名次</td>
@@ -102,11 +126,23 @@ background: #fcfbf8;
 	                    	<td class='td4'><?php echo $v['point'];?></td>
 	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' class='st'></a></td>
 	                    </tr>
-	               </tbody>
-	          </table>
-		</ul>         
-	</div>
-	<?php $n++;}unset($n); ?>
+	                 <?php } else { ?>   
+	               		    <tr <?php if($n%2==1) { ?> class='tr2' <?php } ?>>
+	                    	<td class='td1'><span class='one' style='color:#ff6600;font-w:bold;'><?php echo $n;?></span></td>
+	                    	<td class='td2'><?php echo $v['music'];?></td>
+	                    	<td class='td3'><?php echo $v['singer'];?></td>
+	                    	<td class='td4'><?php echo $v['point'];?></td>
+	                    	<td class='td5'><a href='<?php echo APP_PATH;?>index.php?m=music&c=index&a=mp3&id=<?php echo $v['mid'];?>' class='st'></a></td>
+	                    </tr>
+
+	                 <?php } ?>
+	                   <?php $n++;}unset($n); ?>
+	                </tbody>
+	        </table>
+	    </ul>         
+	</div>    
+
+	
 <div class="c"></div>
 </div>
 </div>

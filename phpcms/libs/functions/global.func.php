@@ -724,7 +724,7 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),
 		if($num>$perpage-1 && $total>1)
 		{
 			$multipage.=' <a href="'.pageurl($urlrule,$total, $array).'" class="aend">'.'尾页'.'</a>';	
-			$multipage .= '<span>共<span><a class="global">'.$total.'页'.'</a>';
+			$multipage .= '<span>共<span><a class="global">'.$total.'</a>'.'<span>页</span>';
 		}
 	return $multipage;
 }

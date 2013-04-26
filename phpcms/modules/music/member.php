@@ -6,6 +6,8 @@ class member{
 	public $data;
 	public $encrypt;
 	public $password;
+	public $catid;
+	public $type;
 	public function __construct()
 	{
 		$this->db=pc_base::load_model("member_model");
@@ -100,27 +102,75 @@ class member{
 		isset($_GET['page'])?$page=$_GET['page']:$page=1;
 		$data=$infos=array();
 		$id=$this->_userid;
-		// $sql='select m.title as music,m.id,s.title as singer ,sp.title as spName ,sc.addtime from v9_music as m inner join v9_singer as s inner join v9_sp as sp inner join v9_member_sc as sc on m.sid=s.id and m.spid = sp.id and m.id = sc.mid where sc.id = '.$id;
 		$sql='select m.title as music ,m.id as id, m.spname,m.singer,sc.addtime from  v9_music as m inner join v9_member_sc as sc on sc.mid = m.id where sc.id = '.$id;
 		$info=$this->db->my_listinfo(array('sql'=>$sql),'sc.addtime desc',$page,$pageSize);
-		$total=$this->db->number;	
+		$total=$this->db->number;
+		if($total>0)
+		{
+				$pages=$this->db->pages;
+				foreach($info as $_v)
+				{
+					if(strpos($_v['url'],'://')===false)$_v['url']='1'.$_v['url'];
+					$data[]=$_v;
+				}
+				$row['pages']=$pages;
+				$row['data']=$data;
+
+		}else{
+			$row=$info;
+		}
 		include template('music','collect');
 
 	}
+	/**
+	 * 月票评分页面显示
+	 * @return tid   月榜的Id
+	 * @return title 榜单的标题
+	 * @return data  查询到的结果集
+	 */
 	public function grade()
 	{
-		if(!isset($this->_userid)) exit('非法操作');
-		
+		if(!isset($this->_userid) || !$_GET['moid'] || !$_GET['catid']) exit('非法操作');
+		$this->catid=$_GET['catid'];
+		$row=$this->getNewMounth($this->catid);
+		foreach ($row['data'] as $k => $v) {
 
+			$url=explode(',', $v[mUrl]);
+			$url=explode('=>',$url[0]);
+			$mUrl=trim($url[2]," '");
+			if(substr($mUrl, 0,23)=='http://localhost/phpcms')
+				{
+					$mUrl=str_replace('http://localhost/phpcms',APP_PATH,$mUrl);
+				}
+				$row['data'][$k]['mUrl']=$mUrl;
+		}
 
+		include template("music",'grade');
 	}
 	// 获得最新的月榜的数据
-	public function getNewMounth()
-	{
-		$sql='select * from v9_mounth where catid = '.$catid.' order by updatetime limit 1';
-		$row=$this->db->queryAll($sql);
-		
-	}
+	public function getNewMounth($catid,$size=100,$limit=1)
+ 	 	{
+ 	 		if(!$catid) exit('非法操作');
+ 	 		$sql='select id,title from v9_mounth where catid ='.$catid.' order by updatetime desc,inputtime desc limit '.$limit;
+ 	 		$row=$this->db->queryAll($sql);
+ 	 		if(empty($row))
+ 	 		{
+ 	 			showmessage('暂无榜单请发布');
+ 		}
+ 		$data['tid']=$row[0]['id'];
+ 		$data['title']=$row[0]['title'];
+ 		$data['data']=$this->getMounthData($row[0]['id'],$size);
+ 		return $data;
+ 	}
+
+ 	public function getMounthData($id,$limit=10,$where='')
+ 	{
+ 		
+ 		$sql='select mo.hgrade+mo.megrade+mo.exgrade as grade ,md.mUrl,m.id as mid,mo.id as id,m.title as music,m.singer from v9_mounth_'.$id.' as mo inner join v9_music as m inner join v9_music_data as md on mo.mid=m.id and m.id=md.id '.$where.' order by grade desc,mo.updatetime desc limit '.$limit;
+ 		$row=$this->db->queryAll($sql);
+ 		return $row;
+ 	}
+
 
 }
 

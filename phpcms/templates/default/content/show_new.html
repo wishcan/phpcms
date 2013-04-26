@@ -21,7 +21,7 @@
                 <!-- 分享到：
                <img src="http://v.t.qq.com/share/images/s/weiboicon16.png"  onclick="postToWb();" class="cu" title="分享到腾讯微博"/> -->
                   <span>来源:{if $copyfrom==''}原创{else}{$copyfrom}{/if}</span>
-                  <span>发布时间:{$inputtime}</span>
+                  <span>发布时间:{php echo substr($inputtime,0,10)}</span>
                   <span>浏览:<span id="hits"></span></span>
 
                 </p>
@@ -85,6 +85,5 @@
 // }
 // new ChannelSlide(".channel-slide","on",311,260);
 </script>
-{template "content","footer"}
-
 <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+{template "content","footer"}

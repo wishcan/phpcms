@@ -16,17 +16,19 @@ li{
         <div class='c'></div>
         <div class="col-auto channel-slide">
             <div class='newlist'>
-                {pc:content  action="lists" catid="$catid" order="updatetime desc"  num="25"}
+                {pc:content  action="lists" catid="$catid" num="25" order="updatetime desc" page="$page" }
                         <div class="title">
                         {loop $data $k $v}
                          <li> <p  {if $n==1}style="display:block"{/if}>
                           <a href="{$v[url]}" title="{$v[title]}" target='blank' class="blue"{title_style($v[style])}>{str_cut($v[title], 80)}</a>
-                            <span class='time'>{date('Y-m-d H:i:s',$v[inputtime])}</span>
+                            <span class='time'>{date('Y-m-d H:i:s',$v[updatetime])}</span>
                           </p>
                           </li>
                            <div {if $n%5==0} class='pre'{/if}></div>
                         {/loop}
+
                       </div>
+                      <div id="pages" class="text-c" style='text-align: center'>{$pages}</div>
                 {/pc}
           </div>
         </div>

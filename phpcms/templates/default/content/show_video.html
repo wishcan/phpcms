@@ -1,220 +1,89 @@
 {template "content","header"}
-<link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{JS_PATH}jquery.tools_tabs.min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$('#html').val('{player_code('video_player',$video['channelid'],$video['vid'],622,460)}');
-	$('#tag1').tabs("div.tabn1 > ul");
-}) 
+<!--main-->
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/news.css">
+<script type="text/javascript" src='{JS_PATH}jquery.min.js'></script>
 
-function copy_text(matter){
-	matter.select();
-	document.execCommand("Copy");
-	alert('复制成功！');
-}
+<div class="main center2">
+  <!-- 文章内容开始 -->
+    <div id='new' class='l'>
+        <div class='content_title l'>
+            <h2 class='l'>视频推荐</h2>
+            <span class='r'>当前位置:首页>视频推荐>内页</span>
+        </div>
+        <div class='c'></div>
+        <div class="col-auto channel-slide">
+            <div class='newlist'>
+              <div class='new_title'>
+                <h4>
+                  {str_cut($title,80)}
+                </h4>
+                <p class='new_message'>
+                <!-- 分享到：
+               <img src="http://v.t.qq.com/share/images/s/weiboicon16.png"  onclick="postToWb();" class="cu" title="分享到腾讯微博"/> -->
+                  <span>来源:{if $copyfrom==''}原创{else}{$copyfrom}{/if}</span>
+                  <span>发布时间:{php echo substr($inputtime,0,10)}</span>
+                  <span>浏览:<span id="hits"></span></span>
 
-</script>
+                </p>
+             </div>
 
-<div class="clr ct show_pg">
-	<div class="crumbs"><a href="{APP_PATH}">首页</a><span> &gt; </span>{catpos($catid)} 正文</div>
-	<div class="ad">
-	
-	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
-	
-	</div>
-    <div class="lty1">
-    	<div class="clr">
-    <div class="zj"><h5>{$title}</h5></div>
-    <div class="clr xxg">
-        <div class="clr">总播放：<span id="hits"></span>  <span>|</span>  更新时间：{$inputtime}</div>
-    </div>
-    </div>
-    	<div class="plbox">   
-{if $allow_visitor==1}
-	{if $video[vid]!=""}
-	{player_code('video_player',$video['channelid'],$video['vid'],622,460)}
-	{else}
-	该视频不存在，请返回！
-	{/if} 		
-{else}
-		<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">阅读此信息需要您支付 <B><I>{$readpoint} {if $paytype}元{else}点{/if}</I></B>，点击这里支付</font></a></CENTER>
+         <div class='news_content'style='line-height:1.5em;margin-bottom: 15px;' >
+
+            {if $allow_visitor==1}
+          {$content}
+          <!--内容关联投票-->
 {/if}
 
-
-		</div>
-        <div class="sr"> 
-		
-        	<ul class="srli">
-               <li>
-                 	<strong>分享视频：</strong><a href="#" title="text" class=""></a>
-                    <div class="clr sr_tag wp l">
-                     <!-- Baidu Button BEGIN -->
-    <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="http://share.baidu.com/static/images/type-button-5.jpg" />
-		<a class="shareCount"></a>
-	</div>
-<script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6434581" ></script>
-<script type="text/javascript" id="bdshell_js"></script>
+        <div class="Article-Tool">
 <script type="text/javascript">
-	document.getElementById("bdshell_js").src = "http://share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+  function postToWb(){
+    var _t = encodeURI(document.title);
+    var _url = encodeURIComponent(document.location);
+    var _appkey = encodeURI("cba3558104094dbaa4148d8caa436a0b");
+    var _pic = encodeURI('{$thumb}');
+    var _site = '';
+    var _u = 'http://v.t.qq.com/share/share.php?url='+_url+'&appkey='+_appkey+'&site='+_site+'&pic='+_pic+'&title='+_t;
+    window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
+  }
 </script>
-<!-- Baidu Button END -->
-                   </div>
-                </li>
-                <li style="clear:both;">
-                <strong>嵌入代码：</strong>
-                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="复制" onclick="copy_text($('#html'));"> (*非IE浏览器，请双击复制哦！)
-				</li> 
-            </ul>
-        </div>
-		{if $video[data] && count($video[data])>1}
-        <div class="clr bfj wp">
-		{loop $video[data] $v}
-         	<a href="{$v[url]}" >{$v[title]}</a>
-		{/loop}
-        </div> 
-		{/if}
-		 <div class="clr mgt10 mgb10">
-			{if $allow_comment && module_exists('comment')}
-      <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
-	  
-	<div class="bk10"></div>
-      <div class="box">
-        		<h5>评论排行</h5>
-				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
-            	<ul class="content list blue f14 row-2">
-				{loop $data $r}
-                	<li>·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 34)}</a><span>({$r[total]})</span></li>
-					{/loop}
-                </ul>
-				{/pc}
-        </div>
-        {/if}
-		 </div>
+          <script type="text/javascript">//document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到新浪微博" class="t1" target="_blank">&nbsp;</a>');</script>
+      <script type="text/javascript">//document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到豆瓣" class="t2" target="_blank">&nbsp;</a>');</script>
+      <script type="text/javascript">//document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="分享到人人" class="t3" target="_blank">&nbsp;</a>');</script>
+      <script type="text/javascript">//document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="分享到开心网" class="t4" target="_blank">&nbsp;</a>');</script>
+      <script type="text/javascript">//document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="分享到QQ空间" class="t5" target="_blank">&nbsp;</a>');</script>
+      
+    <span id='favorite'>
+    </span>
+
     </div>
-  <div class="wp lty2">
-  
-  
-  
-    <div class="box0">
-    	<div class="nav">
-             <h5>上升最快的视频</h5>
+
+      </div>
+
         </div>
-        <div class="bct">
-        	<div class="lbbox nos" >
-            <ul class="c1 c2">
-            
-{pc:content action="hits" catid="$catid" num="5" order="dayviews DESC" cache="0"}
-{loop $data $r}
-	<li>
-	<div class="clr h77">
-	<a href="{$r[url]}" ><img src="{$r[thumb]}" width="104" height="65" class="l"></a>
-	<div class="lh21"><a href="{$r[url]}" >{$r[title]}</a></div>
-	<div class="sz"><span>评论：{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</span></div>
-	</div>
-	</li> 
-{/loop}
-{/pc}			
-				
-            </ul>
-            </div>
         </div>
-    </div>
-	
-	
-	
-    <div class="ad">
-	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
-	
-	</div> 
-	
-	 <div class="mgt10 box2">
-    	<div class="nav tag3">
-        	<ul class="clr col3"  id="tag1">
-                <li><a href="#" class="ac">热点</a></li>
-                <li><a href="#">评论</a></li>
-                <li><a href="#">关注</a></li>
-            </ul>
-        </div>
-        <div class="bct tabn1">
-        	<ul class="uli4 mg10">
-			{pc:content action="hits" catid="$catid" num="10" order="views DESC"}
-			{loop $data $r}
- 			{php $ids = explode('-',$r[hitsid]); $pic = get_pic($ids[2],$r[catid]);}
- 				{if $n==1}
-					<li class="p_r">
-						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$pic[thumb]}" width="106" height="75"></a></div>
-						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],24,false)}</a></div>
-						  <div>{str_cut($r[description],45)}</div>
-					</li>
-				{else}
-					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],44,false)}</a></li>
-				{/if}			
- 			{/loop}
-			{/pc}
-          </ul>
-		  
-        	<ul class="uli4 mg10 hidden">
-			{pc:comment action="bang" num="9" cache="0"}
-			{loop $data $r}
-				{if $n==1}
-					<li class="p_r">
-						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
-						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],24,false)}</a></div>
-						  <div>{str_cut($r[description],45,false)}</div>
-					</li>
-				{else}
-					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],44,false)}</a></li>
-				{/if}			
- 			{/loop}
-			{/pc}
-          </ul>
-		  
-        <ul class="uli4 mg10 hidden">
-			{pc:content action="hits" catid="$catid" num="10" order="views DESC"}
-			{loop $data $r}
-				{if $n==1}
-					<li class="p_r">
-						  <div class="l"><span class="bs">1</span><a href="{$r[url]}" title="{$r[title]}"><img src="{$r[thumb]}" width="106" height="75"></a></div>
-						  <div class="lh18"><a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title],24,false)}</a></div>
-						  <div>{str_cut($r[description],45,false)}</div>
-					</li>
-				{else}
-					<li><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],44,false)}</a></li>
-				{/if}			
- 			{/loop}
-			{/pc}
-          </ul>
-		  
-		  
-        </div>
-    </div>
-	
-	
+
+   </div>
+  <!-- 文章内容结束 -->
+    <!--分类新闻-->
+    <!-- 引入右侧文件-->
+  {template "content","new_right"}
+<!--         <div class="col-auto">
+            <div class="left">推广链接</div>
+            <div class="right">这里放广告</div>
+        </div> -->
   </div>
+
+  <div class="bk10"></div>
 </div>
-<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
-<script language="JavaScript">
-<!--
-//切换地址
-function show_url(id) {
-	var local_value = $('#url').val();
-	if(id == 1){
-		$('#url').val('');
-	}else{
-		
-	}
- 	var local = 'local'+id;
-	var remote = 'remote'+id;
-	
-	var remote_value = $('#'+remote).val();
-	$.get('index.php', {m:'cloudhost', c:'bucket', a:'ChangeBucket', local:local_value,remote:remote_value, id:id, time:Math.random()}, function (data){
-		if(data=='ok'){
-			alert('记录修改成功！');
-		}else{
-			alert('修改失败！');
-		}
-	});  
-}
-//--> 
+<script type="text/javascript">
+// function ChannelSlide(Name,Class){
+//   $(Name+' ul.photo li').sGallery({
+//     titleObj:Name+' div.title p',
+//     thumbObj:Name+' .thumb li',
+//     thumbNowClass:Class
+//   });
+// }
+// new ChannelSlide(".channel-slide","on",311,260);
 </script>
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
 {template "content","footer"}

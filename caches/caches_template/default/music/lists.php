@@ -29,14 +29,11 @@
 			<div class='search l'>
 				<form class='l' type='post' style='width:700px'>
 					<span>歌曲搜索</span>
-					<div class='select'>
-						<div>
- 							<select>
+ 							<select class='l'>
 								<option name='search[singerName]'>按歌手搜索</option>
 								<option name='search[musicName]'>按歌名搜索</option>
 							</select>
-						</div>
-					</div>
+		
 					<input tpye='text' name='search[musicName]' class='name l' />
 					<input type='button' value='' class='submit l' />
 				</form>
@@ -73,12 +70,26 @@
 			<?php $n++;}unset($n); ?>
 		</tbody>
 	</table>
-	 <?php if($pages) { ?><div class=page><?php echo $pages;?></div><?php } ?>
+	<style type="text/css">
+	.page{
+		margin-top: 95px;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size:16px;
+	}
+	.page span{
+		color: #515151;
+		padding: 3px;
+		margin-left: 5px;
+	}
+	.page a{
+		color: #515151;
+	}
+	</style>
+	<?php if($_GET[hash]==1) { ?>
+	 <?php if($page) { ?><div class=page><?php echo $page;?></div><?php } ?>
 	</div>
 	 <div style='clear:both'></div>
-	
-
-<?php if($_GET[hash]==1) { ?>
 </div>
 </div>
 </div>

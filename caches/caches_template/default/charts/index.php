@@ -20,11 +20,14 @@
 		
 	$(function(){
 
-
+		$(".select").click(function()
+		{
+			$(this).find("li").show();	 
+		})
 			$("li").click(function(){
 				if($(this).attr("class")=='on'){
 					$(this).parent().find("li").show();
-					return;
+					return ;
 				}
 
 					$(this).parent().find(".on").removeClass('on');
@@ -32,6 +35,7 @@
 					$(this).addClass("on");
 					$(this).parent().find("li").hide();
 					$(this).show();
+					return false;
 			})
 	})
 

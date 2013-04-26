@@ -44,7 +44,7 @@
 	               </tbody>
 	          </table>
 	          	<p class='bdxq_<?php if($s==0) { ?>n<?php } elseif ($s==1) { ?>g<?php } elseif ($s==2) { ?>m<?php } ?>'>
-	          		<a href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=listCharts&id=<?php echo $s;?>&t=<?php echo $v['title'];?>&b=<?php echo substr($v[tablename],9)?>' target='_blank'></a>
+	          		<a href='<?php echo APP_PATH;?>/index.php?m=music&c=index&a=listCharts&id=<?php echo $s;?>&t=<?php echo mb_substr($v[title],1,-1,"UTF-8");?>&b=<?php echo substr($v[tablename],9)?>' target='_blank'></a>
 	          	</p>
 	      	</ul>
 	      	 <?php $n++;}unset($n); ?>

@@ -32,14 +32,11 @@
 			<div class='search l'>
 				<form class='l' type='post'>
 					<span>歌曲搜索</span>
-					<div class='select'>
-						<div>
- 							<select>
+ 							<select class='l'>
 								<option name='search[singerName]'>按歌手搜索</option>
 								<option name='search[musicName]'>按歌名搜索</option>	
 							</select>
-						</div>
-					</div>
+		
 					<input tpye='text' name='name' class='name'/>
 					<input type='button' value='' class='submit' style='float:left;' />
 				</form>

@@ -21,7 +21,7 @@ li{
                         <?php $n=1; if(is_array($data)) foreach($data AS $k => $v) { ?>
                          <li> <p  <?php if($n==1) { ?>style="display:block"<?php } ?>>
                           <a href="<?php echo $v['url'];?>" title="<?php echo $v['title'];?>" target='blank' class="blue"<?php echo title_style($v[style]);?>><?php echo str_cut($v[title], 80);?></a>
-                            <span class='time'><?php echo date('Y-m-d H:i:s',$v[inputtime]);?></span>
+                            <span class='time'><?php echo date('Y-m-d H:i:s',$v[updatetime]);?></span>
                           </p>
                           </li>
                            <div <?php if($n%5==0) { ?> class='pre'<?php } ?>></div>

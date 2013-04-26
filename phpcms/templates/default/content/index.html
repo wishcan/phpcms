@@ -1,25 +1,40 @@
 
 {template "content","header"}
 <!--首页页面显示开始-->
+
 <div class='main'>
-	
+
     <!-- 首页上部分开始 -->
     <div class='center2 main-top'>
         <!-- 幻灯片开始 -->
         <div class='h_images l'>  
+        					{pc:content  action="lists"  catid="62" order="listorder asc,updatetime desc" num="5"  return="data"  moreinfo='1'}
             <div class='imgs'>
-			<script language="javascript" src="{APP_PATH}caches/poster_js/12.js"></script>
+
+				{loop $data $v}
+				<a href='{if $v["link"]} {$v["link"]}{else}{$v["url"]}{/if}'>
+
+				<img src='{$v["thumb"]}' />
+
+				</a>
+				{/loop}
+				
             </div>
             <div class='zz'></div>
             <ul class='h_num'>
-                <li>6</li>
-                <li>5</li>
-                <li class='lion'>4</li>
-                <li>3</li>
-                <li>2</li>
-                <li>1</li>
+            	{loop $data $v}
+                <li>{$n}</li>
+                {/loop}
+                 <div class="c"></div>
             </ul>
-
+ <div class="c"></div>
+           
+				<div class='imgnews_title'>
+				{loop $data $v}
+					<p class='{if $n==1}imgnews_on{/if}'>{str_cut($v['title'],50)}</p>
+				{/loop}
+			</div>
+			{/pc}
         </div>
         <!-- 幻灯片结束 -->
         <!-- 绝对好声音开始 -->
@@ -107,12 +122,12 @@
                     <!-- 热点新闻开始 -->
                     <div class='hot'>
                     	{pc:content  action="position" posid="2" order="listorder DESC" num="1" return="info"}
-                    	
                     	{loop $info $v}
                     <a href="{$v['url']}" target="__blank" title="{$v['title']}"{title_style($v[style])}>
                           <h3 class='hot_title'>{str_cut($v['title'],50)}</h3>
                           <p class='hot_desc'>
                             {str_cut($v['description'],100)} <span class='more'>查看详细 >></span>
+                            {php $postitle=$v['title']}
                           </p>
                      </a>
                      {/loop}
@@ -122,15 +137,14 @@
                     <!-- 新新闻 -->
                     <ul class='new'>
 
-             		 	{pc:content  action="lists"  catid="9" order="updatetime desc" num="5" return="data"}
+             		 	{pc:content  action="lists"  catid="9" order="updatetime desc" num="5" return="data" where="posids=0 and catid in(36,37)"}
              		 	{loop $data $v}
-             		 	{php if($n!==1):}
+             		 	
                         <li>
                             <a href='{$v[url]}'><span class='news_title'>{str_cut($v['title'],50)}</span>
-                            <span class='time'>{date("Y-m-d",$v[inputtime])}</span>
+                            <span class='time'>{date("Y-m-d",$v[updatetime])}</span>
                             </a>
                         </li>
-						{php endif;}
                         {/loop}
                        	{/pc}
                        
@@ -146,7 +160,7 @@
               </div>
               <!-- 微博同步开始 -->
               <div class='weibo l'>
-                <img src='{CSS_PATH}hy/images/weibo_zw.png' />
+             		<iframe width="328" height="224" class="share_self"  style='background:#faf8f4'frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=328&height=230&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=1&isWeibo=1&isFans=0&uid=3189165094&verifier=fd3040f8&colors=d6f3f7,f8faf4,666666,0082cb,ecfbfd&dpc=1"></iframe>
               </div>
               <!-- 微博同步结束  -->
             </div>
@@ -154,7 +168,7 @@
         <div class='c'></div>
     <!-- 广告位 -->
       <div class='gg'>
-        <img src='{CSS_PATH}hy/images/zw4.png' />
+        <script language="javascript" src="{APP_PATH}caches/poster_js/14.js"></script>
       </div>
     </div>
     <!-- 首页上部分结束 -->
@@ -232,259 +246,6 @@
 	          </table>
 	      	</ul>
 	      	 {/loop}
-	      <!-- 	<ul class='week_n'>
-	          <h1>第201301期</h1>
-	          <table cellspacing="0">
-	                <thead>
-	                    <tr>
-	                    	<td class='td1'>名次</td>
-	                    	<td class='td2'>歌曲</td>
-	                    	<td class='td3'>歌手</td>
-	                    	<td class='td4'>得分</td>
-	                    	<td class='td5'>试听</td>
-	                    </tr>
-	               </thead>
-	               <tbody>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                                        <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='s1'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='os2'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	               </tbody>
-
-	          </table>
-	        </ul>
-	        <ul class='week_g'>
-	          <h1>第201301期</h1>
-	          <table cellspacing="0">
-	                <thead>
-	                    <tr>
-	                    	<td class='td1'>名次</td>
-	                    	<td class='td2'>歌曲</td>
-	                    	<td class='td3'>歌手</td>
-	                    	<td class='td4'>得分</td>
-	                    	<td class='td5'>试听</td>
-	                    </tr>
-	               </thead>
-	               <tbody>
-						<tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='s1'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='os2'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	               </tbody>
-	          </table>
-	        </ul>
-	        <ul class='week_m'>
-	          <h1>第201301期</h1>
-	          <table cellspacing="0">
-	                <thead>
-	                    <tr><td>名次</td><td>歌曲</td><td>歌手</td><td>得分</td><td>试听</td></tr>
-	               </thead>
-						<tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='one'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='s1'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	                    <tr>
-	                    	<td class='td1'><span class='os2'></span></td>
-	                    	<td class='td2'>微日舞曲</td>
-	                    	<td class='td3'>白若溪</td>
-	                    	<td class='td4'>99</td>
-	                    	<td class='td5'><b class='st'></b></td>
-	                    </tr>
-	               </tbody>
-
-	          </table>
-	        </ul> -->
       </div>
     <!-- 首页排行榜结束 -->
     <div class='c'></div>
@@ -530,7 +291,7 @@
 						<img src='{$v["thumb"]}' />
 						<p class='music_name'><span><span>{str_cut($v['music'],24)}</span></span><a taget="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp' ids="{$v['mid']}" b={substr($pos_n['table_name'],9)}></i>
+						<i class='tp' ids="{$v['id']}" b={substr($pos_n['table_name'],9)}></i>
 					</li>
 				{/loop}	
 							
@@ -560,9 +321,9 @@
 
 					<li>
 						<img src='{$v["thumb"]}' />
-						<p class='music_name'><span><span>{$v['music']}</span></span><a target="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}'><b class='st'></b></a></p>
+						<p class='music_name'><span><span>{$v['music']}</span></span><a target="_blank" href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp' ids="{$v['mid']}" b={substr($pos_g['table_name'],9)}></i>
+						<i class='tp' ids="{$v['id']}" b={substr($pos_g['table_name'],9)}></i>
 					</li>
 				{/loop}	
 								
@@ -592,7 +353,7 @@
 						<img src='{$v["thumb"]}' />
 						<p class='music_name'><span><span>{$v['music']}</span></span><a target='_blank' href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}'><b class='st'></b></a></p>
 						<p class='singer'>{$v['singer']}</p>
-						<i class='tp' ids="{$v['mid']}" b={substr($pos_m['table_name'],9)}></i>
+						<i class='tp' ids="{$v['id']}" b={substr($pos_m['table_name'],9)}></i>
 					</li>
 				{/loop}	
 									
@@ -635,11 +396,10 @@
 						<img src='{$v[thumb]}' class='l' />
 						<div class='message l'>
 							
-								<h3 class='message_title'>{str_cut($v[title],30)}</h3>
-								<p class='message_desc'>{str_cut($v[content],100)}</p>
+								<h3 class='message_title'>{php echo mb_substr($v[title],0,30,'utf-8')}</h3>
 								<p><span>时间：</span>{date("Y-m-d",$v[showtime])}</p>
 								<p><span>地点: </span>{$v[showplace]}</p>
-								<p><span>购票地址: </span>{str_cut($v[showplaces],40)}</p>
+								<p><span>地址: </span>{str_cut($v[showplaces],40)}</p>
 							
 						</div>
 					</a>
@@ -670,7 +430,7 @@ $(function(){
 		$(this).parent().parent().parent().prev("img").attr("src",$(this).attr("thumb"));
 	})
 
-		$(".tp").click(function(){
+	$(".tp").click(function(){
 
 			var id=$(this).attr("ids");
 			var catid=$(this).attr("catid");
@@ -696,7 +456,7 @@ $(function(){
 						alert("响应超时，请重试");
 						break;
 						case 0:
-						alert("您今天已经对此歌曲已经投过票了");
+						alert("您今天对此歌曲已经投过票了");
 						break;
 						default:
 						alert(statu);
@@ -705,7 +465,53 @@ $(function(){
 				}
 
 				)
-		})
+	})
+	/**
+	 * 图片幻灯
+	 */
+	index=0;
+	$(".imgs a").hover(function()
+	{
+		ind=$(this).index();
+		clearInterval(showI)
+			},function(){
+		imgPlay(ind)
+	})
+	$(".h_num li").eq(0).addClass("lion")
+	$(".h_num li").hover(function()
+	{
+		ind=$(this).index();
+		imgShow(ind);
+		clearInterval(showI)
+	},function(){
+		imgPlay(ind)
+	})
+	var w=0;
+	$(".h_num li").each(function(){
 
+		w+=parseInt($(this).width())+16;
+	})
+	$(".h_num").css("left",parseInt($(".zz").width())-w-10);
+	showI=setInterval(function(){
+
+			len=$(".h_num li").length;
+			imgShow(index);
+			index++;
+			if(index==len){index=0}
+		},3000)
+	function imgPlay(index){
+		showI=setInterval(function(){
+			len=$(".h_num li").length;
+			imgShow(index);
+			index++;
+			if(index==len){index=0}
+		},3000)
+	}
+	function imgShow(index){
+		$(".imgs a").eq(index).stop(true,true).fadeIn(1000).siblings().hide();
+		$(".h_num li").eq(index).stop(true,true).addClass("lion").siblings().removeClass("lion");
+		$(".imgnews_title p").eq(index).stop(true,true).addClass("imgnews_on").siblings().removeClass("imgnews_on");
+	}
+	
 })
 </script>

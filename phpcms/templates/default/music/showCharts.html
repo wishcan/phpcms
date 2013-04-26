@@ -44,7 +44,7 @@
 	               </tbody>
 	          </table>
 	          	<p class='bdxq_{if $s==0}n{elseif $s==1}g{elseif $s==2}m{/if}'>
-	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=listCharts&id={$s}&t={$v[title]}&b={php echo substr($v[tablename],9)}' target='_blank'></a>
+	          		<a href='{APP_PATH}/index.php?m=music&c=index&a=listCharts&id={$s}&t={mb_substr($v[title],1,-1,"UTF-8")}&b={php echo substr($v[tablename],9)}' target='_blank'></a>
 	          	</p>
 	      	</ul>
 	      	 {/loop}

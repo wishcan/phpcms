@@ -48,9 +48,9 @@ class index {
 		$pos_g=$this->getChar(27,' where sid = 1',6);
 		$pos_m=$this->getChar(28,' where sid = 1',6);
 		// 月票榜数据获取
-		// $mounth_n=$this->getNewMounth(56);
- 	// 	$mounth_g=$this->getNewMounth(57);
- 	// 	$mounth_m=$this->getNewMounth(58);
+		$mounth_n=$this->getNewMounth(56);
+ 		$mounth_g=$this->getNewMounth(57);
+ 		$mounth_m=$this->getNewMounth(58);
  		$mounth=array($mounth_n,$mounth_g,$mounth_m);
 		include template('content','index',$default_style);
 	}

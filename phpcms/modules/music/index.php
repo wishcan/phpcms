@@ -38,11 +38,11 @@ class index{
 
 	public function lists(){
 		if(!$_GET['id'])return false;
-		isset($_GET['hash'])? $pageSize=50:$pageSize=10;
+		isset($_GET['hash'])? $pageSize=20:$pageSize=10;
 		isset($_GET['page'])?$page=$_GET['page']:$page=1;
 		$where=' catid='.$_GET['id'];
-		$row=$this->selectMusic('catid = '.$_GET['id'],0,$page,$pageSize);
-		$page=$row['page'];
+		$row=$this->selectMusic('catid = '.$_GET['id'],$page,$pageSize);
+		$page=$row['pages'];
 		$data=$row['data'];
 		include template('music','lists');
 	}
@@ -106,8 +106,14 @@ class index{
 			
 		include template('music','show_mp3');
 	}
-
-	public function selectMusic($where,$page=0,$page,$pageSize)
+	/**
+	 * 查找歌曲
+	 * @param  string  $where    [查询条件]
+	 * @param  integer $page     [是否进行分页]
+	 * @param  integer $pageSize [分页查询条数]
+	 * @return array             [返回结果集]
+	 */
+	public function selectMusic($where,$page=0,$pageSize)
 	{
 		$sql=$this->sql.' where '.$where;
 		if(!$page)
@@ -127,7 +133,7 @@ class index{
 					if(strpos($_v['url'],'://')===false)$v['url']='1'.$v['url'];
 					$data[]=$_v;
 				}
-				$row['pages']=$page;
+				$row['pages']=$pages;
 				$row['data']=$data;
 
 		}else{
@@ -143,7 +149,6 @@ class index{
 	public function addVoteNum()
 	{
 			$id=$_POST['id'];
-			// echo 1;exit;
 			$catid=$_POST['catid'];
 			$tablename=$this->pre.'chart_'.$_POST['tablename'];
 			$addTime=time();
@@ -334,7 +339,7 @@ class index{
 
 
 	// 获得最新的榜单信息
-	public function getNewChart($size=10,$limit)
+	public function getNewChart($size=10,$limit=1)
 	{
 		$week_n=$this->getChar(26,$size,$limit);
 		$week_g=$this->getChar(27,$size,$limit);
@@ -355,7 +360,7 @@ class index{
 		if(!$id){
 			exit("请指定榜单");
 		}
-	
+		$limit=$limit;
 		$id=$id+20;
 		$sql='select '.$this->field.' from '.$this->tb.' where catid='.$id.' and statu = 1 order by updatetime desc limit '.$limit;
 		$chart=$this->db->queryAll($sql);
@@ -409,12 +414,12 @@ class index{
 	// 单项
  	public function listCharts()
  	{
- 		isset($_GET['t'])?$title=$_GET['t']:showmessage("非法操作");
+
+ 		isset($_GET['t'])?$title='第'.$_GET['t'].'期':showmessage("非法操作");
  		isset($_GET['b'])?$tablename=$this->pre.'chart_'.$_GET['b']:showmessage('非法操作');
  		$row=$this->getDatas($tablename,40);
 		$datas=$row['data'];
 		$page=$datas['page'];
-
  		include template('music','list_charts');
  	}
 

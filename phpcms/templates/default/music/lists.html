@@ -29,14 +29,11 @@
 			<div class='search l'>
 				<form class='l' type='post' style='width:700px'>
 					<span>歌曲搜索</span>
-					<div class='select'>
-						<div>
- 							<select>
+ 							<select class='l'>
 								<option name='search[singerName]'>按歌手搜索</option>
 								<option name='search[musicName]'>按歌名搜索</option>
 							</select>
-						</div>
-					</div>
+		
 					<input tpye='text' name='search[musicName]' class='name l' />
 					<input type='button' value='' class='submit l' />
 				</form>
@@ -73,12 +70,26 @@
 			{/loop}
 		</tbody>
 	</table>
-	 {if $pages}<div class=page>{$pages}</div>{/if}
+	<style type="text/css">
+	.page{
+		margin-top: 95px;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size:16px;
+	}
+	.page span{
+		color: #515151;
+		padding: 3px;
+		margin-left: 5px;
+	}
+	.page a{
+		color: #515151;
+	}
+	</style>
+	{if $_GET[hash]==1}
+	 {if $page}<div class=page>{$page}</div>{/if}
 	</div>
 	 <div style='clear:both'></div>
-	
-
-{if $_GET[hash]==1}
 </div>
 </div>
 </div>

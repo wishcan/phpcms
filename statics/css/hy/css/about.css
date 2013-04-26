@@ -298,26 +298,30 @@ background-color: #f3eee4;
 	height:13px;
 }
 /*新歌推荐*/
-.new_tj_title h3{
+.new_music .new_tj_title h3{
 	background:url(../images/new_t_h.png);
 	margin-top:-8px;
 }
 #new_music select{
-	padding:4px 0px ; 
 	padding-right:0px;
-	font-size:12px;
+	font-size:15px;
 	cursor:pointer;
+	height: 25px;
 	display: block;
+	margin:0px 10px;
+
+		line-height: 25px;
 /*	height:30px;*/
+}
+#new_music select option{
+	line-height: 25px;
 }
 #new_music .music_link{
 	*top:-8px;
 }
 #new_music select option{
 	margin:5px;
-	display: block;
-	height:30px;
-}
+	display: block;}
 #new_music .news_m_c{
 	background-color: #fff;
 	margin-top:-15px;
