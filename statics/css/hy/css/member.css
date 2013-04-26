@@ -63,6 +63,7 @@ color: #fff
 }
 #con{
 width: 690px;
+/*height: 900px;*/
 padding: 17px;
 padding-top: 0;
 margin-left: -20px;
@@ -71,6 +72,9 @@ background: #faf8f4;
 }
 iframe{
 	background: #faf8f4;
+}
+.gra{
+	height: 920px;
 }
 a{
 	text-decoration: none;
@@ -111,7 +115,6 @@ text-align: right;
 	font-size: 18px;
 	text-indent:4px;
 	margin-left: 15px;
-	
 	width: 232px;
 	background: url(../images/input_bg.png);
 	background-repeat: no-repeat;
@@ -133,4 +136,8 @@ text-align: right;
 	margin-left: 60px;
 	margin-top: 30px;
 	*margin-top: 20px;
+}
+.page{
+	text-align: center;
+	margin-top: 220px;
 }

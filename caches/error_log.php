@@ -2577,3 +2577,54 @@
 <?php exit;?>04-26 17:31:26 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>04-26 17:31:26 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>04-26 17:31:26 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:22:06 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:22:06 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:22:06 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 21:23:20 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 22:09:26 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:09:37 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:09:39 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:09:57 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:10:16 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:10:29 | 2 | extract() expects parameter 1 to be array, string given | phpcms\modules\music\member.php | 210
+<?php exit;?>04-26 22:33:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 22:33:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 22:33:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 22:46:22 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 252
+<?php exit;?>04-26 22:46:22 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 253
+<?php exit;?>04-26 22:46:22 | 4096 | Object of class member could not be converted to string | phpcms\modules\music\member.php | 228
+<?php exit;?>04-26 22:49:51 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 255
+<?php exit;?>04-26 22:49:51 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:50:13 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 255
+<?php exit;?>04-26 22:50:13 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:51:08 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 255
+<?php exit;?>04-26 22:51:08 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:51:11 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 255
+<?php exit;?>04-26 22:51:11 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:52:58 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 257
+<?php exit;?>04-26 22:52:58 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 259
+<?php exit;?>04-26 22:53:22 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 257
+<?php exit;?>04-26 22:53:22 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 259
+<?php exit;?>04-26 22:57:22 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 257
+<?php exit;?>04-26 22:57:22 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 259
+<?php exit;?>04-26 22:57:32 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:57:32 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 258
+<?php exit;?>04-26 22:57:42 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:57:42 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 258
+<?php exit;?>04-26 22:57:45 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:57:45 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 258
+<?php exit;?>04-26 22:57:50 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:57:50 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 258
+<?php exit;?>04-26 22:57:53 | 2 | explode() expects parameter 2 to be string, array given | phpcms\modules\music\member.php | 256
+<?php exit;?>04-26 22:57:53 | 2 | in_array() expects parameter 2 to be array, null given | phpcms\modules\music\member.php | 258
+<?php exit;?>04-26 23:13:46 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 23:13:46 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-26 23:13:46 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70

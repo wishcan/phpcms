@@ -4,7 +4,7 @@
     <script type='text/javascript'>
         $('.login').remove()
     </script>
-
+ <input type='hidden' name='modelid' value="<?php echo $modelid;?>">
 <div class='center2'id='member' >
     <div class='link l'>
         <h5 class='wel'>欢迎您  <a href='<?php echo APP_PATH;?>index.php?m=member&c=index&a=logout'><?php echo L('logout');?></a></h5>
@@ -20,11 +20,11 @@
         <a href='<?php echo APP_PATH;?>index.php?m=member&c=index&a=account_manage_password&t=1'class='change' target='con'><h3 class='on'></h3></a>
         <a href='<?php echo APP_PATH;?>index.php?m=music&c=member&a=collect'class='collect' target='con'><h3></h3></a>
   <?php } ?>
-
+ 
      </div>
-    <div id="con"class='border' style='float:left;height: 720px'>
+    <div id="con"class='border' style='float:left;'>
            <?php if(in_array($modelid,array('23','24','25'))) { ?>
-   <iframe style='float:left'width='700'height='720' src="<?php echo APP_PATH;?>index.php?m=music&c=member&a=grade&catid=56&moid=<?php echo $modelid;?>" name='con' frameborder="0"></iframe>
+   <iframe <?php if(in_array($modelid,array('23','24','25'))) { ?> class='gra' <?php } ?> style='float:left'width='700'height='720' src="<?php echo APP_PATH;?>index.php?m=music&c=member&a=grade&catid=56&moid=<?php echo $modelid;?>" name='con' frameborder="0"></iframe>
            <?php } else { ?>
         <iframe style='float:left'width='700'height='720' src="<?php echo APP_PATH;?>index.php?m=member&c=index&a=account_manage_password&t=1" name='con' frameborder="0"></iframe>
         <?php } ?>

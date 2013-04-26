@@ -4,7 +4,7 @@
     <script type='text/javascript'>
         $('.login').remove()
     </script>
-
+ <input type='hidden' name='modelid' value="{$modelid}">
 <div class='center2'id='member' >
     <div class='link l'>
         <h5 class='wel'>欢迎您  <a href='{APP_PATH}index.php?m=member&c=index&a=logout'>{L('logout')}</a></h5>
@@ -20,11 +20,11 @@
         <a href='{APP_PATH}index.php?m=member&c=index&a=account_manage_password&t=1'class='change' target='con'><h3 class='on'></h3></a>
         <a href='{APP_PATH}index.php?m=music&c=member&a=collect'class='collect' target='con'><h3></h3></a>
   {/if}
-
+ 
      </div>
-    <div id="con"class='border' style='float:left;height: 720px'>
+    <div id="con"class='border' style='float:left;'>
            {if in_array($modelid,array('23','24','25'))}
-   <iframe style='float:left'width='700'height='720' src="{APP_PATH}index.php?m=music&c=member&a=grade&catid=56&moid={$modelid}" name='con' frameborder="0"></iframe>
+   <iframe {if in_array($modelid,array('23','24','25'))} class='gra' {/if} style='float:left'width='700'height='720' src="{APP_PATH}index.php?m=music&c=member&a=grade&catid=56&moid={$modelid}" name='con' frameborder="0"></iframe>
            {else}
         <iframe style='float:left'width='700'height='720' src="{APP_PATH}index.php?m=member&c=index&a=account_manage_password&t=1" name='con' frameborder="0"></iframe>
         {/if}
