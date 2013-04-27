@@ -16,7 +16,7 @@
                         {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
                        
         					{loop $data $v}
-        						<a href="" target="_blank"{title_style($v[style])}>{$v[title]}</a>
+        						<span >{$v[title]}</span>
         					{/loop}
                       
         				{/pc}
@@ -39,7 +39,7 @@
                 {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
                            
                                 {loop $data $v}
-                                    <a href="{$v[url]}" target="_blank"{title_style($v[style])}>{$v[title]}</a>
+                                      <span>{$v[title]}</span>
                                 {/loop}
                             
 

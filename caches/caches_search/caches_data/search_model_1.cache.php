@@ -60,6 +60,12 @@ return array (
     'name' => '广告',
     'sort' => '0',
   ),
+  32 => 
+  array (
+    'typeid' => '70',
+    'name' => '公司信息',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',

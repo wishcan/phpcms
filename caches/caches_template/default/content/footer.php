@@ -13,10 +13,12 @@
 			<div class='footer_t_r'>
 				<h3>合作伙伴</h3>
 				<div class='firend_link'>
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
+			<?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"link\" data=\"op=link&tag_md5=99c32cd273c57223c20074bf5196e97a&action=type_list&siteid=%24siteid&order=listorder+DESC&num=10&return=dat\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$link_tag = pc_base::load_app_class("link_tag", "link");if (method_exists($link_tag, 'type_list')) {$dat = $link_tag->type_list(array('siteid'=>$siteid,'order'=>'listorder DESC','limit'=>'10',));}?>
+
+					<?php $n=1;if(is_array($dat)) foreach($dat AS $v) { ?>
+			              <span><?php echo $v['name'];?></span> |
+					<?php $n++;}unset($n); ?>
+				<?php if(defined('IN_ADMIN') && !defined('HTML')) {echo '</div>';}?>
 				</div>
 			</div>
 		</div>

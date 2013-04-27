@@ -10,15 +10,14 @@
        <hr/>
 	<div id='messages' class='l'>
 			<ul class='l'>
-				{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page" moreinfo="1"}
-				{php for($i=0;$i<8;$i++):}
+				{pc:content action="lists" catid="$catid" num="15" order="id DESC" page="$page" moreinfo="1"}
 				{loop $data $r}
 				<li>
 		<a href="{$r[url]}" target="_blank"{title_style($r[style])}>
 				<img src='{$r[thumb]}'class='l' />
 						<div class='message l'>
 						
-								<h3 class='message_title'>{str_cut($r[title],30)}</h3>
+								<h3 class='message_title'>{$r[title]}</h3>
 								<p><span>时间：</span>{$r[showtime]}</p>
 								<p><span>地点: </span>{$r[showplaces]}</p>
 								<p><span>地址: </span>{$r[showplace]}</p>
@@ -28,7 +27,6 @@
 				</li>	
 				{if $n%6==0}<li class="bk20 hr"></li>{/if}
 				{/loop} 
-		        {php endfor;}
 			</ul>	
 			<div id="pages" class="text-c">{$pages}</div> 
 		{/pc}

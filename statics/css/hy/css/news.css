@@ -132,6 +132,9 @@ width:960px;
 	*position: relative;
 	top:-1.8em;
 	}
+#friend span{
+	margin-left: 15px;
+}	
 #friend .me_title{
 	background:url(../images/media_title.png);
 }
@@ -150,7 +153,6 @@ width:960px;
 	height:16px;
 	width: 15px;
 	background:url(../images/morem.png);
-
 }
 .media a,.school a{
 	line-height:2em;

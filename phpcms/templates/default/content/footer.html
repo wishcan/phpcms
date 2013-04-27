@@ -13,10 +13,12 @@
 			<div class='footer_t_r'>
 				<h3>合作伙伴</h3>
 				<div class='firend_link'>
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
-					慈文文化   欧迪传媒   驻均影视集团   慈文文化   欧迪传媒   慈文文化   欧迪传媒
+			{pc:link  action="type_list" siteid="$siteid" order="listorder DESC" num="10" return="dat"}
+
+					{loop $dat $v}
+			              <span>{$v[name]}</span> |
+					{/loop}
+				{/pc}
 				</div>
 			</div>
 		</div>

@@ -690,9 +690,21 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),
 			}
 			$more = 1;
 		}
-		$multipage.= ' <a href="'.pageurl($urlrule,1, $array).'" class="a1">'.'首页'.'</a>';
+		if($curr_page==1)
+		{
+			$multipage='<a href="javascript:void(0)">首页</a>';
+		}else{
+			$multipage.= ' <a href="'.pageurl($urlrule,1, $array).'" class="a1">'.'首页'.'</a>';
+		}
+		
 		if($curr_page>0) {
-			$multipage .= ' <a href="'.pageurl($urlrule, $curr_page-1, $array).'" class="a1">'.L('previous').'</a>';
+			if($curr_page==1)
+			{
+				$multipage .= ' <a href="javascript:void(0)" class="a1">'.L('previous').'</a>';
+			}else{
+				$multipage .= ' <a href="'.pageurl($urlrule, $curr_page-1, $array).'" class="a1">'.L('previous').'</a>';
+			}
+			
 			if($curr_page==1) {
 				$multipage .= ' <span class="on">1</span>';
 			} elseif($curr_page>6 && $more) {
@@ -717,15 +729,25 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),
 		} elseif($curr_page==$pages) {
 			$multipage .= ' <span class="on">'.$pages.'</span> <a href="'.pageurl($urlrule, $curr_page, $array).'" class="a1">'.L('next').'</a>';
 		} else {
-			$multipage .= ' <a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a> <a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a>';
+			$multipage .= ' <a href="'.pageurl($urlrule, $pages, $array).'">'.$pages.'</a>';
+			if($curr_page == ($total+1))
+			{
+				$multipage .= '<a href="javascript:void(0)">'.L('next').'</a>';
+			}else{
+				$multipage .= '<a href="'.pageurl($urlrule, $curr_page+1, $array).'" class="a1">'.L('next').'</a>';
+			}
+			
 		}
 	}
-
-		if($num>$perpage-1 && $total>1)
+		if($curr_page == ($total+1))
 		{
-			$multipage.=' <a href="'.pageurl($urlrule,$total, $array).'" class="aend">'.'尾页'.'</a>';	
-			$multipage .= '<span>共<span><a class="global">'.$total.'</a>'.'<span>页</span>';
+			$multipage.='<a href="javascript:void(0)">尾页</a>';
+		}else
+		{
+			$multipage.=' <a href="'.pageurl($urlrule,$total+1, $array).'" class="aend">'.'尾页'.'</a>';
 		}
+		$num=$total+1;
+		$multipage .= '<span>共<span><a class="global">'.$num.'</a>'.'<span>页</span>';
 	return $multipage;
 }
 

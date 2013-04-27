@@ -623,6 +623,9 @@ background-position:left -260px ;
 #video ul{
 	width: 940px;
 }
+#video ul li{
+	width:171px;
+}
 #video,#messages,.music_tui .center2{
 	float:left;
 	/*height:;*/

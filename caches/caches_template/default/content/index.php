@@ -397,9 +397,9 @@
 						<div class='message l'>
 							
 								<h3 class='message_title'><?php echo mb_substr($v[title],0,30,'utf-8')?></h3>
-								<p><span>时间：</span><?php echo date("Y-m-d",$v[showtime]);?></p>
-								<p><span>地点: </span><?php echo $v['showplace'];?></p>
-								<p><span>地址: </span><?php echo str_cut($v[showplaces],40);?></p>
+								<p><span>时间：</span><?php echo $v['showtime'];?></p>
+								<p><span>地点: </span><?php echo str_cut($v[showplaces],40);?></p>
+								<p><span>地址: </span><?php echo $v['showplace'];?></p>
 							
 						</div>
 					</a>
@@ -456,7 +456,7 @@ $(function(){
 						alert("响应超时，请重试");
 						break;
 						case 0:
-						alert("您今天对此歌曲已经投过票了");
+						alert("您今天对此歌曲投过票了");
 						break;
 						default:
 						alert(statu);

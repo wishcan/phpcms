@@ -1,7 +1,7 @@
 {template "content","header"}
 <link rel="stylesheet" href="{CSS_PATH}hy/css/video.css">
 <!--main-->
-<div class="main center2 border">
+<div class="main center2 border" style='margin-top: 20px;'>
 
 	<div class="content_title l" >
             <h2 class="l">视频推荐</h2>
@@ -17,7 +17,6 @@
 				<a href="{$r[url]}" target="_blank"{title_style($r[style])}>
 				<p><img src='{$r[thumb]}' width='171' height='171' /></p>
 				<b>{$r[title]}</b></a></li>
-			{if $n%6==0}<li class="bk20 hr"></li>{/if}
 		{/loop}
 		        
 		  </ul>       
