@@ -2789,3 +2789,4 @@
 <?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 21:32:23 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 94 and defined | phpcms\modules\music\index.php | 117

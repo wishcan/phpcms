@@ -72,7 +72,7 @@
 		<!-- 信息结束 -->
 		<!-- 作品试听开始 -->
 		<div class='c'></div>
-	<iframe src="<?php echo APP_PATH;?>index.php?m=music&c=index&a=getMusic&singer=<?php echo $title;?>" frameborder="0"></iframe>
+	<iframe src="<?php echo APP_PATH;?>index.php?m=music&c=index&a=getMusic&id=<?php echo $id;?>" frameborder="0"></iframe>
 		
 		<!-- 作品试听结束 -->
 	</div>

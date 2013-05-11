@@ -21,8 +21,8 @@
 					</tr>
 					{loop $data $v}
 					<tr>
-						<td class='t1'><span>{$v[music]}</span></td>
-						<td class='t2'><span>{$v[spName]}</span></td>
+						<td class='t1'><span>{$v[title]}</span></td>
+						<td class='t2'><span>{$v[spname]}</span></td>
 						<td class='t2'><span><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}' target='blank'><b class='st'></b></a></span></td>
 						
 					</tr>
@@ -42,8 +42,8 @@
 					{loop $data $v}
 					{php if($n>count($data)/2):}
 					<tr>
-						<td class='t1'><span>{$v[music]}</span></td>
-						<td class='t2'><span>{$v[spName]}</span></td>
+						<td class='t1'><span>{$v[title]}</span></td>
+						<td class='t2'><span>{$v[spname]}</span></td>
 						<td class='t2'><span><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[id]}' target='blank'><b class='st'></b></a></span></td>
 						
 					</tr>

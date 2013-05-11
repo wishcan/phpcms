@@ -18,6 +18,7 @@ class index{
 		$this->_username=param::get_cookie('_username');
 		$this->_userid=param::get_cookie('_userid');
 		$this->pre=$this->db->db_tablepre;
+		$this->singer=pc_base::load_model('singer_model');
 		$this->sql='select * from '.$this->pre.'music as m inner join '.$this->pre.'music_data as md on m.id=md.id  ' ;
 		pc_base::load_app_func('global');
 	}
@@ -234,14 +235,13 @@ class index{
 
 	public function getMusic()
 	{
-		if(!$_GET['singer']){
-
-			$sql='select m.title as music,m.id as id,s.id s uid ,s.title as singer from v9_music as m inner join v9_singer as s on m.singer like %s.title%';
-			echo json_decode($this->db->queryAll($sql));
-			return;
+		if(!$_GET['id']) return '非法操作';
+		$row=$this->singer->get_one("id=".$_GET['id']);
+		$opus=trim($row['opus'],',');
+		$data=$this->db->select("id in ($opus)");
+		for($i=1;$i<10;$i++){
+			$data[$i]=$data[0];
 		}
-		$sql='select * from v9_music where singer like "'.$_GET['singer'].'"';
-		$data=$this->db->queryAll($sql);
 		include template('music','mp3');
 
 
