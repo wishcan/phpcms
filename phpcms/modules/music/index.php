@@ -474,7 +474,7 @@ class index{
  	}
 
  	// 获得最新的月榜内容(
- 	 	public function getNewMounth($catid,$size=10,$limit=1)
+ 	public function getNewMounth($catid,$size=10,$limit=1)
  	 	{
  	 		if(!$catid) exit('非法操作');
  	 		$sql='select id,title from v9_mounth where catid ='.$catid.' order by updatetime desc,inputtime desc limit '.$limit;
@@ -495,6 +495,7 @@ class index{
  		$row=$this->db->queryAll($sql);
  		return $row;
  	}
+
 
 }
 

@@ -12,8 +12,9 @@
             <div class='imgs'>
 
 				{loop $data $v}
-				<a href='{if $v["link"]} {$v["link"]}{else}{$v["url"]}{/if}'>
-
+				<a href='{if $v["linkto"]}http://{$v["linkto"]}{else}{$v["url"]}{/if}'>
+						
+				
 				<img src='{$v["thumb"]}' />
 
 				</a>
@@ -31,7 +32,7 @@
            
 				<div class='imgnews_title'>
 				{loop $data $v}
-					<p class='{if $n==1}imgnews_on{/if}'>{str_cut($v['title'],50)}</p>
+					<p class='{if $n==1}imgnews_on{/if}'>{$v['title']}</p>
 				{/loop}
 			</div>
 			{/pc}
@@ -114,9 +115,7 @@
                 <div class='top2_l'>
                 <!-- 缩略图 -->
                   <div class='thumb l'>
-                    <img src='{CSS_PATH}hy/images/zw2.png' />
-                    <div class='zz2'></div>
-                    <p>谭晶亮相山西大剧院</p>
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/16.js"></script>
                   </div>
                   <div class='news l'>
                     <!-- 热点新闻开始 -->
@@ -154,9 +153,9 @@
             </div>
             <div class='maing_top2_r l'>
               <div class='top2_r_h'>
-                <a href='' class='login1'></a>
-                <a href='' class='login2'></a>
-                <a href='' class='login3'></a>
+                <a href='{APP_PATH}index.php?m=member&c=index&a=login&mid=24' class='login1'></a>
+                <a href='{APP_PATH}index.php?m=member&c=index&a=login&mid=25' class='login2'></a>
+                <a href='{APP_PATH}index.php?m=member&c=index&a=login&mid=23' class='login3'></a>
               </div>
               <!-- 微博同步开始 -->
               <div class='weibo l'>
@@ -225,7 +224,7 @@
 	                    	<td class='td1'>名次</td>
 	                    	<td class='td2'>歌曲</td>
 	                    	<td class='td3'>歌手</td>
-	                    	<td class='td4'>票数</td>
+	                    	<td class='td4'>评分</td>
 	                    	<td class='td5'>试听</td>
 	                    </tr>
 	               </thead>

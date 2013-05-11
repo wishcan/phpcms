@@ -1,10 +1,10 @@
-{template "content","header"}
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header"); ?>
 
 <!-- 艺术人生列表页开始 -->
 <script type="text/javascript">
 $("title").html('艺术人生');
 </script>
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
 <div id='cont' class='center2 art'>
 
 <!-- 列表页头部开始 -->
@@ -30,13 +30,13 @@ $("title").html('艺术人生');
 	<!-- 推荐明星开始 -->
 		<div class='supstar l'>
 			<!-- 缩略图 -->
-			<img src="{$thumb}" class='l thumb' />
+			<img src="<?php echo $thumb;?>" class='l thumb' />
 			<!-- 信息开始 -->
 			<div class='message l'>
 				<!-- 姓名 -->
-				<h2>{$title}</h2>
+				<h2><?php echo $title;?></h2>
 				<div class='data'>
-					 <p>{$content}</p>
+					 <p><?php echo $content;?></p>
 				</div>
 			</div>
 			<!--  信息结束 -->
@@ -49,30 +49,30 @@ $("title").html('艺术人生');
 			<div class='list_page l'>
 				<div class="auto_art l">
 					<ul class='stars l'>
-					{loop $data $r}
-						 <li class='border {if $n%5==0}l5{/if}'>
-						 	<a href="{$r[url]}" target="_blank" title="{$r[title]}">
-						 		<img src="{$r[thumb]}" />
-						 		<span>{str_cut($r[title],'28')}</span>
+					<?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
+						 <li class='border <?php if($n%5==0) { ?>l5<?php } ?>'>
+						 	<a href="<?php echo $r['url'];?>" target="_blank" title="<?php echo $r['title'];?>">
+						 		<img src="<?php echo $r['thumb'];?>" />
+						 		<span><?php echo str_cut($r[title],'28');?></span>
 						 	</a>
 						 </li>
-					{php if($n%$size==0):}
+					<?php if($n%$size==0):?>
 					</ul>
 					<ul class='stars l'>
-					{php endif;}
-					{/loop}
+					<?php endif;?>
+					<?php $n++;}unset($n); ?>
 					 </ul>
 					<div class="c"></div>
 					 
 				 </div>
 			</div>
 			<div class="c"></div>
-			<div class='page nums'>{$pages}</div>
+			<div class='page nums'><?php echo $pages;?></div>
 		</div>
 	<!--搜索框-->
 	<div class='c'></div>
 		<div class='search'>
-			<form action='{APP_PATH}/index.php?m=artistic&c=index&a=search' type='post'>
+			<form action='<?php echo APP_PATH;?>/index.php?m=artistic&c=index&a=search' type='post'>
 				<span>人物搜索</span>
 				<input tpye='text' name='name' />
 				<input type="button" value="" class="submit">
@@ -89,7 +89,7 @@ $("title").html('艺术人生');
 </div>
 <div class='c'></div>
 <!-- 艺术人生列表页结束 -->
-{template "content","footer"}
+<?php include template("content","footer"); ?>
 
 <script type="text/javascript">
 	$(function(){

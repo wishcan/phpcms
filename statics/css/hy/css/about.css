@@ -80,7 +80,7 @@ background:url(../images/about_list_on.jpg);
 .message{
 	padding:14px;
 	padding-bottom:0px;
-	width:615px;
+	width:580px;
 	*width:613px;
 }
 .ar_t{
@@ -105,8 +105,8 @@ background:url(../images/about_list_on.jpg);
 	*width:903px; 
 }
 .supstar .thumb{
-	width:229px;
-	height:210px;
+	width:258px;
+	height:300px;
 }
 .data{
 	padding:10px 0;
@@ -135,7 +135,8 @@ background:url(../images/about_list_on.jpg);
 
 .stars li a img{
 	width:138px;
-	height:136px;
+	height:160px;
+	margin-bottom: 5px;
 }
 .list_page{
 	width:561px;
@@ -565,6 +566,13 @@ background-color: #f3eee4;
 .form-login .input{ padding:7px 0}
 .form-login .input label{ width:84px;font-size:14px; color:#888; text-align:right}
 .take,.reg{padding:0 0 0 200px}
+.tale{
+	padding: 0;
+}
+.cookietime{
+	position: relative;
+	
+}
 .take .submit{ margin-top:10px}
 .form-login .hr hr{ display:none}
 
@@ -647,7 +655,7 @@ margin-top: 15px;
 	display: block;
 	width: 108px;
 	height: 32px;
-	margin: 20px 40px;
+	margin: 0px 40px;
 	cursor: pointer;
 	background-repeat: no-repeat;
 }
@@ -665,6 +673,50 @@ margin-top: 15px;
 	text-decoration: none;
 	background: url(../images/button_sign.jpg);
 	background-repeat: no-repeat;
+}
+
+
+/*高校等登陆页面*/
+
+#login_sec{
+	width:1050px;
+	/*height: 290px;*/
+	height: 377px;
+	background-image: url(../images/login_3_bg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 0;
+	margin-left: -50px;
+}
+#login_sec form{
+	position: relative;
+	left: 350px;
+	top: 50px;
+	width: 329px;
+	padding: 0 25px;
+	height: 237px;
+	background-image: url(../images/login_3_form.png);
+}
+#login_sec h3{
+	position: relative;
+	left: 430px;
+	top: 20px;
+	width: 221px;
+	height: 51px;
+}
+#login_sec .h3_h{
+	background-image: url(../images/login_2.png);
+}
+#login_sec .h3_m{
+	background-image: url(../images/login_3.png);
+}
+#login_sec .h3_e{
+	background-image: url(../images/login_1.png);
+}
+#login_sec form .submit{
+	position: relative;
+	left: 190px;
+	top:15px;
 }
 /*注册页面*/
 #sign_page{

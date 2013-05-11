@@ -3,49 +3,52 @@
 <!--main-->
 <div class="main center2"id='friend'>
     <!-- 合作联盟 -->
-	<div class="col-left">
+  <div class="col-left">
             <div class='media'>
             <h2 class='me_title'></h2>
-        	{php $j=1;}
-        	{loop subcat($catid) $v}
-        	{php if($v['type']!=0) continue;}
+          {php $j=1;}
+          {loop subcat($catid) $v}
+          {php if($v['type']!=0) continue;}
 
-            		<!-- <h5>{$v[catname]}</h5> -->
+                <h5>{$v[catname]}</h5>
                     <div class='medias'>
-                         <div class='medias_auto'>
-                        {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
+                         <div class='medias_auto l'>
+                           <!-- {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"} -->
+                        {pc:content action="lists" catid="$v[catid]" num="999" order="id DESC" }
                        
-        					{loop $data $v}
-        						<span >{$v[title]}</span>
-        					{/loop}
+                  {loop $data $v}
+                   <span style='display:block;float:left;line-height:2em;'>{$v[title]}</span>
+                  {/loop}
                       
-        				{/pc}
+                {/pc}
                         </div>
                     </div>
 
-                    <!-- <div class='morem r'></div> -->
+                    <div class='morem r'></div>
                     <div class='c'></div>
             {if $j%2==0}<div class="bk10"></div>{/if}
-    	   {$j++}
-    	   {/loop}
+         {$j++}
+         {/loop}
            </div>
 </div>
 
     <div class="col-left">
       <div class='school'>
          <h2 class='sc_title'></h2>
-         <div class='medias'>
-                <div class='medias_auto'>
-                {pc:content action="lists" catid="$v[catid]" num="5" order="id DESC"}
+         <div class='medias' style='height:auto'>
+                <div class='medias_auto l'>
+                {pc:content action="lists" catid="39"   num="999" order="id DESC" }
                            
                                 {loop $data $v}
-                                      <span>{$v[title]}</span>
+                                    <span style='display:block;float:left;line-height:2em;'>{$v[title]}</span>
                                 {/loop}
                             
 
                 {/pc}
                 </div>
-          </div>  
+          </div> 
+          <div class='h_morem r'></div>
+          <div class="c"></div>
       </div>
     </div>
  </div> 
@@ -53,26 +56,37 @@
 
 </div>
 <script type="text/javascript">
-  function ChannelSlide(Name,Class){
-  	$(Name+' ul.photo li').sGallery({
-  		titleObj:Name+' div.title p',
-  		thumbObj:Name+' .thumb li',
-  		thumbNowClass:Class
-  	});
-  }
-  new ChannelSlide(".channel-slide","on",311,260);
+
   $(function(){
   $(".morem").on("click",function(){
-      $(".focus").css("height",42)
-       $(this).prev(".medias").css("height",$(this).prev(".medias").find(".medias_auto").height());
-       $(this).prev(".medias").addClass("focus");
+    if($(this).attr("class")!=='morem r moremon'){
+        $(".focus").css("height",'42');
+        var h=parseInt($(this).prev(".medias").find(".medias_auto").height());
+        $(this).prev(".medias").css("height",h+20);
+        $(this).prev(".medias").addClass("focus");
+        $(this).addClass("moremon").siblings().removeClass("moremon");
+      }else{
+           $(this).prev(".medias").css("height",'42');
+           $(this).removeClass("moremon");
+      }
 
   })
+  $(".h_morem").click(function(){
+    var h=parseInt($(this).prev(".medias").find(".medias_auto").height());
+    if(h<512){
+      return false;
+    }else if($(this).attr("class")=='h_morem r'){
+      $(this).addClass("h_moremon");
+      $(this).prev(".medias").css("height",h+20);
+    }else{
+      $(this).removeClass("h_moremon");
+      $(this).prev(".medias").css("height",'512');
+    }
+
+    })
   })
 
  </script>
-
-
 
 </script>
 {template "content","footer"}

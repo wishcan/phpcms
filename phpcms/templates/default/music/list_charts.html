@@ -1,5 +1,5 @@
 
-<title>{$title}-{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}{/if}榜{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜</title>
+<title>{$title}-{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}民歌{/if}{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜</title>
 
 {template 'content','header'}
 
@@ -41,6 +41,9 @@ background: #fcfbf8;
 	padding: 8px 0;
 
 }
+td{
+	font-size: 12px;
+}
 .week tbody .tr2 td{
 	background-color: #f2f1ec;
 	border-right: 
@@ -80,7 +83,7 @@ background: #fcfbf8;
 <div class="center2">
 
 	<h3 class="page_title list_title">
-		{$title} 至尊{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}{/if}{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜
+		{$title} 至尊{if $_GET[id]==0}内地{elseif $_GET[id]==1}港台{elseif $_GET[id]==2}民歌{/if}{if $_GET['type']==w}周{elseif $_GET['type']=='m'}月{/if}榜
 	</h3>
  <div class='week'>
 
@@ -121,7 +124,7 @@ background: #fcfbf8;
 	               <tbody>
 	               		    <tr {if $n%2==1} class='tr2' {/if}>
 	                    	<td class='td1'><span class='one' style='color:#ff6600;font-w:bold;'>{$n}</span></td>
-	                    	<td class='td2'>{$v[music]}</td>
+	                    	<td class='td2'>{str_cut($v[music],36)}</td>
 	                    	<td class='td3'>{$v[singer]}</td>
 	                    	<td class='td4'>{$v[point]}</td>
 	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' class='st'></a></td>
@@ -129,7 +132,7 @@ background: #fcfbf8;
 	                 {else}   
 	               		    <tr {if $n%2==1} class='tr2' {/if}>
 	                    	<td class='td1'><span class='one' style='color:#ff6600;font-w:bold;'>{$n}</span></td>
-	                    	<td class='td2'>{$v[music]}</td>
+	                    	<td class='td2'>{str_cut($v[music],36)}</td>
 	                    	<td class='td3'>{$v[singer]}</td>
 	                    	<td class='td4'>{$v[point]}</td>
 	                    	<td class='td5'><a href='{APP_PATH}index.php?m=music&c=index&a=mp3&id={$v[mid]}' class='st'></a></td>

@@ -2662,3 +2662,130 @@
 <?php exit;?>04-27 23:06:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>04-27 23:06:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
 <?php exit;?>04-27 23:06:09 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 09:12:25 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 09:12:25 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 09:12:25 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 14:21:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 14:21:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 14:21:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 15:25:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 15:25:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 15:25:44 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 20:31:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 20:31:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 20:31:23 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:15 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:15 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:15 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:43 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:43 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>04-28 21:12:43 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:24:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:24:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:24:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:26:13 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:26:13 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:26:13 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:32:04 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:32:04 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:32:04 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:40:45 | 2 | fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: php_network_getaddresses: getaddrinfo failed: 不知道这样的主机。  | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>05-03 21:40:45 | 2 | fsockopen() [<a href='function.fsockopen'>function.fsockopen</a>]: unable to connect to tool.phpcms.cn:80 (php_network_getaddresses: getaddrinfo failed: 不知道这样的主机。 ) | phpcms\libs\classes\http.class.php | 84
+<?php exit;?>05-03 21:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:44:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:44:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:44:54 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:03 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:03 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:03 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:14 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:14 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-03 21:45:14 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 09:24:45 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 09:24:45 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 09:24:45 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:37 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:37 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:37 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-04 13:44:38 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:10:48 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:10:49 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:10:48 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:10:49 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:12:07 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:12:07 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:12:07 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:13:39 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:13:39 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-06 21:13:39 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-07 14:53:42 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-07 14:53:42 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-07 14:53:42 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 17:38:53 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 17:38:53 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 17:38:53 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:21 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:32 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:32 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 21:21:32 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 22:13:16 | 2 | require(D:\wamp\www\phpcms\phpcms\modules\content\fields\\config.inc.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory | phpcms\modules\content\sitemodel_field.php | 207
+<?php exit;?>05-10 22:17:02 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 22:17:02 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 22:17:02 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-10 22:17:27 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 93 and defined | phpcms\modules\music\index.php | 116
+<?php exit;?>05-10 22:17:32 | 2 | Missing argument 3 for index::selectMusic(), called in D:\wamp\www\phpcms\phpcms\modules\music\index.php on line 93 and defined | phpcms\modules\music\index.php | 116
+<?php exit;?>05-10 22:23:25 | 2 | explode() [<a href='function.explode'>function.explode</a>]: Empty delimiter | caches\caches_template\default\content\show_hy_singer.php | 48
+<?php exit;?>05-11 04:36:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 04:36:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 04:36:22 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:10:28 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:10:28 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:10:28 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:17:48 | 2 | include(D:\wamp\www\phpcms\phpcms\modules\music\templates\chart_admin.tpl.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:17:48 | 2 | include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\wamp\www\phpcms\phpcms\modules\music\templates\chart_admin.tpl.php' for inclusion (include_path='.;C:\php\pear') | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:20:03 | 2 | include(D:\wamp\www\phpcms\phpcms\modules\music\templates\chart_admin.tpl.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:20:03 | 2 | include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\wamp\www\phpcms\phpcms\modules\music\templates\chart_admin.tpl.php' for inclusion (include_path='.;C:\php\pear') | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:20:52 | 2 | include(D:\wamp\www\phpcms\phpcms\modules\music\templates\admin_music.tpl.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:20:52 | 2 | include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\wamp\www\phpcms\phpcms\modules\music\templates\admin_music.tpl.php' for inclusion (include_path='.;C:\php\pear') | phpcms\modules\music\admin_music.php | 40
+<?php exit;?>05-11 15:21:45 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 29
+<?php exit;?>05-11 15:22:01 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 29
+<?php exit;?>05-11 15:22:22 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 29
+<?php exit;?>05-11 15:22:37 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 29
+<?php exit;?>05-11 15:23:13 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 15:26:08 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:26:08 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 15:26:08 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 17:08:39 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 17:25:35 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 17:32:15 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 17:32:18 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 18:49:23 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 18:52:13 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 19:10:28 | 2 | include(D:\wamp\www\phpcms\phpcms\modules\music\templates\addpos.tpl.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory | phpcms\modules\music\admin_music.php | 59
+<?php exit;?>05-11 19:10:28 | 2 | include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\wamp\www\phpcms\phpcms\modules\music\templates\addpos.tpl.php' for inclusion (include_path='.;C:\php\pear') | phpcms\modules\music\admin_music.php | 59
+<?php exit;?>05-11 19:10:30 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 19:10:32 | 2 | include(D:\wamp\www\phpcms\phpcms\modules\music\templates\addpos.tpl.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory | phpcms\modules\music\admin_music.php | 59
+<?php exit;?>05-11 19:10:32 | 2 | include() [<a href='function.include'>function.include</a>]: Failed opening 'D:\wamp\www\phpcms\phpcms\modules\music\templates\addpos.tpl.php' for inclusion (include_path='.;C:\php\pear') | phpcms\modules\music\admin_music.php | 59
+<?php exit;?>05-11 19:13:27 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 20:08:10 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 20:08:17 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:09:05 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:09:54 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:10:07 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:11:46 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:12:01 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:12:14 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:12:24 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:12:31 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:19:48 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:19:48 | 2 | Invalid argument supplied for foreach() | phpcms\modules\music\templates\admin_music.tpl.php | 26
+<?php exit;?>05-11 20:19:55 | 2 | Invalid argument supplied for foreach() | phpcms\libs\classes\model.class.php | 166
+<?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 42 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 43 and defined | phpcms\modules\content\index.php | 70
+<?php exit;?>05-11 20:28:58 | 2 | Missing argument 2 for index::getChar(), called in D:\wamp\www\phpcms\phpcms\modules\content\index.php on line 44 and defined | phpcms\modules\content\index.php | 70

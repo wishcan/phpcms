@@ -237,7 +237,10 @@ $(document).ready(function(){
 		}
 		?></td>
 		<td align='center'><?php echo format::date($r['updatetime'],1);?></td>
-		<td align='center'><a href="javascript:;" onclick="javascript:openwinx('?m=content&c=content&a=edit&catid=<?php echo $catid;?>&id=<?php echo $r['id']?>','')"><?php echo L('edit');?></a> | <a href="javascript:view_comment('<?php echo id_encode('content_'.$catid,$r['id'],$this->siteid);?>','<?php echo safe_replace($r['title']);?>')"><?php echo L('comment');?></a>
+		<td align='center'>
+			<a href="javascript:;" onclick="javascript:openwinx('?m=content&c=content&a=edit&catid=<?php echo $catid;?>&id=<?php echo $r['id']?>','')"><?php echo L('edit');?></a>
+			<br/>
+			<a href="<?php echo APP_PATH;?>index.php?m=music&c=admin_music&a=musiclist&id=<?php echo $r['id'].'&search='.$r[title];?>" target="right">试听作品</a><br/>
 			<?php if($r['supstar']) echo '<span style="color:#D13EBE">推荐人物</span>'?>
 			<?php  if(!$r['supstar'])echo '<span class="tj">推荐</span>' ?>
 			</td>

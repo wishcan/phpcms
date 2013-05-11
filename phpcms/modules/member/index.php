@@ -721,8 +721,12 @@ class index extends foreground {
 			
 			$siteid = isset($_REQUEST['siteid']) && trim($_REQUEST['siteid']) ? intval($_REQUEST['siteid']) : 1;
 			$siteinfo = siteinfo($siteid);
-
-			include template('member', 'login');
+			if(isset($_GET['mid']))
+			{
+				include template('member', 'login_outher');
+			}else{
+				include template('member', 'login');
+			}
 		}
 	}
   	

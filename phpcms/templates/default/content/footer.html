@@ -4,19 +4,24 @@
 	<div class='footer_t'>
 		<div class='center2'>
 			<div class='footer_t_l'>
+				{pc:content  action="lists"  catid="64" order="updatetime desc" num="1" return="data"  moreinfo="1"}
+				{loop $data $v}
 				<a href='' class='foot_logo'></a>
-				<p>联系电话：010-22222222   010-88888888</p>
-				<p>新闻发布：XXX@xxx.com</p>
-				<p>内容合作：12345678 XXX</p>
-				<p>市场合作：12345678 XXX</p>
+				<p>联系电话：{$v[callphone]}</p>
+				<p>新闻发布：{$v[new]}</p>
+				<p>内容合作：{$v[coop]}</p>
+				<p>市场合作：{$v[marke]}</p>
+				{/loop}
+				{/pc}
 			</div>
 			<div class='footer_t_r'>
 				<h3>合作伙伴</h3>
 				<div class='firend_link'>
-			{pc:link  action="type_list" siteid="$siteid" order="listorder DESC" num="10" return="dat"}
+			{pc:link  action="type_list" siteid="$siteid" order="listorder DESC"  return="dat"}
 
 					{loop $dat $v}
-			              <span>{$v[name]}</span> |
+			              <span >{$v[name]}</span>
+			              {if $n%5==0}<br/>{/if}
 					{/loop}
 				{/pc}
 				</div>
@@ -25,8 +30,8 @@
 	</div>
 	<div class='footer_b'>
 		<div class='center2'>
-			<p class='live_us l'>关注我们:</p>
-			<p class='abuto_us r'>© 2007 - 2012 北京红色春天有限公司   京网文[2011]0012-005号    京ICP备08103200号-2 </p>
+			<p class='live_us l'></p>
+			<p class='abuto_us r'>© 2007 - 2013 北京红色春天文化有限公司   京网文[2011]0012-005号    京ICP备08103200号-2 </p>
 
 		</div>
 	</div>

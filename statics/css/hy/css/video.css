@@ -80,10 +80,12 @@ hr{
 	background: url(../images/message_bg.png);
 
 }
-.concert_page 
+
 .concert_page #messages .message h3{
 	line-height: 40px;
 	font-size: 20px;
+	margin-top: -15px;
+	margin-bottom: 10px;
 }
 .concert_page #messages .message p{
 	line-height: 30px;

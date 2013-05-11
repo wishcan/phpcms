@@ -1,4 +1,4 @@
-{template "content","header"}
+<?php defined('IN_PHPCMS') or exit('No permission resources.'); ?><?php include template("content","header"); ?>
 
 
 <!-- 需要参数
@@ -9,7 +9,7 @@
 	$good_works 代表作品
   -->
   <!-- 艺术人生信息页-->
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}hy/css/about.css">
+<link rel="stylesheet" type="text/css" href="<?php echo CSS_PATH;?>hy/css/about.css">
 <div id='cont' class='center2 art'>
 
 	<!-- 艺术人生信息页头部开始 -->
@@ -35,44 +35,44 @@
 		<div class='art_message l'>
 						<!-- 缩略图 -->
 						<div class='thumb l'>
-							<img src="{$thumb}" />
+							<img src="<?php echo $thumb;?>" />
 						</div>
 						
 						<div class='message l'>
 							<!-- 姓名 -->
-							<h2>{$title}</h2>
+							<h2><?php echo $title;?></h2>
 							<div class='data'>
-								 <p>{$content}</p>
+								 <p><?php echo $content;?></p>
 							</div>
 						</div>
 
-					{php $words=explode(chr(13),$word);}
+					<?php $words=explode(chr(13),$word);?>
 					<div class='c'></div>	
 						<table border="0" cellspacing="0" cellpadding="0" accesskey="">
-							{php $m=1}
-							{loop $words $k $v}
-							{php $v=explode("|",$v)}
-							{if $k%2==0}
-							<tr {if $m%2==1}class='odd'{/if}>
-								<td {$k}>{$v[0]}</td>
+							<?php $m=1?>
+							<?php $n=1; if(is_array($words)) foreach($words AS $k => $v) { ?>
+							<?php $v=explode("|",$v)?>
+							<?php if($k%2==0) { ?>
+							<tr <?php if($m%2==1) { ?>class='odd'<?php } ?>>
+								<td <?php echo $k;?>><?php echo $v['0'];?></td>
 								<td class='mes'>
-								{$v[1]}
+								<?php echo $v['1'];?>
 								</td>
-							{else}
-								<td {$k}>{$v[0]}</td>
+							<?php } else { ?>
+								<td <?php echo $k;?>><?php echo $v['0'];?></td>
 								<td class='mes'>
-								{$v[1]}
-								{php $m+=1}								</td>
+								<?php echo $v['1'];?>
+								<?php $m+=1?>								</td>
 							</tr>
-							{/if}
-							{/loop}
+							<?php } ?>
+							<?php $n++;}unset($n); ?>
 							</tr>
 						</table>
 		</div>
 		<!-- 信息结束 -->
 		<!-- 作品试听开始 -->
 		<div class='c'></div>
-	<iframe src="{APP_PATH}index.php?m=music&c=index&a=getMusic&singer={$title}" frameborder="0"></iframe>
+	<iframe src="<?php echo APP_PATH;?>index.php?m=music&c=index&a=getMusic&singer=<?php echo $title;?>" frameborder="0"></iframe>
 		
 		<!-- 作品试听结束 -->
 	</div>
@@ -84,7 +84,7 @@
 		var keywords = $(obj).text();
 		var offset = $(obj).offset();
 		var jsonitem = '';
-		$.getJSON("{APP_PATH}index.php?m=content&c=index&a=json_list&type=keyword&modelid={$modelid}&id={$id}&keywords="+encodeURIComponent(keywords),
+		$.getJSON("<?php echo APP_PATH;?>index.php?m=content&c=index&a=json_list&type=keyword&modelid=<?php echo $modelid;?>&id=<?php echo $id;?>&keywords="+encodeURIComponent(keywords),
 				function(data){
 				var j = 1;
 				var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
@@ -112,7 +112,7 @@
 	}
 
 	function add_favorite(title) {
-		$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+		$.getJSON('<?php echo APP_PATH;?>api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
 			if(data.status==1)	{
 				$("#favorite").html('收藏成功');
 			} else {
@@ -123,4 +123,4 @@
 
 //-->
 </script>
-{template "content","footer"}
+<?php include template("content","footer"); ?>

@@ -17,15 +17,15 @@
                 <img src='{$thumb}' class='l'/>
                 <div class="message l">
                   <h3>{$title}</h3>            
-                      <p><span>演出时间: </span>{$showtime}</p>
-                      <p><span>演出地点: </span>{$showplaces}</p>
-                      <p><span>演出地址: </span>{$showplace}</p>
-                      <p><span>门票票价: </span>{$price}</p>
+                      <p><span>演出时间: &nbsp;</span>{$showtime}</p>
+                      <p><span>演出地点: &nbsp;</span>{$showplaces}</p>
+                      <p><span>演出地址: &nbsp;</span>{$showplace}</p>
+                      <p><span>门票票价: &nbsp;</span>{$price}</p>
                 </div>
             </div>
 
             <div class="m_b l border">
-                    <h4>演唱会介绍</h4>
+                    <h4>演出介绍</h4>
                     <div>
                         {$content}
                 </div>
@@ -37,6 +37,23 @@
         </div>
     </div>
 </div>
+       <div class='c'></div>
+<script type="text/javascript">
+  $(function(){
+    if($.browser.msie){
+          $("body").css("height",$(document).height());
+        $(".body-top").css("height",$(document).height())
+    }else{
+
+    }
+    // $("#footer").css({"position":"absolute"."bottom":0})
+
+
+  })
+
+</script>
+</div></div>
+{template "content","footer"}
 <script type="text/javascript">
   // function postToWb(){
   //   var _t = encodeURI(document.title);
@@ -65,6 +82,4 @@
 // }
 // new ChannelSlide(".channel-slide","on",311,260);
 </script>
-       <div class='c'></div>
-{template "content","footer"}
 <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>

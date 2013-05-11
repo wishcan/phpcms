@@ -15,6 +15,7 @@ body{
 /*	background-color: #f8f4eb;*/
 	background:#f4f2ed;
 }
+body a{outline:none;blr:expression(this.onFocus=this.blur());}
 a{
 	color:#515151;
 	font-size:14px;
@@ -765,10 +766,8 @@ background:url(../images/tp_6.png);
 }
 #video ul li a{
 	color:#ff7200;
-	font-size: 16px;
-}
-#video ul li a{
 	border:0;
+	font-size: 12px;
 }
 #video ul li a img{
 	border:0;
@@ -790,7 +789,7 @@ background:url(../images/tp_6.png);
 #messages li h3{
 	color:#ff7200;
 	/*text-align:center;*/
-	font-size:14px;
+	font-size:13px;
 
 }
 
@@ -818,7 +817,7 @@ padding:15px;
 }
 .footer_t_l,.footer_t_r,{
 	display: inline-block;
-		font-size:14px;
+	font-size:14px;
 }
 .footer_t_r h3{
 	padding:10px 0;
@@ -840,7 +839,7 @@ padding:15px;
 .footer_t_r{
 	width:465px;
 	float:right;
-
+	padding-top: 20px;
 	line-height:1.5em;
 }
 .footer_b{
@@ -912,6 +911,7 @@ font-size: 14px;
 .pointUp{
 	font-size: 16px;
 	position:relative;
+	*left:-10px;
 	left:45px;
 	color:red;
 	font-weight:bold;

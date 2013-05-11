@@ -23,23 +23,10 @@ $(function(){
 <link href="{CSS_PATH}hy/css/about.css" rel="stylesheet" type="text/css" />
 <link href="{CSS_PATH}dialog_simp.css" rel="stylesheet" type="text/css" />
 </head>
-
-<div class='login_page'>
-<div class="col-left form-login" id="logindiv">
-	<div class="page_title login_title">
-		<h3></h3>
-	
-		<div class='music_link l'>
-	  <i class='l'></i>
-	  <i class='l'></i>
-	</div>
-	<div class='music_link r'>
-	  
-	  <i class='l'></i>
-	  <i class='l'></i>
-	</div>
-</div>
-<div class="form">
+<!-- 高校等登陆 -->
+<div class="center2">	
+<div class='login_page' id="login_sec">
+	<h3 class='{if $_GET[mid]==23}h3_h{elseif $_GET[mid]==24}h3_m{elseif $_GET[mid]==25}h3_e{/if}'></h3>
 	<form method="post" action="" onsubmit="save_username();" id="myform" name="myform">
 		<div class='inputs'>
 			<input type="hidden" name="forward" id="forward" value="{$forward}">
@@ -52,30 +39,15 @@ $(function(){
 	        <div class="input">
 				<label style='padding-left:1em;'>{L('checkcode')}：</label><input type="text" id="code" name="code" size="8" class="input-text"style='margin-right:15px;'>{form::checkcode('code_img', '4', '14', 104, 33)}
 			</div>
-				
-	        <div class="take">
-	        	<div class='cookietime'>
-	        		<input type="checkbox" name="cookietime" value="2592000" id="cookietime"> {L('remember')}{L('username')}
-	        	</div>
+
 			<!-- <a href="index.php?m=member&c=index&a=public_forget_password&siteid={$siteid}" class="blue">{L('forgetpassword')}</a><br /> -->
-				
 					<div class="submit">
 						<input type="submit" name="dosubmit" id="dosubmit"value='' />
 					</div>
-					<div class="submit">
-						<a id="sign" href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank">
-							&nbsp;
-						</a>
-					</div>
-				
-			</div>
-	        <div class="hr"><hr /></div>
-	       </div>
-	</form>
-	   
-			
-	    </div>
 
+	</form>
+
+</div>
 </div>
 <script language="JavaScript">
 <!--

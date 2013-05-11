@@ -93,12 +93,13 @@ class index {
 		$info=$this->db->queryAll($sql);
 		$row['data']=$info;
 		return $row;
+	
 	}
 	// 获取最新的月榜的信息
 	public function getNewMounth($catid,$limit=10)
  	{
  		if(!$catid) exit('非法操作');
- 		$sql='select id,title from v9_mounth where catid ='.$catid.' order by updatetime desc,inputtime desc limit 1';
+ 		$sql='select id,title from v9_mounth where catid ='.$catid.'  and statu=1 order by updatetime desc,inputtime desc limit 1';
  		$row=$this->db->queryAll($sql);
  		if(empty($row))return false;
  		$data['title']=$row[0]['title'];

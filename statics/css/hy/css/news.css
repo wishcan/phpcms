@@ -146,13 +146,22 @@ width:960px;
 	height:42px;
 	overflow: hidden;
 }
-#friend .morem{
+#friend .morem,.h_morem{
 	margin-top:-15px;
 	margin-right:10px;
 	margin-bottom:5px;
 	height:16px;
 	width: 15px;
 	background:url(../images/morem.png);
+	cursor: pointer;
+}
+.school .medias{
+	max-height:512px; 
+}
+#friend .moremon,.h_moremon{
+	height:16px;
+	width: 15px;
+	background-image: url(../images/morem_on.png);
 }
 .media a,.school a{
 	line-height:2em;
